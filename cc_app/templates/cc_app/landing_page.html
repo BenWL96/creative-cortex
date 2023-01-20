@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+{% extends 'cc_app/index.html' %}
+{% load static %}
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% block style %}
+      <link href="{% static 'cc_app/css/landing_page.css' %}" rel="stylesheet" type="text/css">
+    {% endblock %}
+
+    
+  </head>
+  <body>
+    
+    {% block body %} 
+
+
+        <p class="cc_text">CREATIVE CORTEX</p>
+
+
+      <center>
+      <div id="carouselExampleFade" class="carousel carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-inner">
+
+            <div class="carousel-item active" data-bs-interval="4000">
+              <img src="{% static 'cc_app/images/placeholder_1.jpg' %}" class="carousel_img">
+            </div>
+            <div class="carousel-item" data-bs-interval="4000">
+              <img src="{% static 'cc_app/images/placeholder_1.jpg' %}" class="carousel_img">
+            </div>
+            <div class="carousel-ite" data-bs-interval="4000">
+              <img src="{% static 'cc_app/images/500_error_img.jpg' %}" class="carousel_img">
+            </div>
+
+          <!--
+            <div class="carousel-item active" data-bs-interval="10">
+              <img class="d-block w-100 h-100">
+            </div>
+
+          {% for image in carousel_img_objects %}
+            <div class="carousel-item" data-bs-interval="4000">
+              <img src="{{image.landing_page_img.url}}" class="d-block w-100 h-100">
+            </div>
+          {% endfor %}-->
+        </div>
+      </div>
+      </center>
+
+    {% endblock %}
+   
+  </body>
+</html>

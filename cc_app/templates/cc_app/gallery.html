@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+
+  {% extends 'cc_app/index.html' %}
+  {% load static %}
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% block style %}
+      <link href="{% static 'cc_app/css/gallery.css' %}" rel="stylesheet" type="text/css">
+
+      <!-- LIGHT BOX -->
+
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+      <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+
+      <!-- JQUERY -->
+
+
+      <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+
+      <!-- MASONRY -->
+
+      <script src="{% static 'cc_app/javascript/masonry.pkgd.js' %}"></script>
+      
+
+    {% endblock %}
+
+    
+  </head>
+  <body>
+    
+    {% block body %}
+      <div class="w">
+
+      
+
+
+        <h1 class="Title">
+              Gallery
+            </h1>
+        <div class="wrap_g">
+
+          <p class="gal_title">
+            Gallery Name
+          </p>
+
+
+          <div class="grid" id ="grid">
+            <!-- do not use banner in Masonry layout -->
+
+            <!-- for every img passed -->
+            {% for image in gallery_images %}
+
+              <div class="grid-item">
+
+                <!-- pass in the object properties such as title and description and possibly date-->
+
+                <img src="{{image.gallery_img_486_by_165.url}}" class="gallery_img" onclick="ShowLightBox('{{image.gallery_img_id}}', '{{image.gallery_img_description}}',
+                  '{{image.gallery_img_486_by_165.url}}'
+                  )" id="gallery_img">
+              
+              </div>
+
+            {% endfor %}
+
+            <!-- all the extra html for display purposes only -->
+
+            <!--<div class="grid-item">
+                <img src="{% static 'cc_app/images/placeholder_2.png' %}" class="gallery_img" onclick="ShowLightBox(1)" id="gallery_img">
+            </div>
+            <div class="grid-item">
+                <img src="{% static 'cc_app/images/popover_placeholder.jpg' %}" class="gallery_img" onclick="ShowLightBox(1)" id="gallery_img">
+            </div>
+            <div class="grid-item">
+                <img src="{% static 'cc_app/images/placeholder_2.png' %}" class="gallery_img" onclick="ShowLightBox(1)" id="gallery_img">
+            </div>
+            <div class="grid-item">
+                <img src="{% static 'cc_app/images/placeholder_2.png' %}" class="gallery_img" onclick="ShowLightBox(1)" id="gallery_img">
+            </div>
+            <div class="grid-item">
+                <img src="{% static 'cc_app/images/popover_placeholder.jpg' %}" class="gallery_img" onclick="ShowLightBox(1)" id="gallery_img">
+            </div>
+            <div class="grid-item">
+              <img src="{% static 'cc_app/images/placeholder_1.jpg' %}" class="gallery_img" onclick="ShowLightBox(1)" id="gallery_img">
+            
+            </div>
+            <div class="grid-item">
+              <img src="{% static 'cc_app/images/placeholder_1.jpg' %}" class="gallery_img" onclick="ShowLightBox(1)" id="gallery_img">
+            
+            </div>-->
+            
+          </div>
+
+
+
+          <!--<div class="d-flex flex-row g_row">
+            <div class="img_cont">
+
+              
+              
+            </div>
+
+            <div class="img_cont">
+
+              <img src="{% static 'cc_app/images/placeholder_1.jpg' %}" class="gallery_img" onclick="ShowLightBox(1)" id="gallery_img">
+              
+            </div>
+
+            <div class="img_cont">
+
+              <img src="{% static 'cc_app/images/placeholder_1.jpg' %}" class="gallery_img" onclick="ShowLightBox(1)" id="gallery_img">
+              
+            </div>
+
+          </div>-->
+
+          <!-- Below ties in template logic 
+          <div class="d-flex flex-row g_row">
+
+            {% for image in gallery_images %}
+            <div class="g_rdiv">
+              <div class="container my-5">
+  
+                  <img src="{{image.gallery_img_486_by_165.url}}" class="img_pop" alt="...">
+            
+              </div>
+            </div>
+
+            {% endfor %}
+
+          </div>
+        </div>-->
+
+           <br>
+             <br>
+
+            
+
+
+
+      </div>
+
+      <script type="text/javascript">
+
+        // Keep the grid hidden until this timer is finished
+        masonry = document.getElementById("grid");
+        masonry.style.display = "none";
+
+
+        function Masonry(){
+        
+        // Display the grid now that the timer has finished.
+        masonry.style.display = "block";
+        
+        var $grid = $('.grid').masonry({
+
+          horizontalOrder: true
+
+        });
+     
+        $grid.masonry( 'on', 'layoutComplete', function() {
+          console.log('layout is complete');
+        });
+
+        $grid.masonry();
+
+        }
+
+        setTimeout(Masonry, 500)
+
+
+      </script>
+
+      <script type="text/javascript">
+        const lightbox = GLightbox({
+          touchNavigation: true,
+      });
+
+      //When user clicks an image, pass image_placement_id
+      //into function and then enlarge image.
+      //We should not be able to navigate between images.
+      //
+
+      function ShowLightBox (image_id, image_description, img_url) {
+
+          //We need to pass in info separately as the object isn't able to be identified.
+
+         
+
+          const src = img_url;
+          const title = `<p class="volume_name_img">${image_id}</p>`;
+          const description = `<p class="volume_num_img">${image_description}</p>`;
+
+
+          const myGallery = GLightbox({
+            elements: [
+                {
+                    'href': `${src}`,
+                    'type': 'image',
+                    'title': `${title}`,
+                    'description': `${description}`,
+                },
+                
+            ],
+     
+        });
+        myGallery.open();
+        
+      };
+
+      /*const myGallery = GLightbox({
+          elements: [
+              {
+                  'href': 'https://picsum.photos/1200/800',
+                  'type': 'image',
+                  'title': 'My Title',
+                  'description': 'Example',
+              },
+              {
+                  'href': 'https://picsum.photos/1200/800',
+                  'type': 'image',
+                  'alt': 'image text alternatives'
+              },
+              {
+                  'href': 'https://www.youtube.com/watch?v=Ga6RYejo6Hk',
+                  'type': 'video',
+                  'source': 'youtube', //vimeo, youtube or local
+                  'width': 900,
+              },
+              {
+                  'content': '<p>This will append some html inside the slide</p>' // read more in the API section
+              },
+              {
+                  'content': document.getElementById('inline-example') // this will append a node inside the slide
+              },
+          ],
+          autoplayVideos: true,
+      });
+      myGallery.open();*/
+
+      </script>
+
+      
+      
+   
+    {% endblock %}
+   
+  </body>
+</html>

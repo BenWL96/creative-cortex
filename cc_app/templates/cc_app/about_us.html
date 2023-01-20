@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+
+  {% extends 'cc_app/index.html' %}
+  {% load static %}
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% block style %}
+      <link href="{% static 'cc_app/css/about_us.css' %}" rel="stylesheet" type="text/css">
+    {% endblock %}
+
+    
+  </head>
+  <body>
+    
+    {% block body %}
+
+    <div class="black_green">
+
+      <div class="w">
+
+        <h1 class="Title">
+              About Us  
+        </h1>
+
+
+
+        <div class="cont_comic_about">
+          <div class="container my-5">
+          <p class="about_descr">
+
+            <!-- {{comic.comic_description}} -->
+
+            Abstract: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+
+          </p>
+      
+          </div>     
+        </div>
+
+
+      {% for person in personnel %}
+
+        {% if person.even == 'false' %}
+          <div class="d-flex flex-row rowwww">
+
+            <div class="cont_volum_2">
+              <div class="container my-3">
+                <center>
+                  <img src="{{person.img_of_person.url}}" class="v_pl_img">
+                </center>
+
+          
+              </div>     
+            </div>
+
+            <div class="cont_volum_3">
+              <div class="container my-3 vert_centred_cont">
+              
+                <div class="d-flex flex-row v_row">
+                  <div class="col_1">
+                    <p class="volume_num_head">Name:</p>
+                  </div>
+                  <div class="col_2">
+                    <p class="volume_num">Placeholder 1 Placeholder</p>
+                  </div>
+                </div>
+                <div class="d-flex flex-row v_row">
+                  <div class="col_1">
+                    <p class="volume_num_head">Email:</p>
+                  </div>
+                  <div class="col_2">
+                    <p class="volume_num">Placeholder 1 Placeholder</p>
+                  </div>
+                </div>
+                <div class="d-flex flex-row v_row">
+                  <div class="col_1">
+                    <p class="volume_num_head">Number:</p>
+                  </div>
+                  <div class="col_2">
+                    <p class="volume_num">Placeholder 1 Placeholder</p>
+
+                  </div>
+                </div>
+              </div>    
+            </div>
+          </div>
+        {% else %}
+
+          <div class="d-flex flex-row rowwww_2">
+
+            
+
+            <div class="cont_volum_3">
+              <div class="container my-3 vert_centred_cont">
+              
+                <div class="d-flex flex-row v_row">
+                  <div class="col_1">
+                    <p class="volume_num_head_2">Name:</p>
+                  </div>
+                  <div class="col_2">
+                    <p class="volume_num_2">Placeholder 1 Placeholder</p>
+                  </div>
+                </div>
+                <div class="d-flex flex-row v_row">
+                  <div class="col_1">
+                    <p class="volume_num_head_2">Email:</p>
+                  </div>
+                  <div class="col_2">
+                    <p class="volume_num_2">Placeholder 1 Placeholder</p>
+                  </div>
+                </div>
+                <div class="d-flex flex-row v_row">
+                  <div class="col_1">
+                    <p class="volume_num_head_2">Number:</p>
+                  </div>
+                  <div class="col_2">
+                    <p class="volume_num_2">Placeholder 1 Placeholder</p>
+
+                  </div>
+                </div>
+              </div>    
+            </div>
+
+            <div class="cont_volum_2">
+              <div class="container my-3">
+                <center>
+                  <img src="{{person.img_of_person.url}}" class="v_pl_img">
+                </center>
+
+          
+              </div>     
+            </div>
+
+            <br><br>
+          </div>
+          
+        {% endif %}
+
+      
+
+      {% endfor %}
+
+
+
+    
+
+       </div>
+    </div>
+    {% endblock %}
+   
+  </body>
+</html>

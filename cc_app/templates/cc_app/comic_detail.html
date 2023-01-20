@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="en">
+
+{% extends 'cc_app/index.html' %}
+{% load static %}
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% block style %}
+      <link href="{% static 'cc_app/css/comic_detail.css' %}" rel="stylesheet" type="text/css">
+    {% endblock %}
+
+    
+  </head>
+  <body>
+    
+    {% block body %}
+    
+    <div class="w">
+
+      <h1 class="Title">
+        Comic Name Goes Here
+      </h1>
+
+
+    <div class="cont_breadcrumb">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="{% url 'comics' %}">comics</a></li>
+          <li class="breadcrumb-item active" aria-current="page">{{comic.comic_name}}</li>
+        </ol>
+      </nav>
+
+    </div>
+
+
+
+
+      <div class="d-flex flex-row rowwww">
+
+        <div class="cont_volum_2">
+          <div class="container my-3">
+            <center>
+              <img src="{% static 'cc_app/images/volumes_page_placeholder_img.jpg' %}" class="v_pl_img">
+            </center>
+
+      
+          </div>     
+        </div>
+
+        <div class="cont_volum_3">
+          <div class="container my-3">
+
+            <div class="d-flex flex-row v_row">
+              <div class="col_1">
+                <p class="volume_num_head">Genre(s):</p>
+              </div>
+              <div class="col_2">
+                <!-- for genre in genres  (currently plural objects do not exist -->
+                <p class="volume_num">Placeholder 1 Placeholder</p>
+
+              </div>
+            </div>
+
+            <div class="d-flex flex-row v_row">
+              <div class="col_1">
+                <p class="volume_num_head">Status:</p>
+              </div>
+              <div class="col_2">
+                <p class="volume_num">
+                  <!-- if {{comic.ongoing}} == True -->
+                  Ongoing
+                  <!-- else -->
+                  Discontinued.
+                </p>
+              </div>
+            </div>
+            
+          </div>    
+        </div>
+      </div>
+
+      <br>
+
+
+      <div class="d-flex flex-row rowwww">
+
+        <div class="cont_volum_2">
+          <div class="container">
+            <center>
+              <p>
+              <a class="btn expand_info_btn" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                See More Info
+              </a>
+              
+            </p>
+            </center>
+
+      
+          </div>     
+        </div>
+
+        <div class="cont_volum_3">
+          <div class="container">
+          
+            <div class="collapse" id="collapseExample">
+            
+            <div class="d-flex flex-row v_row">
+              <div class="col_1">
+                <p class="volume_num_head">Author(s):</p>
+              </div>
+              <div class="col_2">
+
+                <!-- for comic_personnel in comic_personnel_related -->
+                  <!-- if comic_personnel.role == 'Author' -->
+                    <p class="volume_num">Placeholder 1 Placeholder</p>
+                    
+                  <!-- endif -->
+                <!-- endfor -->
+              </div>
+            </div>
+            <div class="d-flex flex-row v_row">
+              <div class="col_1">
+                <p class="volume_num_head">Artist(s):</p>
+              </div>
+              <div class="col_2">
+                <!-- for comic_personnel in comic_personnel_related -->
+                  <!-- if comic_personnel.role == 'Artist' -->
+                    <p class="volume_num">Placeholder 1 Placeholder</p>
+                  <!-- endif -->
+                <!-- endfor -->
+              </div>
+            </div>
+
+            
+            <div class="d-flex flex-row v_row">
+              <div class="col_1">
+                <p class="volume_num_head">Released:</p>
+              </div>
+              <div class="col_2">
+                <p class="volume_num">Placeholder 1 Placeholder</p>
+            
+              </div>
+            </div>
+            <div class="d-flex flex-row v_row">
+              <div class="col_1">
+                <p class="volume_num_head">Next Release:</p>
+              </div>
+              <div class="col_2">
+                <p class="volume_num">Volume 1</p>
+              </div>
+            </div>
+            
+
+            </div>
+
+
+            
+          </div>    
+        </div>
+      </div>
+
+
+      <div class="d-flex flex-row rowwww">
+
+        <div class="cont_comic_about">
+          <div class="container my-5">
+          <p class="comic_about_name">About Comic</p>
+          <p class="comic_about_descr">
+
+            <!-- {{comic.comic_description}} -->
+
+            Abstract: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+
+          </p>
+
+
+      
+          </div>     
+        </div>
+      </div>
+
+
+
+      <div class='container my-5 sep_cont '>
+        <hr class="separator">
+      </div>
+
+
+
+
+
+
+      {% if volumes %}
+      <!-- check if volumes, if not display an error -->
+
+        {% for volume in volumes %}
+
+          <div class="d-flex flex-row rowwww_2">
+            <p class="volume_number">
+              
+                
+              vol: {{volume.vol_number}}
+            </p>
+
+            <div class="cont_volum">
+              <div class="container"> 
+                {% for chapter in chapters %}
+                  {% if chapter.volume == volume %}
+                    <a type="button" class="btn chp_btn" href="{% url 'pages' comic_param=comic.slug volume_param=1 chapter_param=1 page_param=1 %}">chapter: {{chapter.chapter_number}}
+                    </a>
+                
+                  {% endif %}
+                {% endfor %}
+               
+              </div>    
+            </div>
+
+
+            <div class="cont_volum">
+              <div class="container">
+              
+              <p class="volume_name">
+              
+                
+               {{volume.volume_title}}
+              </p>
+              <p class="volume_descr">
+                <!-- volume.volume description DOESN't YET EXIST -->
+                Abstract: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+          
+              </div>     
+            </div>
+
+            
+          </div>
+        {% endfor %}
+      {% else %}
+        <div class="d-flex flex-row rowwww_2">
+
+          <div class="cont_volum">
+            <div class="container">
+            
+            <p class="volume_name"> 
+              If no volume found then display this, in the else statement.
+              Perhaps have an illustration or 3d model here
+            </p>
+        
+            </div>     
+          </div>
+        </div>
+      {% endif %}
+
+      <br>
+      <br>
+
+      <!--
+
+      <div class="d-flex flex-row rowwww">
+
+        <div class="cont_volum">
+          <div class="container">
+          <p class="volume_name">Volume Title</p>
+          <p class="volume_descr">Abstract: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+
+
+      
+          </div>     
+        </div>
+
+        <div class="cont_volum">
+          <div class="container">
+          
+            <a type="button" class="btn chp_btn">Chapter 1</a>
+          
+         
+        
+            <a type="button" class="btn chp_btn">Chapter 2</a>
+          
+      
+
+            <a type="button" class="btn chp_btn">Chapter 3</a>
+              
+
+                    
+            <a type="button" class="btn chp_btn">Chapter 4</a>
+
+            <a type="button" class="btn chp_btn">Chapter 5</a>
+
+            <a type="button" class="btn chp_btn">Chapter 2</a>
+          
+      
+
+            <a type="button" class="btn chp_btn">Chapter 6</a>
+              
+
+                    
+            <a type="button" class="btn chp_btn">Chapter 7</a>
+
+            <a type="button" class="btn chp_btn">Chapter 8</a>
+          
+            <a type="button" class="btn chp_btn">Chapter 9</a>
+          
+           
+          </div>    
+        </div>
+      </div>
+
+       <br>
+      <br>
+
+
+      <div class="d-flex flex-row rowwww">
+
+        <div class="cont_volum">
+          <div class="container">
+          <p class="volume_name">Volume Title</p>
+          <p class="volume_descr">Abstract: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+
+
+      
+          </div>     
+        </div>
+
+        <div class="cont_volum">
+          <div class="container">
+          
+            <a type="button" class="btn chp_btn">Chapter 1</a>
+          
+         
+        
+            <a type="button" class="btn chp_btn">Chapter 2</a>
+          
+      
+
+            <a type="button" class="btn chp_btn">Chapter 3</a>
+              
+
+                    
+            <a type="button" class="btn chp_btn">Chapter 4</a>
+
+            <a type="button" class="btn chp_btn">Chapter 5</a>
+
+            <a type="button" class="btn chp_btn">Chapter 2</a>
+          
+      
+
+            <a type="button" class="btn chp_btn">Chapter 6</a>
+              
+
+                    
+            <a type="button" class="btn chp_btn">Chapter 7</a>
+
+            <a type="button" class="btn chp_btn">Chapter 8</a>
+          
+            <a type="button" class="btn chp_btn">Chapter 9</a>
+          
+           
+          </div>    
+        </div>
+      </div>
+
+
+    <br><br>
+        
+    -->
+
+    {% endblock %}
+   
+  </body>
+</html>

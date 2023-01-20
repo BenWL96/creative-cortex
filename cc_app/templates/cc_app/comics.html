@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+
+{% extends 'cc_app/index.html' %}
+{% load static %}
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% block style %}
+      <link href="{% static 'cc_app/css/comics.css' %}" rel="stylesheet" type="text/css">
+    {% endblock %}
+
+    
+  </head>
+  <body>
+    
+    {% block body %}
+
+
+      <div class="w">
+
+        <h1 class="Title">
+          COMICS
+        </h1>
+
+         <p class="p_text">
+          
+
+        </p>
+
+        <div class="d-flex flex-row cr1">
+      {% for comic in comics %}
+
+        <div class="flex-column c1">
+          <div class="container my-2 cont_1">
+            
+            <a href="{% url 'comic-detail' comic_param=comic.slug %}">
+              <img src="{{comic.comic_img_376_by_376.url}}" class="c_pl_img">
+            </a>
+            <a href="{% url 'comic-detail' comic_param=comic.slug %}" class="com_name">{comic}}
+            {{comic.slug}}</a>
+          </div>
+      
+        </div>
+        <div class="flex-column c1">
+          <div class="container my-2 cont_1">
+            
+            <a href="{% url 'comic-detail' comic_param=comic.slug %}">
+              <img src="{{comic.comic_img_376_by_376.url}}" class="c_pl_img">
+            </a>
+            <a href="{% url 'comic-detail' comic_param=comic.slug %}" class="com_name">{comic}}
+            {{comic.slug}}</a>
+          </div>
+      
+        </div>
+        <div class="flex-column c1">
+          <div class="container my-2 cont_1">
+            
+            <a href="{% url 'comic-detail' comic_param=comic.slug %}">
+              <img src="{{comic.comic_img_376_by_376.url}}" class="c_pl_img">
+            </a>
+            <a href="{% url 'comic-detail' comic_param=comic.slug %}" class="com_name">{comic}}
+            {{comic.slug}}</a>
+          </div>
+      
+        </div>
+        
+      
+      {% endfor %}
+
+
+      </div>
+
+      <br><br>
+
+
+    </div>
+
+
+
+    {% endblock %}
+
+  </body>
+</html>

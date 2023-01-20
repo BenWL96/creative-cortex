@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+
+{% extends 'cc_app/index.html' %}
+{% load static %}
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% block style %}
+      <link href="{% static 'cc_app/css/pages.css' %}" rel="stylesheet" type="text/css">
+    {% endblock %}
+
+    
+  </head>
+  <body>
+
+    {% block body %}
+
+    <div class="w">
+
+      <!--<h1 class="pages_title">
+        {{comic.comic_name}} > (vol: {{volume.vol_number}}) >{{current_page_number}}
+      </h1>-->
+      <div class="stack_wrapper">
+        
+        <div class="hstack gap-2">
+          <div class="stack_0">
+             <a type="button" class="btn back_btn" href="{% url 'comic-detail' comic_param=comic.slug %}">
+                <p class="b_2_ch_text">
+                  Back To Chapters
+                </p>
+              </a>
+          </div>
+            
+          <div class="stack_1">
+              <div class="s1_col">
+                <div class="s1_row">
+                  <p class="c_pag_info">
+                    {{comic.comic_name}} /
+                  </p>
+                </div>
+                <div class="s1_row">
+                  <p class="c_pag_info">
+                    Vol: {{volume.vol_number}} /
+                  </p>
+                </div>
+                <div class="s1_row">
+                  <p class="c_pag_info">
+                    Chap: {{current_page_number}}
+                  </p>
+                </div>
+              </div>
+       
+          </div>
+
+          <div class="stack_2">
+            
+
+            {% if previous_page_exists == False and next_page_exists == False %}
+    
+              <div class="p_row d-flex flex-row">
+                <div class="p_col">
+                  <a type="button" class="btn btn-disabled" disabled>
+                  
+                  </a>
+                </div>
+                <div class="p_col">
+                    <p class="m">
+                      {{current_page_number}} FDFS
+                    </p>
+                </div>
+                <div class="p_col">
+                    <a type="button" class="btn btn-disabled" disabled>
+                     
+                  </a>
+                </div>
+              </div>
+
+          
+            {% elif previous_page_exists == False and next_page_exists == True %}
+              <div class="p_row d-flex flex-row">
+                <div class="p_col">
+                  <a type="button" class="btn btn-disabled" disabled>
+                  
+                  </a>
+                </div>
+                <div class="p_col">
+                  <p class="m">
+                      {{current_page_number}}
+                  </p>
+                </div>
+                <div class="p_col">
+                  <a type="button" class="btn btn-pages" href="{% url 'pages' comic_param=comic.slug volume_param=volume.vol_number chapter_param=chapter.chapter_number page_param=next_page_number %}">
+                    <p class="s_e_t">
+                      {{next_page_number}}
+                    </p>
+                  </a>
+                </div>
+              </div>
+            {% elif previous_page_exists == True and next_page_exists == False %}
+              <div class="p_row d-flex flex-row">
+                <div class="p_col">
+                  <a type="button" class="btn btn-pages" href="{% url 'pages' comic_param=comic.slug volume_param=volume.vol_number chapter_param=chapter.chapter_number page_param=previous_page_number %}">
+                    <p class="s_e_t">
+                      {{previous_page_number}}
+                    </p>
+                  </a>
+                </div>
+                <div class="p_col">
+                    <p class="m">
+                      {{current_page_number}}
+                    </p>
+                </div>
+                <div class="p_col">
+                  <a type="button" class="btn btn-disabled" disabled>
+                   
+                  </a>
+                </div>
+              </div>
+
+            {% else %}
+                <div class="p_row d-flex flex-row">
+                  <div class="p_col">
+                    <a type="button" class="btn btn-pages" href="{% url 'pages' comic_param=comic.slug volume_param=volume.vol_number chapter_param=chapter.chapter_number page_param=previous_page_number %}">
+                      <p class="s_e_t">
+                      {{previous_page_number}}
+                      </p>
+                    </a>
+                  </div>
+
+
+                  <div class="p_col">
+                    <p class="m">
+                      {{current_page_number}}
+                    </p>
+                  </div>
+                  <div class="p_col">
+                    <a type="button" class="btn btn-pages" href="{% url 'pages' comic_param=comic.slug volume_param=volume.vol_number chapter_param=chapter.chapter_number page_param=next_page_number %}">
+                      <p class="s_e_t">
+                      {{next_page_number}}
+                      </p>
+                    </a>
+                    
+                  </div>
+                </div>
+              {% endif %}
+            </div>
+
+        </div>
+      </div>
+
+      
+
+      <center>
+        <img src="{{current_page_obj.page_img.url}}"class="t_p">
+      </center>
+
+    
+ 
+  
+
+    <!--Logic related to pagination -->
+
+    </div>
+    {% endblock %}
+   
+  </body>
+</html>

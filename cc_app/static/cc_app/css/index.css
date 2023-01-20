@@ -1,0 +1,142 @@
+.index_body {
+	background-color: #8878c3;
+}
+
+.hamburger{
+    height: 50px;
+    width: 50px;
+    opacity: 50%;
+    position: fixed;
+    bottom: 20px;
+    right: 20px; 
+    z-index: 50;
+    background-color: turquoise;
+    border-radius: 5px;
+
+}
+
+.hamburger:hover {
+    opacity: 100%;
+    border-style: dashed;
+    border-color: black;
+    background-color: lightgray;
+}
+
+
+.img_pop_logo{
+    width: 60px;
+    height: 40px;
+}
+
+.img_pop_logo:hover{
+    opacity: 75%;
+    cursor: pointer;
+}
+
+
+/* popover css */
+
+.img_pop{
+
+    width: 100%;
+    border-radius: 25px;
+    border-color: turquoise;
+    border-style: solid;
+    border-width: 1px;
+    margin-top: 2vh;
+    box-shadow: black 5px 5px 5px;
+
+}
+
+.img_pop:hover{
+    opacity: 50%;
+}
+
+.offcanvas{
+    background-color: transparent !important;
+}
+
+.offcanvas-title{
+    font-size: 30px !important;
+    font-family: 'Barlow', sans-serif !important;
+    text-decoration: none;
+    color: turquoise !important;
+}
+
+.offcanvas-title:hover{
+    opacity: 75%;
+    cursor: pointer;
+}
+
+.offcanvas-body{
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.5) 100%);
+}
+
+.offcanvas-header{
+    color: turquoise;
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.5) 100%);
+
+}
+
+
+.btn-close{
+    background-color: turquoise !important;
+    color: white;
+}
+
+
+/* info button img */
+
+.info-img{
+    height: 50px;
+    width: 50px;
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    z-index: 140;
+    box-shadow: black 1px 1px 1px;
+}
+
+.info-img:hover{
+    opacity: 75%;
+    box-shadow: black 0px 0px 0px;
+}
+
+
+/* css belonging To all pages */
+
+.Title{
+    font-weight: 900;
+    padding-top: 60px;
+    margin-left: 15px;
+    font-family: 'Barlow', sans-serif;
+    text-shadow: black 1px 1px 1px;
+
+}
+
+@media(min-width: 400px){
+    .Title{
+        font-size: 70px;
+    }
+}
+
+@media(max-width: 400px){
+    .Title{
+        font-size: 40px;
+    }
+}
+
+
+.w{
+    width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #fafafa;
+}
+
+p{
+    padding: 0;
+    margin: 0;
+}

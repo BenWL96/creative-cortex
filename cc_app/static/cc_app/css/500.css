@@ -1,0 +1,36 @@
+.e_w {
+  background-color: black;
+  width: 100vw;
+  height: 100vh;
+}
+
+.img_error {
+  margin-top: 25vh;
+  
+}
+
+
+
+.img_error:hover{
+  border-color: turquoise;
+  border-style: solid;
+  border-width: 1px;
+  opacity: 75%;
+  cursor: pointer;  
+}
+
+@media(min-width: 400px){
+
+  .img_error {
+    width: 400px;
+    height: 400px;
+  }
+}
+
+@media(max-width: 400px){
+  .img_error {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

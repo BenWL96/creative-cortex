@@ -1,0 +1,412 @@
+p {
+	color: white;
+}
+
+/*Separator*/
+
+.separator{
+	width: 80%;
+	color: black;
+	margin-left: auto;
+	margin-right: auto;
+	outline: black;
+	outline-color: black;
+	outline-width: 10px;
+}
+
+
+.cont_breadcrumb{
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.breadcrumb{
+	width: 200px;
+}
+
+.breadcrumb-item{
+	background-color: turquoise;
+}
+
+.v_r{
+	flex-wrap: wrap;
+	display: flex;
+	width: 100%;
+}
+
+.v_c{
+	width: 40vw;
+}
+
+.v_r_2{
+	flex-wrap: wrap;
+	display: flex;
+}
+
+.volume_num{
+	font-size: 20px;
+	font-weight: 500;
+	text-align: left;
+	color: black;
+	font-family: 'Lora', serif;
+	padding-top: 6px;
+
+}
+
+.volume_num_head{
+	font-size: 25px;
+	font-weight: 700;
+	text-align: left;
+	color: black;
+	font-family: 'Lora', serif;
+	text-shadow: black 1px 1px 1px;
+}
+
+.volume_name{
+	font-size: 40px;
+	color: black;
+	font-family: 'Barlow', sans-serif;
+	text-shadow: black 1px 1px 1px;
+}
+
+.volume_number{
+	font-size: 18px;
+	color: black;
+	font-family: 'Barlow', sans-serif;
+	text-shadow: black 1px 1px 1px;
+	padding: 0;
+}
+
+.volume_descr{
+	font-size: 18px;
+	font-weight: 500;
+	color: black;
+	font-family: 'Lora', serif;
+}
+
+.comic_about_name{
+	font-size: 40px;
+	color: black;
+	font-family: 'Barlow', sans-serif;
+	text-shadow: black 1px 1px 1px;
+	text-align: left;
+}
+
+.comic_about_descr{
+	font-size: 18px;
+	font-weight: 500;
+	color: black;
+	font-family: 'Lora', serif;
+	text-align: left;
+}
+
+.t{
+	margin-left: 15px;
+	font-size: 25px;
+	color: black;
+}
+
+
+
+.v_pl_img{
+	outline: solid;
+	outline-color: turquoise;
+	outline-width: 2px;
+	border-radius: 15px;
+	box-shadow: black 5px 5px 5px;
+	margin-top: 10px;
+}	
+
+.v_pl_img:hover{
+	box-shadow: black 0px 0px 0px;
+}	
+
+
+
+
+.chp_btn{
+	background-color: black !important;
+	color: white !important;
+	font-weight: 900;
+	margin-top: 10px;
+	font-family: 'Lora', serif !important;
+	font-size: 15px;
+	box-shadow: black 2px 2px 2px;
+	border-color: turquoise !important;
+	border-width: 2px !important;
+}
+
+.chp_btn:hover{
+	background-color: turquoise !important;
+}
+
+.rowwww{
+	flex-wrap: wrap;
+	display: flex;
+}
+
+.rowwww_2{
+	flex-wrap: wrap-reverse;
+	display: flex;
+}
+
+.cont_volum{
+	flex-grow: 0;
+	
+}
+
+.cont_volum_2{
+	flex-grow: 0;
+}
+
+.cont_volum_3{
+	flex-grow: 0;
+}
+
+
+.see_more_text{
+	text-decoration: none;
+	color: black;
+	font-size: 18px;
+	font-weight: 500;
+	text-align: center;
+}
+
+.see_more_text:hover{
+	color: turquoise;
+}
+
+.card{
+	background-color: turquoise !important;
+}
+
+
+.v_row{
+	display: flex;
+	flex-wrap: wrap;
+
+}
+
+
+.expand_info_btn{
+	background-color: black !important;
+	width: 200px;
+	color: white !important;
+	font-family: 'Lora', serif !important;
+	font-size: 15px;
+	box-shadow: black 2px 2px 2px;
+	border-color: turquoise !important;
+	border-width: 2px !important;
+}
+
+.expand_info_btn:hover{
+	background-color: turquoise !important;
+	box-shadow: black 0px 0px 0px;
+}
+
+.cont_volum_5{
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.cont_comic_about{
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: left;
+}
+
+@media(min-width: 900px){
+
+	.expand_info_btn{
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.volume_name{
+		text-align: center;
+	}
+	.volume_descr{
+		text-align: center;
+	}
+
+	.cont_volum_2{
+		width: 35vw;
+	}
+
+	.cont_volum_3{
+		width: 45vw;
+	}
+
+
+	.cont_volum{
+		width: 30vw;
+		margin-left: auto;
+		margin-right: auto;
+
+	}
+
+	.chp_btn{
+		width: 270px !important;
+	}
+
+
+	
+	.v_pl_img{
+		width: 200px;
+		height: 260px;
+
+	}
+
+	.v_c_1{
+		width: 30vw;
+	}
+
+
+	.v_c_2{
+		width: 450px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.cont_1{
+		width: 400px;
+	}
+}
+
+@media(max-width: 900px) and (min-width: 400px){
+
+
+	.expand_info_btn{
+		margin-left: 0px !important;
+	}
+
+
+	.volume_name{
+		text-align: left;
+	}
+	.volume_descr{
+		text-align: left;
+	}
+
+	.cont_volum_2{
+		width: 80%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.cont_volum_3{
+		width: 80%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+
+	.chp_btn{
+		width: 100% !important;
+	}
+
+	.v_pl_img{
+		width: 200px;
+		height: 260px;
+	}
+
+	.v_c_1{
+		width: 80vw;
+	}
+
+
+	.v_c_2{
+		width: 450px;
+	}
+
+	.cont_1{
+		width: 400px;
+	}
+
+	
+	.cont_volum{
+		width: 80%;
+		margin-left: auto;
+		margin-right: auto;
+	}	
+
+
+}
+
+
+
+
+@media(max-width: 400px){
+
+	.expand_info_btn{
+		margin-left: 0px !important;
+	}
+
+
+	.cont_volum_2{
+		width: 100%;
+	}
+
+	.cont_volum_3{
+		width: 100%;
+	}
+
+
+	
+	.chp_btn{
+		width: 100% !important;
+	}
+
+
+	.cont_1{
+		width: 100%;
+
+	}
+
+	.v_pl_img{
+	width: 100%;
+	}
+
+	
+	.cont_volum{
+		width: 80%;
+		margin-left: auto;
+		margin-right: auto;
+	}	
+
+}
+
+@media(min-width: 900px){
+	.col_1{
+		width: 30%;
+	}
+
+	.col_2{
+		width: 70%;
+	}
+}
+
+@media(max-width: 900px) and (min-width: 700px){
+	.col_1{
+		width: 45%;
+	}
+
+	.col_2{
+		width: 55%;
+	}
+}
+
+@media(max-width: 700px){
+	.col_1{
+		width: 100%;
+	}
+
+	.col_2{
+		width: 100%;
+	}
+}
+
+

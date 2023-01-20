@@ -1,0 +1,198 @@
+p {
+	color: white;
+}
+
+
+.pages_title {
+	position: fixed;
+    top: 20px;
+    left: 10px; 
+    z-index: 1;
+    font-size: 30px;
+    background-color: black;
+    color: white;
+}
+
+
+
+.btn-pages{
+	margin-top: 10px;
+	width: 40px;
+	height: 40px;
+	box-shadow: turquoise 2px 2px 2px !important;
+	border-color: lightgray !important;
+	border-style: solid !important;
+	border-width: 1px !important;
+}
+
+.btn-pages:hover{
+	box-shadow: turquoise 0px 0px 0px !important;
+}
+
+.btn-disabled{
+	box-shadow: turquoise 0px 0px 0px !important;
+	background-color: black !important;
+	margin-top: 10px;
+	width: 40px;
+	height: 40px;
+	border-color: lightgray !important;
+	border-style: solid !important;
+	border-width: 1px !important;
+}
+
+.btn-disabled:hover {
+	cursor: default !important;
+}
+
+
+.p_row {
+	margin-left: auto;
+	margin-right: auto;
+	width: 180px;
+    z-index: 1;
+    padding-top: 20px;
+}
+
+.p_col {
+	width: 40px;
+}
+
+.s_e_t{
+	font-size: 20px;
+	color: #fafafa;
+	font-weight: 700;
+	font-family: 'Lora', serif;
+    text-shadow: black 1px 1px 1px;
+
+}
+
+.m {
+	font-size: 50px;
+	font-weight: 700;
+	text-align: center;
+	color: #fafafa;
+	font-family: 'Barlow', sans-serif;
+	text-shadow: purple 2px 2px 2px;
+	
+}
+
+
+
+.back_btn{
+	height: 54px !important;
+	border-color: #fafafa !important;
+	border-style: solid !important;
+	border-width: 1px !important;
+	margin-left: 10px;
+	box-shadow: turquoise 2px 2px 2px !important;
+
+}
+
+.back_btn:hover{
+	box-shadow: turquoise 0px 0px 0px !important;
+
+}
+
+.b_2_ch_text{
+	color: #fafafa;
+	font-family: 'Barlow', sans-serif;
+}
+
+@media(min-width: 560px){
+	.b_2_ch_text{
+		font-size: 18px;
+	}
+}
+
+@media(max-width: 560px){
+	.b_2_ch_text{
+		font-size: 12px;
+	}
+}
+
+
+.s1_row{
+	width: 100%;
+	height: 18px;
+}
+
+.s1_col{
+	width: 80px;
+}
+
+/* t_p is the page fetched from the s3 bucket */
+
+.t_p{
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 78px;
+
+}
+
+@media(min-width: 700px){
+	.t_p{
+		width: 500px;
+	}
+}
+
+@media(max-width: 700px){
+	.t_p{
+		width: 80vw;
+	}
+}
+
+
+/* s_e is the image displayed when no before and after button */
+
+.s_e {
+	width: 40px;
+	height: 40px;
+	margin-left: auto;
+	margin-right: auto;
+
+}
+
+
+/*Stack */
+.hstack{
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 50;
+	width: 100vw;
+	height: 78px;
+
+}
+
+.stack_0 {
+	width: 33%;
+}
+
+.stack_1 {
+	width: 15%;
+	background-color: transparent;
+}
+
+.stack_2{
+	width: 33%;
+}
+
+.c_pag_info{
+	font-family: 'Barlow', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: #fafafa;
+}
+
+.stack_wrapper{
+	background-color: black;
+}
+.hstack{
+	background-color: black;
+}
+
+
+
+
+
+

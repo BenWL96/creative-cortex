@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+
+  {% extends 'cc_app/index.html' %}
+  {% load static %}
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% block style %}
+      <link href="{% static 'cc_app/css/links.css' %}" rel="stylesheet" type="text/css">
+    {% endblock %}
+
+    
+  </head>
+  <body>
+    
+    {% block body %}
+      <div class="w">
+
+        <h1 class="Title">
+            Links
+        </h1>
+
+
+
+        <div class="wrap_g">
+
+          <p class="l_text">
+             Abstract: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          </p>
+
+
+
+          <p class="l_email_text">
+             Kofi@gmail.com
+          </p>
+
+
+
+         <div class="d-flex flex-row parent_g_row">
+
+          <div class="d-flex flex-row g_row">
+
+            <div class="img_cont">
+
+              <img src="{% static 'cc_app/images/links/links.jpg' %}" class="gallery_img">
+              
+              <br><br>
+
+            </div>
+
+            <div class="img_cont">
+
+              <img src="{% static 'cc_app/images/links/reddit.jpg' %}" class="gallery_img">
+              
+              <br><br>
+
+            </div>
+
+          </div>
+
+          <div class="d-flex flex-row g_row">
+
+            <div class="img_cont">
+
+              <img src="{% static 'cc_app/images/links/instagram.jpg' %}" class="gallery_img">
+              
+              <br><br>
+
+            </div>
+
+            <div class="img_cont">
+
+              <img src="{% static 'cc_app/images/links/links.jpg' %}" class="gallery_img">
+              
+              <br><br>
+
+            </div>
+
+          </div>
+
+          </div>
+      
+        </div>
+
+        <br>
+        <br>
+
+      </div>
+    {% endblock %}
+   
+  </body>
+</html>
