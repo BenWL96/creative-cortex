@@ -97,6 +97,7 @@
     left: 10px;
     z-index: 140;
     box-shadow: black 1px 1px 1px;
+    background-color: #8878c3;
 }
 
 .info-img:hover{
