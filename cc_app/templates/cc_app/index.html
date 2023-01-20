@@ -30,12 +30,12 @@
     {% block body %}
     {% endblock %}
     
-    <img src="{% static 'cc_app/images/hamburger_icon.png' %}" class="hamburger" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
+    <img src="{% static 'cc_app/images/index/hamburger_icon.png' %}" class="hamburger" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
 
       <div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
         <div class="offcanvas-header">
           <a href="{% url 'landing_page' %}">
-            <img src="{% static 'cc_app/images/CC_logo.png' %}" class="img_pop_logo" href="">
+            <img src="{% static 'cc_app/images/index/CC_logo.png' %}" class="img_pop_logo" href="">
           </a>
 
           <a class="offcanvas-title" id="offcanvasScrollingLabel" href="{% url 'landing_page' %}">Creative Cortex</a>
@@ -48,31 +48,31 @@
           <col>
             <row>
               <a href="{% url 'landing_page' %}">
-                <img src="{% static 'cc_app/images/popover_placeholder_img.jpg' %}" class="img_pop homepage" alt="...">
+                <img src="{% static 'cc_app/images/index/popover_placeholder_img.jpg' %}" class="img_pop homepage" alt="...">
               </a>
             </row>
 
             <row>
               <a href="{% url 'comics' %}">
-                <img src="{% static 'cc_app/images/popover_placeholder_img.jpg' %}" class="img_pop comics" alt="...">
+                <img src="{% static 'cc_app/images/index/popover_placeholder_img.jpg' %}" class="img_pop comics" alt="...">
               </a>
             </row>
 
             <row>
               <a href="{% url 'gallery' %}">
-                <img src="{% static 'cc_app/images/popover_placeholder_img.jpg' %}" class="img_pop gallery" alt="...">
+                <img src="{% static 'cc_app/images/index/popover_placeholder_img.jpg' %}" class="img_pop gallery" alt="...">
               </a>
             </row>
 
             <row>
               <a href="{% url 'links' %}">
-                <img src="{% static 'cc_app/images/popover_placeholder_img.jpg' %}" class="img_pop links" alt="...">
+                <img src="{% static 'cc_app/images/index/popover_placeholder_img.jpg' %}" class="img_pop links" alt="...">
               </a>
             </row>
 
             <row>
               <a href="{% url 'about_us' %}">
-                <img src="{% static 'cc_app/images/popover_placeholder_img.jpg' %}" class="img_pop about_us" alt="...">
+                <img src="{% static 'cc_app/images/index/popover_placeholder_img.jpg' %}" class="img_pop about_us" alt="...">
               </a>
             </row>
 
