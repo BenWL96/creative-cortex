@@ -8,13 +8,13 @@
 }
 
 
-@media(min-width: 900px){
+@media(min-width: 950px){
 	.cr1 {
 		width: 750px;
 	}
 }
 
-@media(min-width: 650px) and (max-width: 900px){
+@media(min-width: 650px) and (max-width: 950px){
 	.cr1 {
 		width: 500px;
 	}
