@@ -98,10 +98,11 @@
     z-index: 140;
     box-shadow: black 1px 1px 1px;
     background-color: #8878c3;
+    opacity: 75%;
 }
 
 .info-img:hover{
-    opacity: 75%;
+    opacity: 100%;
     box-shadow: black 0px 0px 0px;
 }
 
