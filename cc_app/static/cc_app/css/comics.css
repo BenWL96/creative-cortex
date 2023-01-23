@@ -7,23 +7,31 @@
 	margin-right: auto;
 }
 
-@media(min-width: 1250px){
+
+@media(min-width: 900px){
 	.cr1 {
-		width: 1000px
+		width: 750px;
 	}
 }
 
-@media(max-width: 1250px){
+@media(min-width: 650px) and (max-width: 900px){
 	.cr1 {
-		width: 80vw;
+		width: 500px;
 	}
 }
 
-.c1 {
-	width: 400px;
-	margin-left: left;
-	margin-right: left;
+@media(max-width: 650px){
+	.cr1 {
+		width: 250px;
+	}
 }
+
+
+	.c1 {
+		width: 250px;
+		margin-left: left;
+		margin-right: left;
+	}
 
 
 .c_pl_img{
