@@ -94,47 +94,7 @@
           </div>
 
 
-
-          <!--<div class="d-flex flex-row g_row">
-            <div class="img_cont">
-
-              
-              
-            </div>
-
-            <div class="img_cont">
-
-              <img src="{% static 'cc_app/images/placeholder_1.jpg' %}" class="gallery_img" onclick="ShowLightBox(1)" id="gallery_img">
-              
-            </div>
-
-            <div class="img_cont">
-
-              <img src="{% static 'cc_app/images/placeholder_1.jpg' %}" class="gallery_img" onclick="ShowLightBox(1)" id="gallery_img">
-              
-            </div>
-
-          </div>-->
-
-          <!-- Below ties in template logic 
-          <div class="d-flex flex-row g_row">
-
-            {% for image in gallery_images %}
-            <div class="g_rdiv">
-              <div class="container my-5">
-  
-                  <img src="{{image.gallery_img_486_by_165.url}}" class="img_pop" alt="...">
-            
-              </div>
-            </div>
-
-            {% endfor %}
-
-          </div>
-        </div>-->
-
-           <br>
-             <br>
+        
 
             
 
@@ -190,8 +150,8 @@
          
 
           const src = img_url;
-          const title = `<p class="volume_name_img">${image_id}</p>`;
-          const description = `<p class="volume_num_img">${image_description}</p>`;
+          const title = `<p class="gallery-img_title">${image_id}</p>`;
+          const description = `<p class="gallery-img_description">${image_description}</p>`;
 
 
           const myGallery = GLightbox({
@@ -210,35 +170,6 @@
         
       };
 
-      /*const myGallery = GLightbox({
-          elements: [
-              {
-                  'href': 'https://picsum.photos/1200/800',
-                  'type': 'image',
-                  'title': 'My Title',
-                  'description': 'Example',
-              },
-              {
-                  'href': 'https://picsum.photos/1200/800',
-                  'type': 'image',
-                  'alt': 'image text alternatives'
-              },
-              {
-                  'href': 'https://www.youtube.com/watch?v=Ga6RYejo6Hk',
-                  'type': 'video',
-                  'source': 'youtube', //vimeo, youtube or local
-                  'width': 900,
-              },
-              {
-                  'content': '<p>This will append some html inside the slide</p>' // read more in the API section
-              },
-              {
-                  'content': document.getElementById('inline-example') // this will append a node inside the slide
-              },
-          ],
-          autoplayVideos: true,
-      });
-      myGallery.open();*/
 
       </script>
 
