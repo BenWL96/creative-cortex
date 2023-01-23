@@ -7,9 +7,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = config("SECRET_KEY", default='')
 
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 #'creative-cortex.herokuapp.com'
 #CSRF_TRUSTED_ORIGINS = ['*']
 
@@ -66,11 +66,11 @@ WSGI_APPLICATION = 'creative_cortex.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': config("DATABASE_NAME_2", default=''),
-        'USER': config('DATABASE_USER_2', default=''),
-        'HOST': config('DATABASE_HOST_2', default=''),
-        'PORT': config('DATABASE_PORT_2', default='3306', cast=float),
-        'PASSWORD': config('DATABASE_PASS_2', default=''),
+        'NAME': config("DATABASE_NAME", default=''),
+        'USER': config('DATABASE_USER', default=''),
+        'HOST': config('DATABASE_HOST', default=''),
+        'PORT': config('DATABASE_PORT', default='3306', cast=float),
+        'PASSWORD': config('DATABASE_PASS', default=''),
         'OPTIONS': {'sql_mode': 'traditional'}}
 }
 
@@ -85,19 +85,19 @@ if USE_S3 == True:
     AWS_SECRET_ACCESS_KEY = config("AWS_SECRET_ACCESS_KEY", default='')
     AWS_STORAGE_BUCKET_NAME = config("AWS_STORAGE_BUCKET_NAME", default='')
 
-    AWS_DEFAULT_ACL = None
+    #AWS_DEFAULT_ACL = None
 
     AWS_S3_REGION_NAME = config("AWS_S3_REGION_NAME", default='')
     AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
     AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
 
-    PUBLIC_MEDIA_LOCATION = 'media'
-    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{PUBLIC_MEDIA_LOCATION}/'
-    DEFAULT_FILE_STORAGE = 'creative_cortex.storage_backends.PublicMediaStorage'
+    #PUBLIC_MEDIA_LOCATION = 'media'
+    #MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{PUBLIC_MEDIA_LOCATION}/'
+    #DEFAULT_FILE_STORAGE = 'creative_cortex.storage_backends.PublicMediaStorage'
 
-
-    """PRIVATE_MEDIA_LOCATION = 'private'
-    PRIVATE_FILE_STORAGE = 'creative_cortex.storage_backends.PrivateMediaStorage'"""
+    PRIVATE_MEDIA_LOCATION = 'private'
+    PRIVATE_FILE_STORAGE = 'creative_cortex.storage_backends.PrivateMediaStorage'
+    
 else:
     MEDIA_URL = '/media/'
     MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

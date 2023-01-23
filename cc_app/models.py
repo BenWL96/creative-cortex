@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils.text import slugify
-from creative_cortex.storage_backends import PublicMediaStorage
+#from creative_cortex.storage_backends import PublicMediaStorage
+from creative_cortex.storage_backends import PrivateMediaStorage
 
 from django.core.validators import MinValueValidator
 
@@ -13,8 +14,8 @@ class Comics(models.Model):
 	ongoing = models.BooleanField()
 	next_release_date = models.DateField()
 	#initial_release_date = models.DateField()
-	comic_img_376_by_376 = models.ImageField(storage=PublicMediaStorage())
-	comic_img_200_by_260 = models.ImageField(storage=PublicMediaStorage())
+	comic_img_376_by_376 = models.ImageField(storage=PrivateMediaStorage())
+	comic_img_200_by_260 = models.ImageField(storage=PrivateMediaStorage())
 
 	def __str__(self):
 		return self.comic_name
@@ -76,7 +77,7 @@ class Pages(models.Model):
 	#Volume is associated with comic, so we need to perform a prefetch
 	chapter = models.ForeignKey(Chapters, on_delete=models.CASCADE)
 	page_number = models.IntegerField(validators=[MinValueValidator(1, message="value has to be above 0"),])
-	page_img = models.ImageField(storage=PublicMediaStorage())
+	page_img = models.ImageField(storage=PrivateMediaStorage())
 
 	def __str__(self):
 		return self.chapter.volume.comic_name.comic_name + " | volume " + str(self.chapter.volume.vol_number) + " | chapter " + str(self.chapter.chapter_number) + " | page " + str(self.page_number)
@@ -96,7 +97,7 @@ class Personnel(models.Model):
 	phone_number = models.IntegerField()
 	email_address = models.EmailField()
 	role_at_creative_cortex = models.CharField(max_length=20)
-	person_img_200_by_260 = models.ImageField(storage=PublicMediaStorage())
+	person_img_200_by_260 = models.ImageField(storage=PrivateMediaStorage())
 
 
 	def __str__(self):
@@ -130,7 +131,7 @@ class Landing_Page_Images(models.Model):
 	landing_page_img_id = models.AutoField(primary_key=True)
 	landing_page_img_carousel_placement_number = models.IntegerField(validators=[MinValueValidator(1, message="value has to be above 0"),])
 	landing_page_img_description = models.CharField(max_length=50)
-	landing_page_img_n_by_n = models.ImageField(storage=PublicMediaStorage())
+	landing_page_img_n_by_n = models.ImageField(storage=PrivateMediaStorage())
 
 	def __str__(self):
 		return "img: " + str(self.landing_page_img_carousel_placement_number) + " | " + self.landing_page_img_description
@@ -143,7 +144,7 @@ class Gallery_images(models.Model):
 	gallery_img_id = models.AutoField(primary_key=True)
 	gallery_img_placement_number = models.IntegerField(validators=[MinValueValidator(1, message="value has to be above 0"),])
 	gallery_img_description = models.CharField(max_length=200)
-	gallery_img_486_by_165 = models.ImageField(storage=PublicMediaStorage())
+	gallery_img_486_by_165 = models.ImageField(storage=PrivateMediaStorage())
 
 	def __str__(self):
 		return "img: " + str(self.gallery_img_placement_number) + " | " + self.gallery_img_description
