@@ -21,7 +21,7 @@
     opacity: 100%;
     border-style: dashed;
     border-color: black;
-    background-color: lightgray;
+    background-color: #fafafa;
 }
 
 
@@ -69,7 +69,7 @@
 
 .img_pop:hover{
     opacity: 95%;
-    box-shadow: lightgray 0px 0px 0px;
+    box-shadow: #fafafa 0px 0px 0px;
 }
 
 .offcanvas{
@@ -143,13 +143,20 @@
 
 /* css belonging To all pages */
 
+.w-title{
+    opacity: 1;
+    background-image: url("../images/placeholders/comic_1.jpg");
+    background-position: center bottom;
+    background-size: 100%;
+}
+
 .Title{
+    color: black;
     font-weight: 900;
     padding-top: 60px;
     margin-left: 15px;
     font-family: 'Barlow', sans-serif;
-    text-shadow: black 1px 1px 1px;
-
+    text-shadow: #fafafa 1px 1px 1px;
 }
 
 @media(min-width: 400px){
