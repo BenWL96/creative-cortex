@@ -85,7 +85,7 @@ if USE_S3 == True:
     AWS_SECRET_ACCESS_KEY = config("AWS_SECRET_ACCESS_KEY", default='')
     AWS_STORAGE_BUCKET_NAME = config("AWS_STORAGE_BUCKET_NAME", default='')
 
-    #AWS_DEFAULT_ACL = None
+    AWS_DEFAULT_ACL = None
 
     AWS_S3_REGION_NAME = config("AWS_S3_REGION_NAME", default='')
     AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
@@ -97,7 +97,7 @@ if USE_S3 == True:
 
     PRIVATE_MEDIA_LOCATION = 'private'
     PRIVATE_FILE_STORAGE = 'creative_cortex.storage_backends.PrivateMediaStorage'
-    
+
 else:
     MEDIA_URL = '/media/'
     MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

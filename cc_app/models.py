@@ -144,7 +144,7 @@ class Gallery_images(models.Model):
 	gallery_img_id = models.AutoField(primary_key=True)
 	gallery_img_placement_number = models.IntegerField(validators=[MinValueValidator(1, message="value has to be above 0"),])
 	gallery_img_description = models.CharField(max_length=200)
-	gallery_img_486_by_165 = models.ImageField(storage=PrivateMediaStorage())
+	gallery_img = models.ImageField(storage=PrivateMediaStorage())
 
 	def __str__(self):
 		return "img: " + str(self.gallery_img_placement_number) + " | " + self.gallery_img_description
