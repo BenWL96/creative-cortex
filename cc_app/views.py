@@ -177,15 +177,9 @@ def Gallery(request):
 
 	return render(request, 'cc_app/gallery.html', context)
 
-def error_404(request, exception):
-
-	context = {}
-
-	return render(request, 'cc_app/error_404.html', context)
+def error404(request, exception):
+	return render(request, 'cc_app/error_404.html', status=404)
 
 
-def error_500(request):
-
-	context = {}
-
-	return render(request, 'cc_app/error_500.html', context)
+def error500(request):
+	return render(request, 'cc_app/error_500.html', status=500)
