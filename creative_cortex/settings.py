@@ -28,6 +28,8 @@ INSTALLED_APPS = [
     'storages',
     'baton.autodiscover',
 
+    "phonenumber_field"
+
 
 ]
 
@@ -66,11 +68,11 @@ WSGI_APPLICATION = 'creative_cortex.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': config("DATABASE_NAME", default=''),
-        'USER': config('DATABASE_USER', default=''),
-        'HOST': config('DATABASE_HOST', default=''),
-        'PORT': config('DATABASE_PORT', default='3306', cast=float),
-        'PASSWORD': config('DATABASE_PASS', default=''),
+        'NAME': config("DATABASE_NAME_2", default=''),
+        'USER': config('DATABASE_USER_2', default=''),
+        'HOST': config('DATABASE_HOST_2', default=''),
+        'PORT': config('DATABASE_PORT_2', default='3306', cast=float),
+        'PASSWORD': config('DATABASE_PASS_2', default=''),
         'OPTIONS': {'sql_mode': 'traditional'}}
 }
 

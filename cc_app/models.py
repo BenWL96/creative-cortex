@@ -2,7 +2,7 @@ from django.db import models
 from django.utils.text import slugify
 #from creative_cortex.storage_backends import PublicMediaStorage
 from creative_cortex.storage_backends import PrivateMediaStorage
-
+from phonenumber_field.modelfields import PhoneNumberField
 from django.core.validators import MinValueValidator
 
 class Comics(models.Model):
@@ -94,7 +94,7 @@ class Pages(models.Model):
 class Personnel(models.Model):
 	personnel_id = models.AutoField(primary_key=True)
 	full_name = models.CharField(max_length=75, unique=True)
-	phone_number = models.IntegerField()
+	phone_number = PhoneNumberField(blank=True, unique=True)
 	email_address = models.EmailField()
 	role_at_creative_cortex = models.CharField(max_length=20)
 	person_img_200_by_260 = models.ImageField(storage=PrivateMediaStorage())
@@ -144,7 +144,7 @@ class Gallery_images(models.Model):
 	gallery_img_id = models.AutoField(primary_key=True)
 	gallery_img_placement_number = models.IntegerField(validators=[MinValueValidator(1, message="value has to be above 0"),])
 	gallery_img_description = models.CharField(max_length=200)
-	gallery_img = models.ImageField(storage=PrivateMediaStorage())
+	gallery_img_url = models.ImageField(storage=PrivateMediaStorage())
 
 	def __str__(self):
 		return "img: " + str(self.gallery_img_placement_number) + " | " + self.gallery_img_description
