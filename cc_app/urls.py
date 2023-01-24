@@ -11,7 +11,7 @@ urlpatterns = [
 	path('links/', views.Links, name="links"),
 	path('about-us/', views.About_Us, name="about_us"),
 	path('gallery/', views.Gallery, name="gallery"),
-	path('404error/', views.Error_404, name="error_404"),
-	path('500error/', views.Error_500, name="error_500"),
+	#path('404error/', views.Error_404, name="error_404"),
+	#path('500error/', views.Error_500, name="error_500"),
 
 ]

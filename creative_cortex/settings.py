@@ -10,8 +10,6 @@ SECRET_KEY = config("SECRET_KEY", default='')
 DEBUG = False
 
 ALLOWED_HOSTS = ['creative-cortex.herokuapp.com']
-#'creative-cortex.herokuapp.com'
-#CSRF_TRUSTED_ORIGINS = ['*']
 
 
 INSTALLED_APPS = [
