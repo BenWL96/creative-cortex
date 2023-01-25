@@ -29,7 +29,13 @@
         <div class="wrap_g">
 
           <p class="l_text">
-             Abstract: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            
+             {% if page_text_content_1 %}
+
+                {{page_text_content_1.text_content}}
+
+            {% endif %}
+
           </p>
 
 

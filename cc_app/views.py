@@ -155,10 +155,11 @@ def Pages(request, comic_param, volume_param, chapter_param, page_param):
 
 def Links(request):
 
-	page_text_content = models.Web_Page_Text_Content.objects.select_related(
-		'page_name').all().order_by("id")
+	links_page_obj = models.Web_Pages.objects.get(page_name="Links")
+	# page_text_content = models.Web_Page_Text_Content.objects.select_related('page_name')
+	page_text_content = links_page_obj.web_page_text_content_set.all()
 
-	context = utils.Pass_About_Us_Text_Return_Context(
+	context = utils.Pass_Links_Text_Return_Context(
 		page_text_content
 	)
 

@@ -263,3 +263,44 @@ def Pass_About_Us_Text_Return_Context(list_personnel, page_text_content):
 		}
 
 	return context
+
+
+
+def Pass_Links_Text_Return_Context(page_text_content):
+
+	if page_text_content.count() == 1:
+		context = {
+			'page_text_content_1': page_text_content[0]
+		}
+
+	elif page_text_content.count() == 2:
+		context = {
+			'page_text_content_1': page_text_content[0],
+			'page_text_content_2': page_text_content[1]
+		}
+	elif page_text_content.count() == 3:
+		context = {
+			'page_text_content_1': page_text_content[0],
+			'page_text_content_2': page_text_content[1],
+			'page_text_content_3': page_text_content[2]
+		}
+	elif page_text_content.count() == 4:
+		context = {
+			'page_text_content_1': page_text_content[0],
+			'page_text_content_2': page_text_content[1],
+			'page_text_content_3': page_text_content[2],
+			'page_text_content_4': page_text_content[3]
+		}
+	elif page_text_content.count() == 5:
+		context = {
+			'page_text_content_1': page_text_content[0],
+			'page_text_content_2': page_text_content[1],
+			'page_text_content_3': page_text_content[2],
+			'page_text_content_4': page_text_content[3],
+			'page_text_content_5': page_text_content[4],
+		}
+
+	else:
+		context = {}
+
+	return context
