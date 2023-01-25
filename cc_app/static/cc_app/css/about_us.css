@@ -68,11 +68,10 @@
 
 .volume_num_head{
 	font-size: 25px;
-	font-weight: 700;
+	font-weight: 800;
 	text-align: left;
     color: black;
     font-family: 'Libre Franklin', sans-serif;
-	text-shadow: black 1px 1px 1px;
 }
 
 
@@ -86,10 +85,9 @@
 
 .volume_num_head_2{
 	font-size: 25px;
-	font-weight: 700;
+	font-weight: 800;
 	color: black;
 	font-family: 'Libre Franklin', sans-serif;
-	text-shadow: black 1px 1px 1px;
 }
 
 .v_row{
