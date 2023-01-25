@@ -7,6 +7,7 @@ from django.test import (
 from django.urls import reverse, resolve
 from . import views, models, utils
 from django.http import HttpResponseRedirect
+from phonenumber_field.phonenumber import PhoneNumber
 
 
 class testPatternNameResolveToView(unittest.TestCase):
@@ -589,6 +590,37 @@ class testContext(unittest.TestCase):
 		self.assertEqual(len(context_objects), 1)
 
 
+	def test_about_page_context(self):
+
+		raw_phone = "+447713835911"
+		phone_num = PhoneNumber.from_string(phone_number=raw_phone).as_e164
+
+		models.Personnel.objects.create(
+
+			full_name="name",
+			phone_number=phone_num,
+			email_address="name@email.com",
+			role_at_creative_cortex="founder",
+			person_img_200_by_260=self.a_simple_file
+		)
+
+		about_page_object = models.Web_Pages.objects.create(
+			page_name="About Page"
+		)
+
+		models.Web_Pages.objects.create(
+			page_name=about_page_object,
+			text_content_ordering=1,
+			text_content="lorem ipsum"
+
+		)
+
+		response = self.client.get(reverse('about_us'))
+		context_objects = response.context['personnel']
+		self.assertEqual(len(context_objects), 1)
+		context_objects = response.context['page_text_content_1']
+		self.assertEqual(len(context_objects), 1)
+
 class testModelFieldParameters(TestCase):
 
 	def test_volume_number_model_cant_be_negative(self):
@@ -622,7 +654,7 @@ import time
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
 
-
+"""
 class WebNavigationTest(SimpleTestCase):
 
 
@@ -635,7 +667,7 @@ class WebNavigationTest(SimpleTestCase):
 		self.driver.close()
 
 
-	"""def testNavigationToHomepage(self):
+	def testNavigationToHomepage(self):
 
 		link = WebDriverWait(self.driver, timeout=5).until(
 			lambda d: d.find_element(By.CLASS_NAME, "hamburger"))
@@ -773,7 +805,7 @@ class WebNavigationTest(SimpleTestCase):
 
 		title = WebDriverWait(self.driver, timeout=5).until(
 			lambda d: d.find_element(By.CLASS_NAME, "Title"))
-		self.assertInHTML("About Us", title.text)"""
+		self.assertInHTML("About Us", title.text)
 
 	def testNavigationToPages(self):
 
@@ -825,3 +857,4 @@ class WebNavigationTest(SimpleTestCase):
 		)
 
 		self.assertInHTML("Back To Chapters", button)
+"""

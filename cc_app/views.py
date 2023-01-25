@@ -154,15 +154,24 @@ def Pages(request, comic_param, volume_param, chapter_param, page_param):
 	return render(request, 'cc_app/pages.html', context)
 
 def Links(request):
-	context = {}
+
+	page_text_content = models.Web_Page_Text_Content.objects.select_related(
+		'page_name').all().order_by("id")
+
+	context = utils.Pass_About_Us_Text_Return_Context(
+		page_text_content
+	)
+
 	return render(request, 'cc_app/links.html', context)
 
 def About_Us(request):
 
 	list_personnel = utils.assign_personnel_objects_even_boolean_return_list()
 
-	page_text_content = models.Web_Page_Text_Content.objects.select_related(
-		'page_name').all().order_by("id")
+	about_page_obj = models.Web_Pages.objects.get(page_name="About Us")
+	#page_text_content = models.Web_Page_Text_Content.objects.select_related('page_name')
+	page_text_content = about_page_obj.web_page_text_content_set.all()
+	#.all().order_by("id") .filter(page_name="About Us")
 
 	context = utils.Pass_About_Us_Text_Return_Context(
 		list_personnel, page_text_content

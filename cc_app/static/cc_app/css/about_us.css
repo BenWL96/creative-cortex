@@ -8,11 +8,12 @@
 
 
 .about_descr{
-	font-size: 18px;
-	font-weight: 500;
-	color: black;
-	font-family: 'Lora', serif;
+	font-size: 25px;
+    font-weight: 300;
+    color: black;
+    font-family: 'Libre Franklin', sans-serif;
 	text-align: left;
+	padding-top: 10px;
 }
 
 
@@ -57,12 +58,11 @@
 }
 
 .volume_num{
-	font-size: 20px;
-	font-weight: 500;
+	font-size: 25px;
+	font-weight: 700;
 	text-align: left;
 	color: black;
-	font-family: 'Lora', serif;
-	padding-top: 6px;
+	font-family: 'Libre Franklin', sans-serif;
 
 }
 
@@ -70,18 +70,17 @@
 	font-size: 25px;
 	font-weight: 700;
 	text-align: left;
-	color: black;
-	font-family: 'Lora', serif;
+    color: black;
+    font-family: 'Libre Franklin', sans-serif;
 	text-shadow: black 1px 1px 1px;
 }
 
 
 .volume_num_2{
-	font-size: 20px;
-	font-weight: 500;
+	font-size: 25px;
+	font-weight: 700;
 	color: black;
-	font-family: 'Lora', serif;
-	padding-top: 6px;
+	font-family: 'Libre Franklin', sans-serif;
 
 }
 
@@ -89,7 +88,7 @@
 	font-size: 25px;
 	font-weight: 700;
 	color: black;
-	font-family: 'Lora', serif;
+	font-family: 'Libre Franklin', sans-serif;
 	text-shadow: black 1px 1px 1px;
 }
 
