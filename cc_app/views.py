@@ -160,15 +160,16 @@ def Links(request):
 def About_Us(request):
 
 	list_personnel = utils.assign_personnel_objects_even_boolean_return_list()
-	#web_page = models.WebPages.objects.get(page_name="About Us")
-	text_content = models.Web_Page_Text_Content.objects.select_related(
-		'page_name').all().order_by("id")
-	print(text_content)
 
-	context = {
-		'personnel': list_personnel,
-	}
+	page_text_content = models.Web_Page_Text_Content.objects.select_related(
+		'page_name').all().order_by("id")
+
+	context = utils.Pass_About_Us_Text_Return_Context(
+		list_personnel, page_text_content
+	)
+
 	return render(request, 'cc_app/about_us.html', context)
+
 
 def Gallery(request):
 
