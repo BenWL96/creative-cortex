@@ -6,6 +6,8 @@ admin.site.register(models.Personnel)
 admin.site.register(models.Comic_Personnel)
 admin.site.register(models.Landing_Page_Images)
 admin.site.register(models.Gallery_images)
+admin.site.register(models.Web_Pages)
+admin.site.register(models.Web_Page_Text_Content)
 
 class ComicsAdmin(admin.ModelAdmin):
 	exclude = ('slug',)

@@ -152,3 +152,30 @@ class Gallery_images(models.Model):
 	class Meta:
 		verbose_name = "Gallery Image"
 		verbose_name_plural = "Gallery Images"
+
+
+#Related to adding content to webpages.
+
+class Web_Pages(models.Model):
+	id = models.AutoField(primary_key=True)
+	page_name = models.CharField(max_length=25, unique=True)
+
+	def __str__(self):
+		return self.page_name
+
+	class Meta:
+		verbose_name = "Web Page"
+		verbose_name_plural = "Web Pages"
+
+
+class Web_Page_Text_Content(models.Model):
+	id = models.AutoField(primary_key=True)
+	page_name = models.ForeignKey(Web_Pages, on_delete=models.CASCADE)
+	text_content_ordering = models.IntegerField(validators=[MinValueValidator(1, message="value has to be above 0"),])
+	text_content = models.CharField(max_length=500, blank=True)
+
+	def __str__(self):
+		return self.page_name.page_name + " | " + str(self.text_content_ordering)
+
+	class Meta:
+		verbose_name = "Text Content For WebPages"
