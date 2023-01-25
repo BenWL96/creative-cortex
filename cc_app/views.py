@@ -157,8 +157,10 @@ def Links(request):
 
 	links_page_obj = models.Web_Pages.objects.get(page_name="Links")
 	# page_text_content = models.Web_Page_Text_Content.objects.select_related('page_name')
-	page_text_content = links_page_obj.web_page_text_content_set.all()
+	page_text_content = links_page_obj.web_page_text_content_set.all().order_by('text_content_ordering')
 
+	print(page_text_content)
+	
 	context = utils.Pass_Links_Text_Return_Context(
 		page_text_content
 	)
@@ -171,8 +173,10 @@ def About_Us(request):
 
 	about_page_obj = models.Web_Pages.objects.get(page_name="About Us")
 	#page_text_content = models.Web_Page_Text_Content.objects.select_related('page_name')
-	page_text_content = about_page_obj.web_page_text_content_set.all()
+	page_text_content = about_page_obj.web_page_text_content_set.all().order_by('text_content_ordering')
 	#.all().order_by("id") .filter(page_name="About Us")
+
+	print(page_text_content)
 
 	context = utils.Pass_About_Us_Text_Return_Context(
 		list_personnel, page_text_content
