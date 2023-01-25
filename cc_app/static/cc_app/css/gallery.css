@@ -51,6 +51,10 @@
     opacity: 75%;
 }
 
+.grid{
+    padding-top: 25px;
+}
+
 @media(min-width: 800px){
     .grid-item{
             width: 200px;
