@@ -174,14 +174,7 @@ def About_Us(request):
 		form = forms.NameForm(request.POST)
 
 		if form.is_valid():
-			# This accesses the object related to the field 'your_name'
-			print(form['your_name'])
-			print(form['email_address'])
-			print(form['subject'])
-			# print(form['phone_number'])
-			# your_phone_number = clean_form['phone_number']
 
-			# This places the values from the bound form into a dictionary
 			clean_form = form.cleaned_data
 
 			# This finally takes the information from that dictionary and then
@@ -192,10 +185,16 @@ def About_Us(request):
 			your_email = clean_form['email_address']
 			your_subject = clean_form['subject']
 
-				# Redirect To ThankYouPage
-			return HttpResponseRedirect('/get-name/')
+			models.Inquiries.objects.create(
+				name=your_name,
+				email=your_email,
+				inquiry=your_subject
+			)
 
-			print(result)
+			print("inquiry has been added to the database")
+
+				# Redirect To ThankYouPage
+			return HttpResponseRedirect('/about-us/')
 
 		else:
 			# form is not valid and so we must render error messages

@@ -25,15 +25,15 @@ class NameForm(forms.Form):
 
 	def clean_subject(self):
 		data = self.cleaned_data['subject']
-		lengthError = "Sorry but your message is too short..."
+		lengthError = "Sorry but you must keep your message between 15 and 150 characters..."
 		js_error = "An error has occurred"
 
-		if len(str(data)) < 15:
-			raise ValidationError(lengthError)
+		if 15 <= len(str(data)) <= 150:
+			return data
 		elif '<script>' in str(data) or '</script>' in str(data):
 			raise ValidationError(js_error)
 		else:
-			return data
+			raise ValidationError(lengthError)
 
 	def clean_your_name(self):
 		data = self.cleaned_data['your_name']

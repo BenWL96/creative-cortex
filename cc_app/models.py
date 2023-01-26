@@ -196,3 +196,17 @@ class Featured_Youtube_videos(models.Model):
 		verbose_name = "Featured Youtube video"
 		verbose_name_plural = "Featured Youtube videos"
 
+
+class Inquiries(models.Model):
+	inquiry_id = models.AutoField(primary_key=True)
+	inquiry = models.CharField(max_length=150)
+	name = models.CharField(max_length=50, default="")
+	email = models.EmailField()
+	checked = models.BooleanField(default=False)
+
+	def __str__(self):
+		return "Inquiry: " + str(self.inquiry_id) + " | from " + self.email + " | checked: " + str(self.checked)
+
+	class Meta:
+		verbose_name = "Inquiry"
+		verbose_name_plural = "Inquiries"
