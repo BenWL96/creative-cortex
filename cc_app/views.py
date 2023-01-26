@@ -2,6 +2,8 @@ from django.shortcuts import render
 from . import models, utils, forms
 from django.shortcuts import get_object_or_404, redirect
 from django.http import HttpResponseRedirect
+
+
 def Landing_Page(request):
 	carousel_img_objects = models.Landing_Page_Images.objects.all().order_by(
 		"landing_page_img_carousel_placement_number"
