@@ -1,9 +1,7 @@
 from django.shortcuts import render
-from . import models
+from . import models, utils, forms
 from django.shortcuts import get_object_or_404, redirect
-from . import utils
 from django.http import HttpResponseRedirect
-
 def Landing_Page(request):
 	carousel_img_objects = models.Landing_Page_Images.objects.all().order_by(
 		"landing_page_img_carousel_placement_number"
@@ -171,6 +169,41 @@ def Links(request):
 
 def About_Us(request):
 
+	if request.method == 'POST':
+
+		form = forms.NameForm(request.POST)
+
+		if form.is_valid():
+			# This accesses the object related to the field 'your_name'
+			print(form['your_name'])
+			print(form['email_address'])
+			print(form['subject'])
+			# print(form['phone_number'])
+			# your_phone_number = clean_form['phone_number']
+
+			# This places the values from the bound form into a dictionary
+			clean_form = form.cleaned_data
+
+			# This finally takes the information from that dictionary and then
+			# accesses the data within the fields.
+
+			# This also completes all the custom validation.
+			your_name = clean_form['your_name']
+			your_email = clean_form['email_address']
+			your_subject = clean_form['subject']
+
+				# Redirect To ThankYouPage
+			return HttpResponseRedirect('/get-name/')
+
+			print(result)
+
+		else:
+			# form is not valid and so we must render error messages
+			form = forms.NameForm(request.POST)
+	else:
+
+		form = forms.NameForm()
+
 	list_personnel = utils.assign_personnel_objects_even_boolean_return_list()
 
 	about_page_obj = models.Web_Pages.objects.get(page_name="About Us")
@@ -181,7 +214,7 @@ def About_Us(request):
 	print(page_text_content)
 
 	context = utils.Pass_About_Us_Text_Return_Context(
-		list_personnel, page_text_content
+		form, list_personnel, page_text_content
 	)
 
 	return render(request, 'cc_app/about_us.html', context)

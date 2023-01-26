@@ -151,8 +151,82 @@
       {% endfor %}
 
 
-      <br>
+      <div class='container my-5 sep_cont'>
+            <hr class="separator">
+      </div>
+
+      <div class="wrap-form">
+
+        <form action="{% url 'about_us' %}" method="post" class="needs-validation" novalidate>
+          {% csrf_token %}
+
+          <div class="d-flex flex-row">
+            <div class="flex-col">
+
+              <div class="container">
+                
+                <label for="your_name" class="form-label">Your Name: </label>
+                <input id="your_name" class="form-control" type="text" name="your_name" maxlength="25" required>
+                <div class="error">
+                  {{ form.your_name.errors }}
+                </div>
+
+              </div>
+
+              <br>
+
+            </div>
+            <div class="flex-col">
+
+              <div class="container">
+
+                <label for="email_address" class="form-label">Email: </label>
+                <input id="email_address" class="form-control" type="text" name="email_address" maxlength="50" required>
+                <div class="error">
+                  {{ form.email_address.errors }}
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+          <br>
+
+          <div class="d-flex flex-row">
+              <div class="flex-col">
+                
+                <div class="container">
+
+                  <label for="subject" class="form-label">Subject: </label>
+                  <textarea id="subject" class="form-control" type="text" name="subject" maxlength="100" required rows="5"></textarea>
+                  <div class="error">
+                  {{ form.subject.errors }}
+                  </div>
+
+                </div>
+                
+              </div>
+          </div>
+      
+
+          <br>
+
+          <div class="d-flex flex-row">
+            <div class="flex-col">
+              <div class="container">
+                <button id="submit" type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </div>
+          </div>
+
+            <br>
+
+         
+
+        </form>
     
+        </div>
 
        </div>
     </div>

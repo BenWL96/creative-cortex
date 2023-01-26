@@ -241,3 +241,37 @@
 .index_body {
 	background-color: transparent !important;
 }
+
+.separator{
+    width: 80%;
+    color: black;
+    margin-left: auto;
+    margin-right: auto;
+    outline: black;
+    outline-color: black;
+    outline-width: 10px;
+}
+
+/* Form css */
+
+.wrap-form{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+}
+
+
+div.error{
+  color: red;
+  font-weight: bold;
+  }
+
+div.flex-row{
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+div.flex-col{
+  flex-grow: 1;
+}

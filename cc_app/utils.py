@@ -218,22 +218,25 @@ def assign_personnel_objects_even_boolean_return_list():
 	return list_personnel
 
 
-def Pass_About_Us_Text_Return_Context(list_personnel, page_text_content):
+def Pass_About_Us_Text_Return_Context(form, list_personnel, page_text_content):
 
 	if page_text_content.count() == 1:
 		context = {
+			'form': form,
 			'personnel': list_personnel,
 			'page_text_content_1': page_text_content[0]
 		}
 
 	elif page_text_content.count() == 2:
 		context = {
+			'form': form,
 			'personnel': list_personnel,
 			'page_text_content_1': page_text_content[0],
 			'page_text_content_2': page_text_content[1]
 		}
 	elif page_text_content.count() == 3:
 		context = {
+			'form': form,
 			'personnel': list_personnel,
 			'page_text_content_1': page_text_content[0],
 			'page_text_content_2': page_text_content[1],
@@ -241,6 +244,7 @@ def Pass_About_Us_Text_Return_Context(list_personnel, page_text_content):
 		}
 	elif page_text_content.count() == 4:
 		context = {
+			'form': form,
 			'personnel': list_personnel,
 			'page_text_content_1': page_text_content[0],
 			'page_text_content_2': page_text_content[1],
@@ -249,6 +253,7 @@ def Pass_About_Us_Text_Return_Context(list_personnel, page_text_content):
 		}
 	elif page_text_content.count() == 5:
 		context = {
+			'form': form,
 			'personnel': list_personnel,
 			'page_text_content_1': page_text_content[0],
 			'page_text_content_2': page_text_content[1],
@@ -259,6 +264,7 @@ def Pass_About_Us_Text_Return_Context(list_personnel, page_text_content):
 
 	else:
 		context = {
+			'form': form,
 			'personnel': list_personnel,
 		}
 
