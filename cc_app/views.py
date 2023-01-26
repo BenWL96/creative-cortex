@@ -155,6 +155,7 @@ def Pages(request, comic_param, volume_param, chapter_param, page_param):
 
 def Links(request):
 
+	featured_videos = models.Featured_Youtube_videos.objects.all().order_by("video_ordering")
 	links_page_obj = models.Web_Pages.objects.get(page_name="Links")
 	# page_text_content = models.Web_Page_Text_Content.objects.select_related('page_name')
 	page_text_content = links_page_obj.web_page_text_content_set.all().order_by('text_content_ordering')
@@ -162,6 +163,7 @@ def Links(request):
 	print(page_text_content)
 
 	context = utils.Pass_Links_Text_Return_Context(
+		featured_videos,
 		page_text_content
 	)
 

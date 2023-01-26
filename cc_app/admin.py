@@ -8,6 +8,7 @@ admin.site.register(models.Landing_Page_Images)
 admin.site.register(models.Gallery_images)
 admin.site.register(models.Web_Pages)
 admin.site.register(models.Web_Page_Text_Content)
+admin.site.register(models.Featured_Youtube_videos)
 
 class ComicsAdmin(admin.ModelAdmin):
 	exclude = ('slug',)

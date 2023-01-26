@@ -212,7 +212,7 @@ class testViewsAndTemplates(TestCase):
 class testUtils(TestCase):
 
 	def setUp(self):
-		
+
 		phone_number = "+447788888884"
 		phone_number_2 = "+447788888885"
 		phone_number_3 = "+447788888889"

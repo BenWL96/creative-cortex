@@ -179,3 +179,20 @@ class Web_Page_Text_Content(models.Model):
 
 	class Meta:
 		verbose_name = "Text Content For WebPages"
+		verbose_name_plural = "Text Content For WebPages"
+
+
+class Featured_Youtube_videos(models.Model):
+	id = models.AutoField(primary_key=True)
+	video_name = models.CharField(max_length=50)
+	video_ordering = models.IntegerField(
+		validators=[MinValueValidator(1, message="value has to be above 0"), ])
+	url = models.URLField()
+
+	def __str__(self):
+		return str(self.video_ordering) + " | " + self.video_name
+
+	class Meta:
+		verbose_name = "Featured Youtube video"
+		verbose_name_plural = "Featured Youtube videos"
+
