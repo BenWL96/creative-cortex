@@ -279,6 +279,24 @@
 	background-color: transparent !important;
 }
 
+.wrap-inq{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+}
+
+.sub-title{
+    color: black;
+    font-weight: 900;
+
+    margin-left: 15px;
+    font-family: 'Barlow', sans-serif;
+    text-shadow: #fafafa 1px 1px 1px;
+}
+
+
+
 .separator{
     width: 80%;
     color: black;
@@ -292,6 +310,7 @@
 /* Form css */
 
 .wrap-form{
+	padding-top: 40px;
     width: 80%;
     margin-left: auto;
     margin-right: auto;
