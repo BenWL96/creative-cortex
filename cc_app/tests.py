@@ -548,6 +548,69 @@ class testUtils(TestCase):
 		self.assertEqual(second_person_even, True)
 		self.assertEqual(third_person_not_even, True)
 
+	def test_Pass_Links_Text_Return_Context(self):
+
+
+		page_name = models.Web_Pages.objects.create(page_name="Links")
+		models.Web_Page_Text_Content.objects.create(
+			page_name=page_name,
+			text_content_ordering=1,
+			text_content="ipsum"
+		)
+		models.Web_Page_Text_Content.objects.create(
+			page_name=page_name,
+			text_content_ordering=2,
+			text_content="ipsum"
+		)
+
+		web_page_text_objects = models.Web_Page_Text_Content.objects.all()
+		context = utils.Pass_Links_Text_Return_Context(web_page_text_objects)
+		print(len(context))
+		print(len(context))
+		self.assertEqual(len(context), 2)
+
+	def test_Pass_About_Us_Text_Return_Context(self):
+		a_simple_file = tempfile.NamedTemporaryFile(suffix=".jpg").name
+
+		models.Personnel.objects.create(
+			full_name="name goes here",
+			phone_number=self.number,
+			email_address="name@gmail.com",
+			role_at_creative_cortex='Founder',
+			person_img_200_by_260=a_simple_file
+		)
+		models.Personnel.objects.create(
+			full_name="name goes here 2",
+			phone_number=self.number_2,
+			email_address="name@gmail.com",
+			role_at_creative_cortex='Founder',
+			person_img_200_by_260=a_simple_file
+		)
+
+		models.Personnel.objects.create(
+			full_name="name goes here 3",
+			phone_number=self.number_3,
+			email_address="name@gmail.com",
+			role_at_creative_cortex='Founder',
+			person_img_200_by_260=a_simple_file
+		)
+
+		page_name = models.Web_Pages.objects.create(page_name="About Us")
+		models.Web_Page_Text_Content.objects.create(
+			page_name=page_name,
+			text_content_ordering=1,
+			text_content="ipsum"
+		)
+		models.Web_Page_Text_Content.objects.create(
+			page_name=page_name,
+			text_content_ordering=2,
+			text_content="ipsum"
+		)
+
+		web_page_text_objects = models.Web_Page_Text_Content.objects.all()
+		personnel = models.Personnel.objects.all()
+		context = utils.Pass_About_Us_Text_Return_Context(personnel, web_page_text_objects)
+		print(context)
 
 class testContext(unittest.TestCase):
 
@@ -631,9 +694,31 @@ class testContext(unittest.TestCase):
 
 		response = self.client.get(reverse('about_us'))
 		context_object_person = response.context['personnel']
-		context_object_text = response.context['personnel']
+		context_object_text = response.context['page_text_content_1']
+
 		self.assertEqual(len(context_object_person), 1)
-		self.assertEqual(len(context_object_text), 1)
+		self.assertIsNotNone(context_object_text)
+
+
+	def test_about_us_page_context_2_text(self):
+
+		page_name = models.Web_Pages.objects.get(page_name="About Us")
+
+		models.Web_Page_Text_Content.objects.create(
+			page_name=page_name,
+			text_content_ordering=2,
+			text_content="ipsum"
+		)
+
+		response = self.client.get(reverse('about_us'))
+		context_object_person = response.context['personnel']
+		context_object_text = response.context['page_text_content_1']
+		context_object_text_2 = response.context['page_text_content_2']
+		self.assertEqual(len(context_object_person), 1)
+		self.assertIsNotNone(context_object_text)
+		self.assertIsNotNone(context_object_text_2)
+
+
 
 
 	"""def test_about_page_context(self):
