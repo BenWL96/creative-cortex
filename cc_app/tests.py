@@ -212,6 +212,7 @@ class testViewsAndTemplates(TestCase):
 class testUtils(TestCase):
 
 	def setUp(self):
+		
 		phone_number = "+447788888884"
 		phone_number_2 = "+447788888885"
 		phone_number_3 = "+447788888889"
@@ -219,6 +220,7 @@ class testUtils(TestCase):
 		self.number_2 = PhoneNumber.from_string(phone_number_2, region=None)
 		self.number_3 = PhoneNumber.from_string(phone_number_3, region=None)
 
+		self.a_simple_file = tempfile.NamedTemporaryFile(suffix=".jpg").name
 
 	def test_return_chapters_related_to_volumes_queryset(self):
 
@@ -308,15 +310,12 @@ class testUtils(TestCase):
 
 	def test_find_chapter_with_all_pages_from_params_or_redirect_COMIC_NO_OTHER_OBJECTS(self):
 
-		a_simple_file = tempfile.NamedTemporaryFile(suffix=".jpg").name
-
-
 		comic = models.Comics.objects.create(
 			comic_name="comic_1",
 			ongoing=True,
 			next_release_date=datetime.date.today(),
-			comic_img_376_by_376=a_simple_file,
-			comic_img_200_by_260=a_simple_file
+			comic_img_376_by_376=self.a_simple_file,
+			comic_img_200_by_260=self.a_simple_file
 		)
 		comic_name = comic.comic_name
 		comic_param, volume_param, chapter_param, page_param = comic_name, 1, 1, "false"
@@ -330,14 +329,12 @@ class testUtils(TestCase):
 
 	def test_find_chapter_from_params_or_redirect_COMIC_VOLUME_NO_OTHER_OBJECTS(self):
 
-		a_simple_file = tempfile.NamedTemporaryFile(suffix=".jpg").name
-
 		comic_object = models.Comics.objects.create(
 			comic_name="comic_1",
 			ongoing=True,
 			next_release_date=datetime.date.today(),
-			comic_img_376_by_376=a_simple_file,
-			comic_img_200_by_260=a_simple_file
+			comic_img_376_by_376=self.a_simple_file,
+			comic_img_200_by_260=self.a_simple_file
 		)
 
 		models.Volumes.objects.create(
@@ -358,14 +355,12 @@ class testUtils(TestCase):
 
 	def test_find_chapter_from_params_or_redirect_COMIC_VOLUME_CHAPTER_OBJECTS(self):
 
-		a_simple_file = tempfile.NamedTemporaryFile(suffix=".jpg").name
-
 		comic_object = models.Comics.objects.create(
 			comic_name="comic_1",
 			ongoing=True,
 			next_release_date=datetime.date.today(),
-			comic_img_376_by_376=a_simple_file,
-			comic_img_200_by_260=a_simple_file
+			comic_img_376_by_376=self.a_simple_file,
+			comic_img_200_by_260=self.a_simple_file
 		)
 
 		volume_object = models.Volumes.objects.create(
@@ -397,14 +392,12 @@ class testUtils(TestCase):
 
 	def test_take_volumes_of_comic_return_list_volumes_with_chapters(self):
 
-		a_simple_file = tempfile.NamedTemporaryFile(suffix=".jpg").name
-
 		comic_object = models.Comics.objects.create(
 			comic_name="comic_1",
 			ongoing=True,
 			next_release_date=datetime.date.today(),
-			comic_img_376_by_376=a_simple_file,
-			comic_img_200_by_260=a_simple_file
+			comic_img_376_by_376=self.a_simple_file,
+			comic_img_200_by_260=self.a_simple_file
 		)
 
 		volume_object = models.Volumes.objects.create(
@@ -422,7 +415,7 @@ class testUtils(TestCase):
 		models.Pages.objects.create(
 			chapter=chapter_object,
 			page_number=1,
-			page_img=a_simple_file
+			page_img=self.a_simple_file
 		)
 
 		volumes_related_to_comic_param = [volume_object]
@@ -442,14 +435,12 @@ class testUtils(TestCase):
 
 	def test_take_volumes_with_chap_return_list_volumes_that_have_chapters_and_pages(self):
 
-		a_simple_file = tempfile.NamedTemporaryFile(suffix=".jpg").name
-
 		comic_object = models.Comics.objects.create(
 			comic_name="comic_1",
 			ongoing=True,
 			next_release_date=datetime.date.today(),
-			comic_img_376_by_376=a_simple_file,
-			comic_img_200_by_260=a_simple_file
+			comic_img_376_by_376=self.a_simple_file,
+			comic_img_200_by_260=self.a_simple_file
 		)
 
 		volume_object = models.Volumes.objects.create(
@@ -467,7 +458,7 @@ class testUtils(TestCase):
 		models.Pages.objects.create(
 			chapter=chapter_object,
 			page_number=1,
-			page_img=a_simple_file
+			page_img=self.a_simple_file
 		)
 
 		list_volumes_with_chapters = [volume_object]
@@ -486,21 +477,19 @@ class testUtils(TestCase):
 
 	def test_assign_personnel_objects_even_boolean_return_correct_length_list(self):
 
-		a_simple_file = tempfile.NamedTemporaryFile(suffix=".jpg").name
-
 		models.Personnel.objects.create(
 			full_name="name goes here",
 			phone_number=self.number,
 			email_address="name@gmail.com",
 			role_at_creative_cortex='Founder',
-			person_img_200_by_260=a_simple_file
+			person_img_200_by_260=self.a_simple_file
 		)
 		models.Personnel.objects.create(
 			full_name="name goes here 2",
 			phone_number=self.number_2,
 			email_address="name@gmail.com",
 			role_at_creative_cortex='Founder',
-			person_img_200_by_260=a_simple_file
+			person_img_200_by_260=self.a_simple_file
 		)
 
 		personnel_list = utils.assign_personnel_objects_even_boolean_return_list()
@@ -508,21 +497,19 @@ class testUtils(TestCase):
 
 	def test_check_even_values_from_assign_personnel_objects_even_boolean_return(self):
 
-		a_simple_file = tempfile.NamedTemporaryFile(suffix=".jpg").name
-
 		models.Personnel.objects.create(
 			full_name="name goes here",
 			phone_number=self.number,
 			email_address="name@gmail.com",
 			role_at_creative_cortex='Founder',
-			person_img_200_by_260=a_simple_file
+			person_img_200_by_260=self.a_simple_file
 		)
 		models.Personnel.objects.create(
 			full_name="name goes here 2",
 			phone_number=self.number_2,
 			email_address="name@gmail.com",
 			role_at_creative_cortex='Founder',
-			person_img_200_by_260=a_simple_file
+			person_img_200_by_260=self.a_simple_file
 		)
 
 		models.Personnel.objects.create(
@@ -530,7 +517,7 @@ class testUtils(TestCase):
 			phone_number=self.number_3,
 			email_address="name@gmail.com",
 			role_at_creative_cortex='Founder',
-			person_img_200_by_260=a_simple_file
+			person_img_200_by_260=self.a_simple_file
 		)
 
 		personnel_list = utils.assign_personnel_objects_even_boolean_return_list()
@@ -570,21 +557,20 @@ class testUtils(TestCase):
 		self.assertEqual(len(context), 2)
 
 	def test_Pass_About_Us_Text_Return_Context(self):
-		a_simple_file = tempfile.NamedTemporaryFile(suffix=".jpg").name
 
 		models.Personnel.objects.create(
 			full_name="name goes here",
 			phone_number=self.number,
 			email_address="name@gmail.com",
 			role_at_creative_cortex='Founder',
-			person_img_200_by_260=a_simple_file
+			person_img_200_by_260=self.a_simple_file
 		)
 		models.Personnel.objects.create(
 			full_name="name goes here 2",
 			phone_number=self.number_2,
 			email_address="name@gmail.com",
 			role_at_creative_cortex='Founder',
-			person_img_200_by_260=a_simple_file
+			person_img_200_by_260=self.a_simple_file
 		)
 
 		models.Personnel.objects.create(
@@ -592,7 +578,7 @@ class testUtils(TestCase):
 			phone_number=self.number_3,
 			email_address="name@gmail.com",
 			role_at_creative_cortex='Founder',
-			person_img_200_by_260=a_simple_file
+			person_img_200_by_260=self.a_simple_file
 		)
 
 		page_name = models.Web_Pages.objects.create(page_name="About Us")
