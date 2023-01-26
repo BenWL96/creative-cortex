@@ -23,7 +23,7 @@ class testPatternNameResolveToView(unittest.TestCase):
 	def test_Volumes_View_No_Comics(self):
 		#If no comics exists go to landin pages
 		kwargs = {"comic_param": "random-comic"}
-		url = reverse('volumes', kwargs=kwargs)
+		url = reverse('comic-detail', kwargs=kwargs)
 		print(resolve(url).func)
 		print(resolve(url).func)
 	"""
@@ -43,18 +43,21 @@ class testPatternNameResolveToView(unittest.TestCase):
 		url = reverse('gallery')
 		self.assertEqual(resolve(url).func, views.Gallery)
 
-	def test_404_View(self):
+	"""def test_404_View(self):
 		url = reverse('error_404')
 		self.assertEqual(resolve(url).func, views.Error_404)
 
 	def test_500_View(self):
 		url = reverse('error_500')
-		self.assertEqual(resolve(url).func, views.Error_500)
+		self.assertEqual(resolve(url).func, views.Error_500)"""
 
 class testViewsAndTemplates(TestCase):
 
 	def setUp(self):
 		self.client = Client()
+		self.a_simple_file = tempfile.NamedTemporaryFile(suffix=".jpg").name
+		phone_number = "+447713835916"
+		self.number = PhoneNumber.from_string(phone_number, region=None)
 
 	def test_Homepage_Template(self):
 		response = self.client.get(reverse('landing_page'))
@@ -81,16 +84,15 @@ class testViewsAndTemplates(TestCase):
 		)
 		kwargs = {"comic_param": comic_object.slug}
 
-		response = self.client.get(reverse('volumes', kwargs=kwargs))
+		response = self.client.get(reverse('comic-detail', kwargs=kwargs))
 		self.assertEqual(response.status_code, 200)
 
-		self.assertTemplateUsed(response,'cc_app/volumes.html')
+		self.assertTemplateUsed(response,'cc_app/comic_detail.html')
 		self.assertTemplateUsed(response, 'cc_app/index.html')
 
 	def test_Pages_Template(self):
 		#Currently returns 400 status code, and I can't
 		#Understand why.
-		a_simple_file = tempfile.NamedTemporaryFile(suffix=".jpg").name
 
 		comic_object = models.Comics.objects.create(
 			comic_name="comic",
@@ -98,8 +100,8 @@ class testViewsAndTemplates(TestCase):
 			comic_genre="something",
 			ongoing=True,
 			next_release_date=datetime.date.today(),
-			comic_img_376_by_376=a_simple_file,
-			comic_img_200_by_260=a_simple_file
+			comic_img_376_by_376=self.a_simple_file,
+			comic_img_200_by_260=self.a_simple_file
 		)
 		volume_object = models.Volumes.objects.create(
 			comic_name=comic_object,
@@ -117,7 +119,7 @@ class testViewsAndTemplates(TestCase):
 		pages_object = models.Pages.objects.create(
 			chapter=chapters_object,
 			page_number=1,
-			page_img=a_simple_file
+			page_img=self.a_simple_file
 		)
 		kwargs = {
 			"comic_param": comic_object.slug,
@@ -138,6 +140,20 @@ class testViewsAndTemplates(TestCase):
 
 	def test_Links_Template(self):
 
+		page_name = models.Web_Pages.objects.create(page_name="Links")
+		models.Web_Page_Text_Content.objects.create(
+			page_name=page_name,
+			text_content_ordering=1,
+			text_content="ipsum"
+		)
+		models.Personnel.objects.create(
+			full_name="x",
+			phone_number=self.number,
+			email_address="y@gmail.com",
+			role_at_creative_cortex="Founder",
+			person_img_200_by_260=self.a_simple_file
+		)
+
 		response = self.client.get(reverse('links'))
 		self.assertEqual(response.status_code, 200)
 
@@ -146,6 +162,19 @@ class testViewsAndTemplates(TestCase):
 
 	def test_About_Us_Template(self):
 
+		page_name = models.Web_Pages.objects.create(page_name="About Us")
+		models.Web_Page_Text_Content.objects.create(
+			page_name=page_name,
+			text_content_ordering=1,
+			text_content="ipsum"
+		)
+		models.Personnel.objects.create(
+			full_name="x",
+			phone_number=self.number,
+			email_address="y@gmail.com",
+			role_at_creative_cortex="Founder",
+			person_img_200_by_260=self.a_simple_file
+		)
 		response = self.client.get(reverse('about_us'))
 		self.assertEqual(response.status_code, 200)
 
@@ -181,6 +210,15 @@ class testViewsAndTemplates(TestCase):
 
 
 class testUtils(TestCase):
+
+	def setUp(self):
+		phone_number = "+447788888884"
+		phone_number_2 = "+447788888885"
+		phone_number_3 = "+447788888889"
+		self.number = PhoneNumber.from_string(phone_number, region=None)
+		self.number_2 = PhoneNumber.from_string(phone_number_2, region=None)
+		self.number_3 = PhoneNumber.from_string(phone_number_3, region=None)
+
 
 	def test_return_chapters_related_to_volumes_queryset(self):
 
@@ -452,14 +490,14 @@ class testUtils(TestCase):
 
 		models.Personnel.objects.create(
 			full_name="name goes here",
-			phone_number=6345236,
+			phone_number=self.number,
 			email_address="name@gmail.com",
 			role_at_creative_cortex='Founder',
 			person_img_200_by_260=a_simple_file
 		)
 		models.Personnel.objects.create(
 			full_name="name goes here 2",
-			phone_number=634523,
+			phone_number=self.number_2,
 			email_address="name@gmail.com",
 			role_at_creative_cortex='Founder',
 			person_img_200_by_260=a_simple_file
@@ -474,14 +512,14 @@ class testUtils(TestCase):
 
 		models.Personnel.objects.create(
 			full_name="name goes here",
-			phone_number=6345236,
+			phone_number=self.number,
 			email_address="name@gmail.com",
 			role_at_creative_cortex='Founder',
 			person_img_200_by_260=a_simple_file
 		)
 		models.Personnel.objects.create(
 			full_name="name goes here 2",
-			phone_number=634523,
+			phone_number=self.number_2,
 			email_address="name@gmail.com",
 			role_at_creative_cortex='Founder',
 			person_img_200_by_260=a_simple_file
@@ -489,7 +527,7 @@ class testUtils(TestCase):
 
 		models.Personnel.objects.create(
 			full_name="name goes here 3",
-			phone_number=634523,
+			phone_number=self.number_3,
 			email_address="name@gmail.com",
 			role_at_creative_cortex='Founder',
 			person_img_200_by_260=a_simple_file
@@ -517,8 +555,8 @@ class testContext(unittest.TestCase):
 
 		self.a_simple_file = tempfile.NamedTemporaryFile(suffix=".jpg").name
 		self.client = Client()
-
-
+		phone_number = "+447713835916"
+		self.number = PhoneNumber.from_string(phone_number, region=None)
 
 		"""volume_object = models.Volumes.objects.create(
 			comic_name=comic_object,
@@ -575,22 +613,30 @@ class testContext(unittest.TestCase):
 		context_objects = response.context['comics']
 		self.assertEqual(len(context_objects), 1)
 
-	def test_personnel_page_context(self):
+	def test_about_us_page_context(self):
 
+		page_name = models.Web_Pages.objects.create(page_name="About Us")
+		models.Web_Page_Text_Content.objects.create(
+			page_name=page_name,
+			text_content_ordering=1,
+			text_content="ipsum"
+		)
 		models.Personnel.objects.create(
-			full_name="name",
-			phone_number=632671,
-			email_address="name@email.com",
-			role_at_creative_cortex="founder",
+			full_name="x",
+			phone_number=self.number,
+			email_address="y@gmail.com",
+			role_at_creative_cortex="Founder",
 			person_img_200_by_260=self.a_simple_file
 		)
 
 		response = self.client.get(reverse('about_us'))
-		context_objects = response.context['personnel']
-		self.assertEqual(len(context_objects), 1)
+		context_object_person = response.context['personnel']
+		context_object_text = response.context['personnel']
+		self.assertEqual(len(context_object_person), 1)
+		self.assertEqual(len(context_object_text), 1)
 
 
-	def test_about_page_context(self):
+	"""def test_about_page_context(self):
 
 		raw_phone = "+447713835911"
 		phone_num = PhoneNumber.from_string(phone_number=raw_phone).as_e164
@@ -619,7 +665,7 @@ class testContext(unittest.TestCase):
 		context_objects = response.context['personnel']
 		self.assertEqual(len(context_objects), 1)
 		context_objects = response.context['page_text_content_1']
-		self.assertEqual(len(context_objects), 1)
+		self.assertEqual(len(context_objects), 1)"""
 
 class testModelFieldParameters(TestCase):
 

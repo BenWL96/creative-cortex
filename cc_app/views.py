@@ -160,7 +160,7 @@ def Links(request):
 	page_text_content = links_page_obj.web_page_text_content_set.all().order_by('text_content_ordering')
 
 	print(page_text_content)
-	
+
 	context = utils.Pass_Links_Text_Return_Context(
 		page_text_content
 	)
