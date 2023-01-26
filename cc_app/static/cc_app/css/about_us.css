@@ -7,6 +7,21 @@
 }
 
 
+.form-label{
+	font-size: 25px;
+    font-weight: 300;
+    color: black;
+    font-family: 'Libre Franklin', sans-serif;
+}
+
+.form-button-text{
+	font-size: 20px;
+    font-weight: 700;
+    color: white;
+    font-family: 'Libre Franklin', sans-serif;
+    margin-top: 10px;
+}
+
 .about_descr{
 	font-size: 25px;
     font-weight: 300;
@@ -40,7 +55,7 @@
 }
 
 .rowwww_2{
-	flex-wrap: wrap-reverse;
+	flex-wrap: wrap-reverse !important;
 	display: flex;
 }
 
@@ -205,15 +220,30 @@
 	.col_2{
 		width: 70%;
 	}
+	.col_3{
+		width: 70%;
+	}
+
+	.col_4{
+		width: 30%;
+	}
 }
 
 @media(max-width: 900px) and (min-width: 700px){
 	.col_1{
-		width: 45%;
+		width: 50%;
 	}
 
 	.col_2{
-		width: 55%;
+		width: 50%;
+	}
+
+	.col_3{
+		width: 50%;
+	}
+
+	.col_4{
+		width: 50%;
 	}
 }
 
@@ -223,6 +253,13 @@
 	}
 
 	.col_2{
+		width: 100%;
+	}
+	.col_3{
+		width: 100%;
+	}
+
+	.col_4{
 		width: 100%;
 	}
 }
