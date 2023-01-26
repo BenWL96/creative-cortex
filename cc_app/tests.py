@@ -537,7 +537,11 @@ class testUtils(TestCase):
 
 	def test_Pass_Links_Text_Return_Context(self):
 
-
+		featured_video = models.Featured_Youtube_videos.objects.create(
+			video_name="vid 1",
+			video_ordering=1,
+			url="https://www.youtube.com/embed/Hf75Q0ir39w"
+		)
 		page_name = models.Web_Pages.objects.create(page_name="Links")
 		models.Web_Page_Text_Content.objects.create(
 			page_name=page_name,
@@ -551,10 +555,13 @@ class testUtils(TestCase):
 		)
 
 		web_page_text_objects = models.Web_Page_Text_Content.objects.all()
-		context = utils.Pass_Links_Text_Return_Context(web_page_text_objects)
-		print(len(context))
-		print(len(context))
-		self.assertEqual(len(context), 2)
+		context = utils.Pass_Links_Text_Return_Context(
+			featured_video,
+			web_page_text_objects
+		)
+
+
+		self.assertEqual(len(context), 3)
 
 	def test_Pass_About_Us_Text_Return_Context(self):
 
