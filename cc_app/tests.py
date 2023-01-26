@@ -1091,11 +1091,3 @@ class formInputTest(SimpleTestCase):
 			self.assertFalse(form.is_valid())
 			self.assertEquals(len(form.errors), 3)
 
-#Testing injection
-
-"""class formInputBadHeaderTest(SimpleTestCase):
-	def test_header_injection(self):
-		email = EmailMultiAlternatives('Subject\nInjection Test', 'Content',
-							 'from@example.com', ['to@example.com'])
-		self.assertRaises(BadHeaderError, email.message)
-"""
