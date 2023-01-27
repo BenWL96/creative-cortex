@@ -3,7 +3,7 @@ from django.core.validators import validate_email
 from django.core.exceptions import ValidationError
 
 
-class NameForm(forms.Form):
+class Name_Form(forms.Form):
 	your_name = forms.CharField(label='Your name', max_length=25)
 	email_address = forms.EmailField(label='Your email', max_length=50)
 	subject = forms.CharField(label='Subject', max_length=100)

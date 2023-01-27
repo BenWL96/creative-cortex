@@ -173,7 +173,7 @@ def About_Us(request):
 
 	if request.method == 'POST':
 
-		form = forms.NameForm(request.POST)
+		form = forms.Name_Form(request.POST)
 
 		if form.is_valid():
 
@@ -200,10 +200,10 @@ def About_Us(request):
 
 		else:
 			# form is not valid and so we must render error messages
-			form = forms.NameForm(request.POST)
+			form = forms.Name_Form(request.POST)
 	else:
 
-		form = forms.NameForm()
+		form = forms.Name_Form()
 
 	list_personnel = utils.assign_personnel_objects_even_boolean_return_list()
 
@@ -229,6 +229,8 @@ def Gallery(request):
 	context = {'gallery_images': ordered_gallery_img_objects}
 
 	return render(request, 'cc_app/gallery.html', context)
+
+
 
 def error404(request, exception):
 	return render(request, 'cc_app/error_404.html', status=404)

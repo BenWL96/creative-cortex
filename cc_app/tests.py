@@ -986,7 +986,7 @@ class WebNavigationTest(SimpleTestCase):
 class formInputTest(SimpleTestCase):
 
 		def test_form_success(self):
-			form = forms.NameForm(data={
+			form = forms.Name_Form(data={
 				'your_name': 'Alice',
 				'email_address': 'Alice@gmail.com',
 				'subject': 'Hi I Would Like To Inquire About This And That'
@@ -996,7 +996,7 @@ class formInputTest(SimpleTestCase):
 
 
 		def test_form_no_email_provided(self):
-			form = forms.NameForm(data={
+			form = forms.Name_Form(data={
 				'your_name': 'Alice',
 				'email_address': 'Alice',
 				'subject': 'Hi I Would Like To Inquire About This And That'
@@ -1005,7 +1005,7 @@ class formInputTest(SimpleTestCase):
 			self.assertFalse(form.is_valid())
 
 		def test_form_no_email_provided_for_errors(self):
-			form = forms.NameForm(data={
+			form = forms.Name_Form(data={
 				'your_name': 'Alice',
 				'email_address': 'Alice',
 				'subject': 'Hi I Would Like To Inquire About This And That'
@@ -1014,7 +1014,7 @@ class formInputTest(SimpleTestCase):
 			self.assertFalse(form.is_valid())
 
 		def test_form_subject_too_long(self):
-			form = forms.NameForm(data={
+			form = forms.Name_Form(data={
 				'your_name': 'Alice',
 				'email_address': 'Alice@gmail.com',
 				'subject': "Hi I Would Like To Inquire About This And That, "
@@ -1026,7 +1026,7 @@ class formInputTest(SimpleTestCase):
 			self.assertFalse(form.is_valid())
 
 		def test_form_subject_too_long_for_errors(self):
-			form = forms.NameForm(data={
+			form = forms.Name_Form(data={
 				'your_name': 'Alice',
 				'email_address': 'Alice@gmail.com',
 				'subject': "Hi I Would Like To Inquire About This And That, "
@@ -1039,7 +1039,7 @@ class formInputTest(SimpleTestCase):
 			self.assertIn("Ensure this value has at most 100 characters", str(form.errors))
 
 		def test_form_subject_too_short_for_errors(self):
-			form = forms.NameForm(data={
+			form = forms.Name_Form(data={
 				'your_name': 'Alice',
 				'email_address': 'Alice@gmail.com',
 				'subject': "Hi"
@@ -1049,7 +1049,7 @@ class formInputTest(SimpleTestCase):
 
 
 		def test_form_subject_too_short_and_false_email_for_errors(self):
-			form = forms.NameForm(data={
+			form = forms.Name_Form(data={
 				'your_name': 'Alice',
 				'email_address': 'Alicegmail.com',
 				'subject': "Hi"
@@ -1062,7 +1062,7 @@ class formInputTest(SimpleTestCase):
 
 
 		def test_form_subject_for_open_script_errors(self):
-			form = forms.NameForm(data={
+			form = forms.Name_Form(data={
 				'your_name': 'Alice',
 				'email_address': 'Alice@gmail.com',
 				'subject': "Hi<script>myNameIsQuentin"
@@ -1072,7 +1072,7 @@ class formInputTest(SimpleTestCase):
 			self.assertIn(errorMessage_1, str(form.errors))
 
 		def test_form_subject_for_close_script_errors(self):
-			form = forms.NameForm(data={
+			form = forms.Name_Form(data={
 				'your_name': 'Alice',
 				'email_address': 'Alice@gmail.com',
 				'subject': "Hi</script>myNameIsQuentin"
@@ -1086,7 +1086,7 @@ class formInputTest(SimpleTestCase):
 
 
 		def test_form_no_data(self):
-			form = forms.NameForm(data={})
+			form = forms.Name_Form(data={})
 
 			self.assertFalse(form.is_valid())
 			self.assertEquals(len(form.errors), 3)
