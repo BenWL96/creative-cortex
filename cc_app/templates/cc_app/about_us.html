@@ -28,6 +28,7 @@
         </div>
 
 
+        {% if page_text_content_1 %}
 
         <div class="cont_comic_about">
           <div class="container my-5">
@@ -35,7 +36,7 @@
 
             <!-- {{comic.comic_description}} -->
 
-            {% if page_text_content_1 %}
+            
 
       
 
@@ -43,12 +44,12 @@
 
 
 
-            {% endif %}
+            
           </p>
       
           </div>     
         </div>
-
+        {% endif %}
 
       {% for person in personnel %}
 
