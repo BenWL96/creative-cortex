@@ -179,17 +179,8 @@ def Pages(request, comic_param, volume_param, chapter_param, page_param):
 def Links(request):
 
 	featured_videos = models.Featured_Youtube_videos.objects.all().order_by("video_ordering")
-	links_page_obj = models.Web_Pages.objects.filter(page_name="Links")
-	# page_text_content = models.Web_Page_Text_Content.objects.select_related('page_name')
-
-	if len(links_page_obj) > 0:
-		page_text_content = links_page_obj[0].web_page_text_content_set.all().order_by('text_content_ordering')
-		header_img_url = links_page_obj[0].header_img_url
-	else:
-		print("There is no text for the links page")
-		page_text_content = "No text"
-		header_img_url = False
-
+	
+	page_text_content, header_img_url = utils.fetch_links_page_return_content_and_img_url()
 
 	context = utils.Pass_Links_Text_Return_Context(
 		featured_videos,

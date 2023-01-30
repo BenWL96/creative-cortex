@@ -361,6 +361,22 @@ def fetch_gallery_page_return_content_and_img_url():
 	return header_img_url
 
 
+def fetch_links_page_return_content_and_img_url():
+
+	links_page_obj = models.Web_Pages.objects.filter(page_name="Links")
+	# page_text_content = models.Web_Page_Text_Content.objects.select_related('page_name')
+
+	if len(links_page_obj) > 0:
+		page_text_content = links_page_obj[
+			0].web_page_text_content_set.all().order_by('text_content_ordering')
+		header_img_url = links_page_obj[0].header_img_url
+	else:
+		print("There is no text for the links page")
+		page_text_content = "No text"
+		header_img_url = False
+
+	return page_text_content, header_img_url
+
 def form_logic_about_us(request):
 	if request.method == 'POST':
 
