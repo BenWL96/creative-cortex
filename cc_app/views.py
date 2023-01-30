@@ -222,13 +222,7 @@ def About_Us(request):
 
 def Gallery(request):
 
-	gallery_page_obj = models.Web_Pages.objects.filter(page_name="Gallery")
-
-	if len(gallery_page_obj) > 0:
-		# If there is no img_url, then null will be passed I think
-		header_img_url = gallery_page_obj[0].header_img_url
-	else:
-		header_img_url = False
+	header_img_url = utils.fetch_gallery_page_return_content_and_img_url()
 
 	ordered_gallery_img_objects = models.Gallery_images.objects.all().order_by(
 		"gallery_img_placement_number"
