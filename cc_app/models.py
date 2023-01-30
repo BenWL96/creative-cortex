@@ -210,3 +210,8 @@ class Inquiries(models.Model):
 	class Meta:
 		verbose_name = "Inquiry"
 		verbose_name_plural = "Inquiries"
+
+class HeaderImages(models.Model):
+	header_img_id = models.AutoField(primary_key=True)
+	page_name = models.ForeignKey(Web_Pages, on_delete=models.CASCADE)
+	header_img_url = models.ImageField(storage=PrivateMediaStorage())

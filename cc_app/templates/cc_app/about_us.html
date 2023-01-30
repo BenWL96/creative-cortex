@@ -9,6 +9,17 @@
 
     {% block style %}
       <link href="{% static 'cc_app/css/about_us.css' %}" rel="stylesheet" type="text/css">
+
+      <!-- HEADER IMG -->
+      
+      <style>
+
+        .w-title{
+            background-image: url( "{% static 'cc_app/images/placeholders/comic_1.jpg' %}" );
+        }
+
+      </style>
+
     {% endblock %}
 
     
@@ -36,14 +47,7 @@
 
             <!-- {{comic.comic_description}} -->
 
-            
-
-      
-
                 {{page_text_content_1.text_content}}
-
-
-
             
           </p>
       
