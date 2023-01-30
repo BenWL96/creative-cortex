@@ -10,8 +10,19 @@
 
     {% block style %}
       <link href="{% static 'cc_app/css/comics.css' %}" rel="stylesheet" type="text/css">
-    {% endblock %}
 
+      <style>
+
+      .cont_1{
+          background-image: url( "{% static 'cc_app/images/placeholders/comic_1.jpg' %}" );
+          background-position: center bottom;
+          background-size: 100%;
+      }
+
+    </style>
+
+
+    {% endblock %}
     
   </head>
   <body>
@@ -28,14 +39,8 @@
 
         </div>
 
-        
 
-         <p class="p_text">
-          
-
-        </p>
-
-        <div class="d-flex flex-row cr1" style="background-image: url('..../static/cc_app/images/placeholders/comic_1.jpg');">
+        <div class="d-flex flex-row cr1" >
       {% for comic in comics %}
     
           <div class="flex-column c1">

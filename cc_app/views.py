@@ -214,16 +214,13 @@ def About_Us(request):
 	list_personnel = utils.assign_personnel_objects_even_boolean_return_list()
 
 	about_page_obj = models.Web_Pages.objects.filter(page_name="About Us")
-	#page_text_content = models.Web_Page_Text_Content.objects.select_related('page_name')
+
 	if len(about_page_obj) > 0:
 		page_text_content = about_page_obj.web_page_text_content_set.all().order_by('text_content_ordering')
 	else:
 		print("There is no text for the links page")
 		page_text_content = about_page_obj
 
-	#.all().order_by("id") .filter(page_name="About Us")
-
-	print(page_text_content)
 
 	context = utils.Pass_About_Us_Text_Return_Context(
 		form, list_personnel, page_text_content

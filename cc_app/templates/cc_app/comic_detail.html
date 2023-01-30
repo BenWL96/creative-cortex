@@ -10,6 +10,14 @@
 
     {% block style %}
       <link href="{% static 'cc_app/css/comic_detail.css' %}" rel="stylesheet" type="text/css">
+
+      <style type="text/css">
+      .cont_volume_2_cont{
+          background-image: url( "{% static 'cc_app/images/placeholders/comic_1.jpg' %}" );
+          background-position: center bottom;
+          background-size: 100%;
+      }
+      </style>
     {% endblock %}
 
     
@@ -43,7 +51,7 @@
       <div class="d-flex flex-row rowwww">
 
         <div class="cont_volum_2">
-          <div class="container my-3">
+          <div class="container my-3 cont_volume_2_cont">
             <center>
               <img src="{% static 'cc_app/images/volumes_page_placeholder_img.jpg' %}" class="v_pl_img">
             </center>
