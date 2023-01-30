@@ -7,6 +7,10 @@
 	margin-right: auto;
 }
 
+.wrapcol{
+	width: 100%;
+}
+
 
 @media(min-width: 950px){
 	.cr1 {

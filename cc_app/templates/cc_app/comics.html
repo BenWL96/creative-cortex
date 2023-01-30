@@ -35,21 +35,21 @@
 
         </p>
 
-        <div class="d-flex flex-row cr1">
+        <div class="d-flex flex-row cr1" style="background-image: url('..../static/cc_app/images/placeholders/comic_1.jpg');">
       {% for comic in comics %}
+    
+          <div class="flex-column c1">
+            <div class="container my-2 cont_1">
+              
+              <a href="{% url 'comic-detail' comic_param=comic.slug %}">
+                <img src="{{comic.comic_img_376_by_376.url}}" class="c_pl_img">
+              </a>
+              <a href="{% url 'comic-detail' comic_param=comic.slug %}" class="com_name">{comic}}
+              {{comic.slug}}</a>
+            </div>
+        
+          </div>   
 
-        <div class="flex-column c1">
-          <div class="container my-2 cont_1">
-            
-            <a href="{% url 'comic-detail' comic_param=comic.slug %}">
-              <img src="{{comic.comic_img_376_by_376.url}}" class="c_pl_img">
-            </a>
-            <a href="{% url 'comic-detail' comic_param=comic.slug %}" class="com_name">{comic}}
-            {{comic.slug}}</a>
-          </div>
-      
-        </div>   
-      
       {% endfor %}
 
 

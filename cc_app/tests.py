@@ -1091,3 +1091,6 @@ class formInputTest(SimpleTestCase):
 			self.assertFalse(form.is_valid())
 			self.assertEquals(len(form.errors), 3)
 
+
+if __name__ == "__main__":
+	unittest.main()

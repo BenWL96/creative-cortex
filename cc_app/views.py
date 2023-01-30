@@ -156,16 +156,22 @@ def Pages(request, comic_param, volume_param, chapter_param, page_param):
 def Links(request):
 
 	featured_videos = models.Featured_Youtube_videos.objects.all().order_by("video_ordering")
-	links_page_obj = models.Web_Pages.objects.get(page_name="Links")
+	links_page_obj = models.Web_Pages.objects.filter(page_name="Links")
 	# page_text_content = models.Web_Page_Text_Content.objects.select_related('page_name')
-	page_text_content = links_page_obj.web_page_text_content_set.all().order_by('text_content_ordering')
 
-	print(page_text_content)
+	if len(links_page_obj) > 0:
+		page_text_content = links_page_obj.web_page_text_content_set.all().order_by('text_content_ordering')
+	else:
+		print("There is no text for the links page")
+		page_text_content = links_page_obj
 
 	context = utils.Pass_Links_Text_Return_Context(
 		featured_videos,
 		page_text_content
 	)
+	print(page_text_content)
+
+
 
 	return render(request, 'cc_app/links.html', context)
 
@@ -207,9 +213,14 @@ def About_Us(request):
 
 	list_personnel = utils.assign_personnel_objects_even_boolean_return_list()
 
-	about_page_obj = models.Web_Pages.objects.get(page_name="About Us")
+	about_page_obj = models.Web_Pages.objects.filter(page_name="About Us")
 	#page_text_content = models.Web_Page_Text_Content.objects.select_related('page_name')
-	page_text_content = about_page_obj.web_page_text_content_set.all().order_by('text_content_ordering')
+	if len(about_page_obj) > 0:
+		page_text_content = about_page_obj.web_page_text_content_set.all().order_by('text_content_ordering')
+	else:
+		print("There is no text for the links page")
+		page_text_content = about_page_obj
+
 	#.all().order_by("id") .filter(page_name="About Us")
 
 	print(page_text_content)
