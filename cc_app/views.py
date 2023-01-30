@@ -217,9 +217,12 @@ def About_Us(request):
 
 	if len(about_page_obj) > 0:
 		page_text_content = about_page_obj[0].web_page_text_content_set.all().order_by('text_content_ordering')
+		#If there is no img_url, then null will be passed I think
 		header_img_url = about_page_obj[0].header_img_url
 	else:
 		print("There are no about page objects")
+
+		#This should be a boolean instead of "placeholder"
 		page_text_content = "Placeholder"
 
 
@@ -232,10 +235,19 @@ def About_Us(request):
 
 def Gallery(request):
 
+	gallery_page_obj = models.Web_Pages.objects.filter(page_name="Gallery")
+
+	if len(gallery_page_obj) > 0:
+		# If there is no img_url, then null will be passed I think
+		header_img_url = gallery_page_obj[0].header_img_url
+
 	ordered_gallery_img_objects = models.Gallery_images.objects.all().order_by(
 		"gallery_img_placement_number"
 	)
-	context = {'gallery_images': ordered_gallery_img_objects}
+	context = {
+		'gallery_images': ordered_gallery_img_objects,
+		'header_img_url': header_img_url
+	}
 
 	return render(request, 'cc_app/gallery.html', context)
 
