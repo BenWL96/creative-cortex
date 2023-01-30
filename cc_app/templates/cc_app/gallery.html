@@ -25,16 +25,6 @@
       <script src="{% static 'cc_app/javascript/masonry.pkgd.js' %}"></script>
       
 
-      <!-- HEADER IMG -->
-
-      <style>
-
-        .w-title{
-            background-image: url( "{% static 'cc_app/images/placeholders/comic_1.jpg' %}" );
-        }
-
-      </style>
-
     {% endblock %}
 
     
@@ -46,11 +36,23 @@
 
       
 
-        <div class="w-title">
-          <h1 class="Title">
+        {% if header_img_url %}
+
+          <div class="w-title" style="background-image: url( '{{header_img_url.url}}' )">
+            <h1 class="Title">
                 Gallery
-          </h1>
-        </div>
+            </h1>
+          </div>
+
+        {% else %}
+
+          <div class="w-title" style="background-color: black;">
+            <h1 class="Title">
+                Gallery
+            </h1>
+          </div>
+
+      {% endif %}
 
         
         <div class="wrap_g">

@@ -11,14 +11,7 @@
       <link href="{% static 'cc_app/css/about_us.css' %}" rel="stylesheet" type="text/css">
 
       <!-- HEADER IMG -->
-      
-      <style>
 
-        .w-title{
-            background-image: url( "{% static 'cc_app/images/placeholders/comic_1.jpg' %}" );
-        }
-
-      </style>
 
     {% endblock %}
 
@@ -32,11 +25,23 @@
 
       <div class="w">
 
-        <div class="w-title">
-          <h1 class="Title">
-                About Us  
-          </h1>
-        </div>
+        {% if header_img_url %}
+
+          <div class="w-title" style="background-image: url( '{{header_img_url.url}}' )">
+            <h1 class="Title">
+                About Us
+            </h1>
+          </div>
+
+        {% else %}
+
+          <div class="w-title" style="background-color: black;">
+            <h1 class="Title">
+                About Us
+            </h1>
+          </div>
+
+        {% endif %}
 
 
         {% if page_text_content_1 %}

@@ -19,13 +19,6 @@
           background-size: 100%;
       }
 
-
-      /* HEADER IMG */
-      
-      .w-title{
-        background-image: url( "{% static 'cc_app/images/placeholders/comic_1.jpg' %}" );
-      }
-
     </style>
 
 
@@ -39,12 +32,23 @@
 
       <div class="w">
 
-        <div class="w-title">
-          <h1 class="Title">
-            Comics
-          </h1>
+        {% if header_img_url %}
 
-        </div>
+          <div class="w-title" style="background-image: url( '{{header_img_url.url}}' )">
+            <h1 class="Title">
+                Comics
+            </h1>
+          </div>
+
+        {% else %}
+
+          <div class="w-title" style="background-color: black;">
+            <h1 class="Title">
+                Comics
+            </h1>
+          </div>
+
+      {% endif %}
 
 
         <div class="d-flex flex-row cr1" >

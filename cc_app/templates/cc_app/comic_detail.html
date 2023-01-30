@@ -18,12 +18,6 @@
           background-size: 100%;
       }
 
-      /* HEADER IMG */
-
-      .w-title{
-        background-image: url( "{% static 'cc_app/images/placeholders/comic_1.jpg' %}" );
-      }
-
       </style>
     {% endblock %}
 
@@ -35,11 +29,25 @@
     
     <div class="w">
 
-      <div class="w-title">
-        <h1 class="Title">
-          {{comic.comic_name}}
-        </h1>
-      </div>
+      {% if header_img_url %}
+
+          <div class="w-title" style="background-image: url( '{{header_img_url.url}}' )">
+            <h1 class="Title">
+                {{comic.comic_name}}
+            </h1>
+          </div>
+
+        {% else %}
+
+          <div class="w-title" style="background-color: black;">
+            <h1 class="Title">
+                {{comic.comic_name}}
+            </h1>
+          </div>
+
+      {% endif %}
+
+
 
 
     <div class="cont_breadcrumb">
