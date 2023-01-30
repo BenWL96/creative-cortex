@@ -348,7 +348,7 @@ def fetch_about_us_page_return_content_and_img_url():
 	return page_text_content, header_img_url
 
 
-def fetch_gallery_page_return_content_and_img_url():
+def fetch_gallery_page_return_and_img_url():
 
 	gallery_page_obj = models.Web_Pages.objects.filter(page_name="Gallery")
 
@@ -359,6 +359,20 @@ def fetch_gallery_page_return_content_and_img_url():
 		header_img_url = False
 
 	return header_img_url
+
+def fetch_comic_detail_page_return_img_url():
+
+	comic_detail_page_obj = models.Web_Pages.objects.filter(
+		page_name="Comic Detail")
+
+	if len(comic_detail_page_obj) > 0:
+		# If there is no img_url, then null will be passed I think
+		header_img_url = comic_detail_page_obj[0].header_img_url
+	else:
+		header_img_url = False
+
+	return header_img_url
+
 
 
 def fetch_links_page_return_content_and_img_url():

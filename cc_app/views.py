@@ -48,13 +48,7 @@ def Comic_Detail(request, comic_param):
 	volumes_with_chapters_and_pages = utils.take_volumes_with_chap_return_list_volumes_that_have_chapters_and_pages(list_volumes_with_chapters)
 
 	#HEADER IMG
-
-	comic_detail_page_obj = models.Web_Pages.objects.filter(page_name="Comic Detail")
-	if len(comic_detail_page_obj) > 0:
-		# If there is no img_url, then null will be passed I think
-		header_img_url = comic_detail_page_obj[0].header_img_url
-	else:
-		header_img_url = False
+	header_img_url = utils.fetch_comic_detail_page_return_img_url()
 
 
 	volumes_related_count = len(volumes_with_chapters_and_pages)
@@ -179,7 +173,7 @@ def Pages(request, comic_param, volume_param, chapter_param, page_param):
 def Links(request):
 
 	featured_videos = models.Featured_Youtube_videos.objects.all().order_by("video_ordering")
-	
+
 	page_text_content, header_img_url = utils.fetch_links_page_return_content_and_img_url()
 
 	context = utils.Pass_Links_Text_Return_Context(
@@ -213,7 +207,7 @@ def About_Us(request):
 
 def Gallery(request):
 
-	header_img_url = utils.fetch_gallery_page_return_content_and_img_url()
+	header_img_url = utils.fetch_gallery_page_return_img_url()
 
 	ordered_gallery_img_objects = models.Gallery_images.objects.all().order_by(
 		"gallery_img_placement_number"
