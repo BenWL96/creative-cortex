@@ -12,8 +12,20 @@ def Landing_Page(request):
 	return render(request, 'cc_app/landing_page.html', context)
 
 def Comics(request):
+
+	comics_page_obj = models.Web_Pages.objects.filter(page_name="Comics")
+
+	if len(comics_page_obj) > 0:
+		# If there is no img_url, then null will be passed I think
+		header_img_url = comics_page_obj[0].header_img_url
+	else:
+		header_img_url = False
+
 	comics = models.Comics.objects.all()
-	context = {'comics': comics}
+	context = {
+		'comics': comics,
+		'header_img_url': header_img_url
+	}
 	return render(request, 'cc_app/comics.html', context)
 
 def Comic_Detail(request, comic_param):
@@ -34,6 +46,15 @@ def Comic_Detail(request, comic_param):
 
 	list_volumes_with_chapters = utils.take_volumes_of_comic_return_list_volumes_with_chapters(volumes_related_to_comic_param)
 	volumes_with_chapters_and_pages = utils.take_volumes_with_chap_return_list_volumes_that_have_chapters_and_pages(list_volumes_with_chapters)
+
+	#HEADER IMG
+
+	comic_detail_page_obj = models.Web_Pages.objects.filter(page_name="Comic Detail")
+	if len(comic_detail_page_obj) > 0:
+		# If there is no img_url, then null will be passed I think
+		header_img_url = comic_detail_page_obj[0].header_img_url
+	else:
+		header_img_url = False
 
 
 	volumes_related_count = len(volumes_with_chapters_and_pages)
@@ -57,7 +78,8 @@ def Comic_Detail(request, comic_param):
 			'comic': comic,
 			'volumes': volumes_with_chapters_and_pages,
 			'chapters': chapters,
-			'comic_personnel_related': comic_personnel_related
+			'comic_personnel_related': comic_personnel_related,
+			'header_img_url': header_img_url
 		}
 
 	else:
@@ -65,7 +87,8 @@ def Comic_Detail(request, comic_param):
 		print("comic found but volumes not found")
 		context = {
 			'comic': comic,
-			'comic_personnel_related': comic_personnel_related
+			'comic_personnel_related': comic_personnel_related,
+			'header_img_url': header_img_url
 		}
 
 	return render(request, "cc_app/comic_detail.html", context)
@@ -165,6 +188,8 @@ def Links(request):
 	else:
 		print("There is no text for the links page")
 		page_text_content = "No text"
+		header_img_url = False
+
 
 	context = utils.Pass_Links_Text_Return_Context(
 		featured_videos,
@@ -224,6 +249,7 @@ def About_Us(request):
 
 		#This should be a boolean instead of "placeholder"
 		page_text_content = "Placeholder"
+		header_img_url = False
 
 
 	context = utils.Pass_About_Us_Text_Return_Context(
@@ -240,6 +266,8 @@ def Gallery(request):
 	if len(gallery_page_obj) > 0:
 		# If there is no img_url, then null will be passed I think
 		header_img_url = gallery_page_obj[0].header_img_url
+	else:
+		header_img_url = False
 
 	ordered_gallery_img_objects = models.Gallery_images.objects.all().order_by(
 		"gallery_img_placement_number"
