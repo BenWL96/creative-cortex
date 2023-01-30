@@ -28,15 +28,21 @@
 
         <div class="wrap_g">
 
+          {% if page_text_content_1 %}
           <p class="l_text">
             
-             {% if page_text_content_1 %}
-
                 {{page_text_content_1.text_content}}
 
-            {% endif %}
+          </p>
+          {% else %}
+
+          <p class="l_text">
+            
+                Please insert text content for web page.
 
           </p>
+
+          {% endif %}
 
 
 
