@@ -161,17 +161,17 @@ def Links(request):
 
 	if len(links_page_obj) > 0:
 		page_text_content = links_page_obj[0].web_page_text_content_set.all().order_by('text_content_ordering')
+		header_img_url = links_page_obj[0]
 	else:
 		print("There is no text for the links page")
 		page_text_content = "No text"
 
 	context = utils.Pass_Links_Text_Return_Context(
 		featured_videos,
-		page_text_content
+		page_text_content,
+		header_img_url
 	)
 	print(page_text_content)
-
-
 
 	return render(request, 'cc_app/links.html', context)
 
@@ -217,13 +217,14 @@ def About_Us(request):
 
 	if len(about_page_obj) > 0:
 		page_text_content = about_page_obj[0].web_page_text_content_set.all().order_by('text_content_ordering')
+		header_img_url = about_page_obj[0]
 	else:
 		print("There are no about page objects")
 		page_text_content = "Placeholder"
 
 
 	context = utils.Pass_About_Us_Text_Return_Context(
-		form, list_personnel, page_text_content
+		form, list_personnel, page_text_content, header_img_url
 	)
 
 	return render(request, 'cc_app/about_us.html', context)
