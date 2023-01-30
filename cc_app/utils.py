@@ -348,9 +348,11 @@ def fetch_about_us_page_return_content_and_img_url():
 	return page_text_content, header_img_url
 
 
-def fetch_gallery_page_return_and_img_url():
+def fetch_gallery_page_return_img_url():
 
 	gallery_page_obj = models.Web_Pages.objects.filter(page_name="Gallery")
+
+	print(gallery_page_obj)
 
 	if len(gallery_page_obj) > 0:
 		# If there is no img_url, then null will be passed I think
