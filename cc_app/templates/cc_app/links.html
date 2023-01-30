@@ -10,16 +10,7 @@
     {% block style %}
       <link href="{% static 'cc_app/css/links.css' %}" rel="stylesheet" type="text/css">
 
-      <!-- HEADER IMG -->
-
-      <style>
-
-        .w-title{
-          background-image: url( "{% static 'cc_app/images/placeholders/comic_1.jpg' %}" );
-        }
-
-      </style> 
-      
+    
     {% endblock %}
 
     
@@ -27,14 +18,31 @@
   <body>
     
     {% block body %}
+
+
       <div class="w">
 
-        <div class="w-title">
-          <h1 class="Title">
-              Links
-          </h1>
-        </div>
+        {% if header_img_url %}
 
+          <div class="w-title" style="background-image: url( '{{header_img_url.url}}' )">
+            <h1 class="Title">
+                Links
+            </h1>
+          </div>
+
+        {% else %}
+
+          <div class="w-title" style="background-color: black;">
+            <h1 class="Title">
+                Links
+            </h1>
+          </div>
+
+        {% endif %}
+
+
+        
+        
 
 
         <div class="wrap_g">

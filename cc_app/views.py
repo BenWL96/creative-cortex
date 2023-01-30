@@ -161,7 +161,7 @@ def Links(request):
 
 	if len(links_page_obj) > 0:
 		page_text_content = links_page_obj[0].web_page_text_content_set.all().order_by('text_content_ordering')
-		header_img_url = links_page_obj[0]
+		header_img_url = links_page_obj[0].header_img_url
 	else:
 		print("There is no text for the links page")
 		page_text_content = "No text"
@@ -217,7 +217,7 @@ def About_Us(request):
 
 	if len(about_page_obj) > 0:
 		page_text_content = about_page_obj[0].web_page_text_content_set.all().order_by('text_content_ordering')
-		header_img_url = about_page_obj[0]
+		header_img_url = about_page_obj[0].header_img_url
 	else:
 		print("There are no about page objects")
 		page_text_content = "Placeholder"
