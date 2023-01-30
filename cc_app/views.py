@@ -238,19 +238,8 @@ def About_Us(request):
 
 	list_personnel = utils.assign_personnel_objects_even_boolean_return_list()
 
-	about_page_obj = models.Web_Pages.objects.filter(page_name="About Us")
 
-	if len(about_page_obj) > 0:
-		page_text_content = about_page_obj[0].web_page_text_content_set.all().order_by('text_content_ordering')
-		#If there is no img_url, then null will be passed I think
-		header_img_url = about_page_obj[0].header_img_url
-	else:
-		print("There are no about page objects")
-
-		#This should be a boolean instead of "placeholder"
-		page_text_content = "Placeholder"
-		header_img_url = False
-
+	page_text_content, header_img_url = utils.fetch_about_us_page_return_content_and_img_url()
 
 	context = utils.Pass_About_Us_Text_Return_Context(
 		form, list_personnel, page_text_content, header_img_url
