@@ -159,6 +159,7 @@ class Gallery_images(models.Model):
 class Web_Pages(models.Model):
 	id = models.AutoField(primary_key=True)
 	page_name = models.CharField(max_length=25, unique=True)
+	header_img_url = models.ImageField(storage=PrivateMediaStorage(), null=True)
 
 	def __str__(self):
 		return self.page_name
@@ -210,8 +211,3 @@ class Inquiries(models.Model):
 	class Meta:
 		verbose_name = "Inquiry"
 		verbose_name_plural = "Inquiries"
-
-class HeaderImages(models.Model):
-	header_img_id = models.AutoField(primary_key=True)
-	page_name = models.ForeignKey(Web_Pages, on_delete=models.CASCADE)
-	header_img_url = models.ImageField(storage=PrivateMediaStorage())
