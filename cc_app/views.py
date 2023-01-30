@@ -202,39 +202,11 @@ def Links(request):
 
 def About_Us(request):
 
-	if request.method == 'POST':
+	form = utils.form_logic_about_us(request)
+	#This needs to be named something else to make it more clear...
+	if form == True:
+		return HttpResponseRedirect('/about-us/')
 
-		form = forms.Name_Form(request.POST)
-
-		if form.is_valid():
-
-			clean_form = form.cleaned_data
-
-			# This finally takes the information from that dictionary and then
-			# accesses the data within the fields.
-
-			# This also completes all the custom validation.
-			your_name = clean_form['your_name']
-			your_email = clean_form['email_address']
-			your_subject = clean_form['subject']
-
-			models.Inquiries.objects.create(
-				name=your_name,
-				email=your_email,
-				inquiry=your_subject
-			)
-
-			print("inquiry has been added to the database")
-
-				# Redirect To ThankYouPage
-			return HttpResponseRedirect('/about-us/')
-
-		else:
-			# form is not valid and so we must render error messages
-			form = forms.Name_Form(request.POST)
-	else:
-
-		form = forms.Name_Form()
 
 	list_personnel = utils.assign_personnel_objects_even_boolean_return_list()
 

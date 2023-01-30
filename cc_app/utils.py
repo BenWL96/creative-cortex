@@ -1,4 +1,4 @@
-from . import models
+from . import models, forms
 from django.shortcuts import redirect
 import re
 
@@ -346,3 +346,41 @@ def fetch_about_us_page_return_content_and_img_url():
 		header_img_url = False
 
 	return page_text_content, header_img_url
+
+
+def form_logic_about_us(request):
+	if request.method == 'POST':
+
+		form = forms.Name_Form(request.POST)
+
+		if form.is_valid():
+
+			clean_form = form.cleaned_data
+
+			# This finally takes the information from that dictionary and then
+			# accesses the data within the fields.
+
+			# This also completes all the custom validation.
+			your_name = clean_form['your_name']
+			your_email = clean_form['email_address']
+			your_subject = clean_form['subject']
+
+			models.Inquiries.objects.create(
+				name=your_name,
+				email=your_email,
+				inquiry=your_subject
+			)
+
+			print("inquiry has been added to the database")
+
+			# Redirect To ThankYouPage
+			return True
+
+		else:
+			# form is not valid and so we must render error messages
+			form = forms.Name_Form(request.POST)
+	else:
+
+		form = forms.Name_Form()
+
+	return form
