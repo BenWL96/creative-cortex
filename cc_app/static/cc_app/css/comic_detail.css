@@ -449,11 +449,16 @@ p {
     margin-right: auto;
     height: 100%;
 }
+.wrap-sub-wrap{
+	background-color: turquoise;
+    width: 100px;
+    margin-left: 0;
+}
 
 .sub-title{
     color: black;
     font-weight: 900;
-
+    font-style: italic;
     margin-left: 15px;
     font-family: 'Barlow', sans-serif;
     text-shadow: #fafafa 1px 1px 1px;
