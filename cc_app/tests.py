@@ -663,9 +663,25 @@ class testUtils(TestCase):
 		img_url = utils.fetch_gallery_page_return_img_url()
 		self.assertNotEqual(img_url, False)
 
+	def test_fetch_links_page_return_content_and_img_url_with_obj(self):
+		page_name = models.Web_Pages.objects.create(
+			page_name="Links"
+		)
+		models.Web_Page_Text_Content.objects.create(
+			page_name=page_name,
+			text_content_ordering=1,
+			text_content="ipsum"
+		)
+		page_text_content, header_img_url = utils.fetch_links_page_return_content_and_img_url()
+		self.assertNotEqual(header_img_url, False)
+		self.assertNotEqual(page_text_content, "No text")
 
-
-
+	def test_fetch_comic_detail_page_return_img_url_no_obj(self):
+		models.Web_Pages.objects.create(
+			page_name="Comic Detail"
+		)
+		img_url = utils.fetch_comic_detail_page_return_img_url()
+		self.assertNotEqual(img_url, False)
 
 class testContext(unittest.TestCase):
 
