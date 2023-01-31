@@ -25,10 +25,10 @@ class testPatternNameResolveToView(unittest.TestCase):
 		url = reverse('comic-detail', kwargs=kwargs)
 		print(resolve(url).func)
 		print(resolve(url).func)
-	"""
+
 	def test_Pages_View(self):
 		url = reverse('pages')
-		self.assertEqual(resolve(url).func, views.Pages)"""
+		self.assertEqual(resolve(url).func, views.Pages)
 
 	def test_Links_View(self):
 		url = reverse('links')
@@ -42,13 +42,17 @@ class testPatternNameResolveToView(unittest.TestCase):
 		url = reverse('gallery')
 		self.assertEqual(resolve(url).func, views.Gallery)
 
-	"""def test_404_View(self):
+	"""Debug should be set to False before testing these
+	
+	def test_404_View(self):
 		url = reverse('error_404')
 		self.assertEqual(resolve(url).func, views.Error_404)
 
 	def test_500_View(self):
 		url = reverse('error_500')
-		self.assertEqual(resolve(url).func, views.Error_500)"""
+		self.assertEqual(resolve(url).func, views.Error_500)
+	
+	"""
 
 class testViewsAndTemplates(TestCase):
 
@@ -191,9 +195,12 @@ class testViewsAndTemplates(TestCase):
 		self.assertEqual(response.status_code, 200)
 
 		self.assertTemplateUsed(response, 'cc_app/gallery.html')
+		self.assertTemplateUsed(response, 'cc_app/index.html')
 
 
-	"""def test_404_template(self):
+	"""Debug should be set to False before testing these
+	
+	def test_404_template(self):
 		#This Test Is Failing
 		response = self.client.get(reverse('error_404'))
 		self.assertEqual(response.status_code, 200)
@@ -210,7 +217,7 @@ class testViewsAndTemplates(TestCase):
 
 		self.assertTemplateUsed(response,
 								template_name='cc_app/error_500.html')
-"""
+	"""
 
 
 class testUtils(TestCase):
@@ -299,8 +306,6 @@ class testUtils(TestCase):
 		page_param = 1512
 		type_check_passed = utils.check_type_page_param_boolean(page_param)
 		self.assertEqual(type_check_passed, True)
-
-
 
 	def test_find_chapter_from_params_or_redirect_NO_OBJECTS(self):
 		comic_param, volume_param, chapter_param, page_param = "comic_1", 1, 1, 1
@@ -616,7 +621,7 @@ class testUtils(TestCase):
 		#'header_img_url': header_img_url,
 		#'page_text_content_1': page_text_content[0],
 		#'page_text_content_2': page_text_content[1]
-		
+
 		self.assertEqual(len(context), 5)
 
 	def test_about_us_page_return_content_and_img_url_no_obj(self):
@@ -646,34 +651,6 @@ class testContext(unittest.TestCase):
 		phone_number = "+447713835916"
 		self.number = PhoneNumber.from_string(phone_number, region=None)
 
-		"""volume_object = models.Volumes.objects.create(
-			comic_name=comic_object,
-			volume_title="Volume Name",
-			vol_number=1,
-			date_published=datetime.date.today()
-		)
-
-		chapter_object = models.Chapters.objects.create(
-			volume=volume_object,
-			chapter_title="Chapter Name 1",
-			chapter_number=1,
-		)
-		models.Pages.objects.create(
-			chapter=chapter_object,
-			page_number=1,
-			page_img=self.a_simple_file
-		)
-
-		models.Personnel.objects.create(
-			full_name="name 1",
-			phone_number=521615,
-			email_address="name@email.com",
-			role_at_creative_cortex="founder",
-			person_img_200_by_260=self.a_simple_file
-		)"""
-
-
-
 	def test_landing_page_context(self):
 
 		models.Landing_Page_Images.objects.create(
@@ -681,8 +658,7 @@ class testContext(unittest.TestCase):
 			landing_page_img_description="image number 1",
 			landing_page_img_n_by_n=self.a_simple_file
 		)
-
-
+		
 		response = self.client.get(reverse('landing_page'))
 		context_objects = response.context['carousel_img_objects']
 		self.assertEqual(len(context_objects), 1)
