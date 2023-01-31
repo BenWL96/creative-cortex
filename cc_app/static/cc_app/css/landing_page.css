@@ -32,17 +32,21 @@
 	};
 }
 
+.title_wrap{
+	z-index: 100;
+  	position: fixed;
+  	text-align: center;
+  	margin-top: 25vh;
+  	width: 100vw;
+}
 
 .cc_text{
     font-weight: 900;
     font-family: 'Barlow', sans-serif;
     text-shadow: white 2px 2px 2px;
-  	z-index: 100;
-  	position: fixed;
-  	text-align: center;
-  	margin-top: 25vh;
-  	width: 100vw;
   	text-decoration: underline;
+  	margin-left: auto;
+  	margin-right: auto;
  
 }
 
@@ -50,10 +54,17 @@
 	.cc_text{
 		font-size: 100px;
 	}
+
+	.cc_text{
+		width: 400px;
+	}
 }
 
 @media(max-width: 500px){
 	.cc_text{
 		font-size: 20vw;
+	}
+	.cc_text{
+		width: 100%;
 	}
 }

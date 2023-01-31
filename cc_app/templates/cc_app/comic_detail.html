@@ -215,20 +215,20 @@
 
 
 
-
-
-
       {% if volumes %}
       <!-- check if volumes, if not display an error -->
 
+
         {% for volume in volumes %}
 
+          <div class="wrap-subtitle">
+            <h3 class="sub-title">
+                vol: {{volume.vol_number}}
+            </h3>
+          </div>
+
+
           <div class="d-flex flex-row rowwww_2">
-            <p class="volume_number">
-              
-                
-              vol: {{volume.vol_number}}
-            </p>
 
             <div class="cont_volum_4">
               <div class="container"> 
