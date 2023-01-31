@@ -46,25 +46,27 @@ p {
 
 .volume_num{
 	font-size: 20px;
-	font-weight: 500;
+    font-weight: 300;
+    color: black;
+    font-family: 'Libre Franklin', sans-serif;
 	text-align: left;
-	color: black;
-	font-family: 'Lora', serif;
+	
 	padding-top: 6px;
 
 }
 
 .volume_num_head{
 	font-size: 25px;
-	font-weight: 700;
 	text-align: left;
 	color: black;
-	font-family: 'Lora', serif;
-	text-shadow: black 1px 1px 1px;
+    font-weight: 900;
+    font-family: 'Barlow', sans-serif;
+    text-shadow: #fafafa 1px 1px 1px;
 }
 
 .volume_name{
-	font-size: 40px;
+	font-size: 45px;
+	font-weight: 900;
 	color: black;
 	font-family: 'Barlow', sans-serif;
 	text-shadow: black 1px 1px 1px;
@@ -80,13 +82,14 @@ p {
 
 .volume_descr{
 	font-size: 18px;
-	font-weight: 500;
-	color: black;
-	font-family: 'Lora', serif;
+    font-weight: 300;
+    color: black;
+    font-family: 'Libre Franklin', sans-serif;
 }
 
 .comic_about_name{
-	font-size: 40px;
+	font-size: 45px;
+	font-weight: 900;
 	color: black;
 	font-family: 'Barlow', sans-serif;
 	text-shadow: black 1px 1px 1px;
@@ -94,10 +97,10 @@ p {
 }
 
 .comic_about_descr{
-	font-size: 18px;
-	font-weight: 500;
-	color: black;
-	font-family: 'Lora', serif;
+	font-size: 25px;
+    font-weight: 300;
+    color: black;
+    font-family: 'Libre Franklin', sans-serif;
 	text-align: left;
 }
 
