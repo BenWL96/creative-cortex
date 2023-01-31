@@ -342,7 +342,7 @@ def fetch_about_us_page_return_content_and_img_url():
 		print("There are no about page objects")
 
 		# This should be a boolean instead of "placeholder"
-		page_text_content = "Placeholder"
+		page_text_content = "No text"
 		header_img_url = False
 
 	return page_text_content, header_img_url

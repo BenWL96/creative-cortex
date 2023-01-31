@@ -604,6 +604,22 @@ class testUtils(TestCase):
 		context = utils.Pass_About_Us_Text_Return_Context(personnel, web_page_text_objects)
 		print(context)
 
+
+	def test_about_us_page_return_content_and_img_url_no_obj(self):
+		page_text_content, header_img_url = utils.fetch_about_us_page_return_content_and_img_url()
+		self.assertEqual(header_img_url, False)
+		self.assertEqual(page_text_content, "No text")
+
+	def test_fetch_gallery_page_return_img_url_no_obj(self):
+		img_url = utils.fetch_gallery_page_return_img_url()
+		self.assertEqual(img_url, False)
+
+	def test_fetch_links_page_return_content_and_img_url_no_obj(self):
+		page_text_content, header_img_url = utils.fetch_links_page_return_content_and_img_url()
+		self.assertEqual(header_img_url, False)
+		self.assertEqual(page_text_content, "No text")
+
+
 class testContext(unittest.TestCase):
 
 	def setUp(self):
