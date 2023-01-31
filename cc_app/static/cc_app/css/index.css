@@ -43,7 +43,7 @@
 /* popover css */
 
 @media(min-width: 400px){
-    .img_pop{
+    .offcanvas-page-img{
 
         width: 100%;
         height: 100px;
@@ -52,12 +52,12 @@
 
 
 @media(max-width: 400px){
-    .img_pop{
+    .offcanvas-page-img{
         width: 100%;
     }
 }
 
-.img_pop{
+.offcanvas-page-img{
     border-radius: 25px;
     border-color: #8878c3;
     border-style: solid;
@@ -67,7 +67,7 @@
 
 }
 
-.img_pop:hover{
+.offcanvas-page-img:hover{
     opacity: 95%;
     box-shadow: #fafafa 0px 0px 0px;
 }
@@ -123,7 +123,7 @@
 
 /* info button img */
 
-.info-img{
+.info-icon{
     height: 50px;
     width: 50px;
     position: fixed;
@@ -135,7 +135,7 @@
     opacity: 75%;
 }
 
-.info-img:hover{
+.info-icon:hover{
     opacity: 100%;
     box-shadow: black 0px 0px 0px;
 }
