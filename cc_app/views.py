@@ -189,12 +189,10 @@ def About_Us(request):
 
 	form = utils.form_logic_about_us(request)
 	#This needs to be named something else to make it more clear...
-	if form == True:
+	if type(form) == bool:
 		return HttpResponseRedirect('/about-us/')
 
-
 	list_personnel = utils.assign_personnel_objects_even_boolean_return_list()
-
 
 	page_text_content, header_img_url = utils.fetch_about_us_page_return_content_and_img_url()
 

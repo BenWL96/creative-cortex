@@ -394,6 +394,7 @@ def fetch_links_page_return_content_and_img_url():
 	return page_text_content, header_img_url
 
 def form_logic_about_us(request):
+
 	if request.method == 'POST':
 
 		form = forms.Name_Form(request.POST)

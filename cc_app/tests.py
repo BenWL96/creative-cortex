@@ -161,7 +161,10 @@ class testViewsAndTemplates(TestCase):
 
 	def test_About_Us_Template(self):
 
-		page_name = models.Web_Pages.objects.create(page_name="About Us")
+		page_name = models.Web_Pages.objects.create(
+			page_name="About Us",
+			header_img_url=self.a_simple_file
+		)
 		models.Web_Page_Text_Content.objects.create(
 			page_name=page_name,
 			text_content_ordering=1,
@@ -175,6 +178,8 @@ class testViewsAndTemplates(TestCase):
 			person_img_200_by_260=self.a_simple_file
 		)
 		response = self.client.get(reverse('about_us'))
+		print(response)
+		print(response)
 		self.assertEqual(response.status_code, 200)
 
 		self.assertTemplateUsed(response, 'cc_app/about_us.html')
@@ -553,14 +558,15 @@ class testUtils(TestCase):
 			text_content="ipsum"
 		)
 
-		web_page_text_objects = models.Web_Page_Text_Content.objects.all()
+		page_text_content, header_img_url = utils.fetch_links_page_return_content_and_img_url()
+
 		context = utils.Pass_Links_Text_Return_Context(
 			featured_video,
-			web_page_text_objects
+			page_text_content,
+			header_img_url
 		)
 
-
-		self.assertEqual(len(context), 3)
+		self.assertEqual(len(context), 4)
 
 	def test_Pass_About_Us_Text_Return_Context(self):
 
@@ -619,6 +625,9 @@ class testUtils(TestCase):
 		self.assertEqual(header_img_url, False)
 		self.assertEqual(page_text_content, "No text")
 
+	def test_fetch_comic_detail_page_return_img_url_no_obj(self):
+		img_url = utils.fetch_comic_detail_page_return_img_url()
+		self.assertEqual(img_url, False)
 
 class testContext(unittest.TestCase):
 
