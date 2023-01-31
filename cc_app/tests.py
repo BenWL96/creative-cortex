@@ -594,6 +594,7 @@ class testUtils(TestCase):
 		)
 
 		page_name = models.Web_Pages.objects.create(page_name="About Us")
+
 		models.Web_Page_Text_Content.objects.create(
 			page_name=page_name,
 			text_content_ordering=1,
@@ -605,11 +606,18 @@ class testUtils(TestCase):
 			text_content="ipsum"
 		)
 
-		web_page_text_objects = models.Web_Page_Text_Content.objects.all()
+		page_text_content, header_img_url = utils.fetch_about_us_page_return_content_and_img_url()
 		personnel = models.Personnel.objects.all()
-		context = utils.Pass_About_Us_Text_Return_Context(personnel, web_page_text_objects)
-		print(context)
+		form = forms.Name_Form
+		context = utils.Pass_About_Us_Text_Return_Context(form, personnel, page_text_content, header_img_url)
 
+		#'form': form,
+		#'personnel': list_personnel,
+		#'header_img_url': header_img_url,
+		#'page_text_content_1': page_text_content[0],
+		#'page_text_content_2': page_text_content[1]
+		
+		self.assertEqual(len(context), 5)
 
 	def test_about_us_page_return_content_and_img_url_no_obj(self):
 		page_text_content, header_img_url = utils.fetch_about_us_page_return_content_and_img_url()
