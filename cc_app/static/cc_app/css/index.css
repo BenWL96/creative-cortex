@@ -25,7 +25,7 @@
 }
 
 
-.img_pop_logo{
+.offcanvas-logo{
     width: 60px;
     height: 40px;
     border-color: black;
@@ -34,7 +34,7 @@
     box-shadow: turquoise 1px 1px 1px;
 }
 
-.img_pop_logo:hover{
+.offcanvas-logo:hover{
     opacity: 75%;
     cursor: pointer;
 }
