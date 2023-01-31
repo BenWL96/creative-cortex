@@ -73,8 +73,8 @@
 }
 
 .volume_num{
-	font-size: 25px;
-	font-weight: 700;
+	font-size: 28px;
+	font-weight: 500;
 	text-align: left;
 	color: black;
 	font-family: 'Libre Franklin', sans-serif;
@@ -82,8 +82,8 @@
 }
 
 .volume_num_head{
-	font-size: 25px;
-	font-weight: 800;
+	font-size: 28px;
+	font-weight: 700;
 	text-align: left;
     color: black;
     font-family: 'Libre Franklin', sans-serif;
@@ -91,16 +91,16 @@
 
 
 .volume_num_2{
-	font-size: 25px;
-	font-weight: 700;
+	font-size: 28px;
+	font-weight: 500;
 	color: black;
 	font-family: 'Libre Franklin', sans-serif;
 
 }
 
 .volume_num_head_2{
-	font-size: 25px;
-	font-weight: 800;
+	font-size: 28px;
+	font-weight: 700;
 	color: black;
 	font-family: 'Libre Franklin', sans-serif;
 }
