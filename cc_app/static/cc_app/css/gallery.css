@@ -105,7 +105,7 @@
 
 /* Lightbox */
 
-.gallery-img_description{
+.gallery_img-description{
     font-size: 20px;
     font-weight: 300;
     color: black;
@@ -116,7 +116,7 @@
 
 }
 
-.gallery-img_title{
+.gallery_img-title{
     font-weight: 900;
     font-size: 40px !important;
     font-family: 'Barlow', sans-serif !important;
@@ -128,22 +128,22 @@
 @media(min-width: 769px){
     
 
-    .gallery-img_title{
+    .gallery_img-title{
         color: black;
     }
 
-    .gallery-img_description{
+    .gallery_img-description{
         color: black;
     }
 }
 
 @media(max-width: 769px){
 
-    .gallery-img_title{
+    .gallery_img-title{
         color: white !important;
     }
 
-    .gallery-img_description{
+    .gallery_img-description{
         color: white !important;
     }
 }
