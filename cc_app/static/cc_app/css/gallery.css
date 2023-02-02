@@ -1,5 +1,5 @@
 
-.wrap_g{
+.gallery-wrapper{
     width: 80%;
     margin-left: auto;
     margin-right: auto;
@@ -37,16 +37,16 @@
     opacity: 75%;
 }
 
-.grid{
+.gallery{
     padding-top: 55px;
 }
 
 @media(min-width: 800px){
-    .grid-item{
+    .gallery_item{
             width: 200px;
         }
 
-    .grid{
+    .gallery{
         column-width: 33%;
     }
 }
@@ -58,11 +58,11 @@
     }
 
 
-    .grid-item{
+    .gallery_item{
         width: 200px;
     }
 
-    .grid{
+    .gallery{
         column-width: 50%;
     }
 
@@ -76,11 +76,11 @@
         width: 100%;
     }
 
-    .grid-item{
+    .gallery_item{
        width: 100%;
     }
 
-    .grid{
+    .gallery{
         column-width: 100%;
     }
 
@@ -88,7 +88,7 @@
 
 
 
-.grid-item{
+.gallery_item{
     margin-bottom: 2px;
     margin-left: 1px;
     margin-right: 1px;

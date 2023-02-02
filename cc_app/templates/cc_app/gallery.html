@@ -55,20 +55,20 @@
       {% endif %}
 
         
-        <div class="wrap_g">
+        <div class="gallery-wrapper">
 
           <!--<p class="gal_title">
             Gallery Name
           </p>-->
 
 
-          <div class="grid" id ="grid">
+          <div class="gallery" id ="gallery">
             <!-- do not use banner in Masonry layout -->
 
             <!-- for every img passed -->
             {% for image in gallery_images %}
 
-              <div class="grid-item">
+              <div class="gallery_item">
 
                 <!-- pass in the object properties such as title and description and possibly date-->
 
@@ -120,7 +120,7 @@
       <script type="text/javascript">
 
         // Keep the grid hidden until this timer is finished
-        masonry = document.getElementById("grid");
+        masonry = document.getElementById("gallery");
         masonry.style.display = "none";
 
 
@@ -129,7 +129,7 @@
         // Display the grid now that the timer has finished.
         masonry.style.display = "block";
         
-        var $grid = $('.grid').masonry({
+        var $grid = $('.gallery').masonry({
 
           horizontalOrder: true
 
