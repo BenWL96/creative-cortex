@@ -7,21 +7,6 @@
 }
 
 
-.form-label{
-	font-size: 25px;
-    font-weight: 300;
-    color: black;
-    font-family: 'Libre Franklin', sans-serif;
-}
-
-.form-button-text{
-	font-size: 20px;
-    font-weight: 700;
-    color: white;
-    font-family: 'Libre Franklin', sans-serif;
-    margin-top: 10px;
-}
-
 .about_descr{
 	font-size: 25px;
     font-weight: 300;
@@ -331,3 +316,20 @@ div.flex-row{
 div.flex-col{
   flex-grow: 1;
 }
+
+
+.form-label{
+	font-size: 25px;
+    font-weight: 300;
+    color: black;
+    font-family: 'Libre Franklin', sans-serif;
+}
+
+.form-button-text{
+	font-size: 20px;
+    font-weight: 700;
+    color: white;
+    font-family: 'Libre Franklin', sans-serif;
+    margin-top: 10px;
+}
+
