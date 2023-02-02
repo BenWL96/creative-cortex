@@ -1,5 +1,5 @@
 
-.cont_comic_about{
+.text-wrapper{
 	width: 80%;
 	margin-left: auto;
 	margin-right: auto;
@@ -7,7 +7,7 @@
 }
 
 
-.about_descr{
+.about-us-text{
 	font-size: 25px;
     font-weight: 300;
     color: black;
@@ -249,7 +249,7 @@
 	}
 }
 
-.black_green{
+.page-background{
 	background-size: 100vw 100%;
     background-repeat: no-repeat;
     background-image: url("../images/about_us_colours.jpg");
