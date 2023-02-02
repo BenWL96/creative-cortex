@@ -27,13 +27,13 @@
         <div class="carousel-inner">
 
             <div class="carousel-item active" data-bs-interval="4000">
-              <img src="{% static 'cc_app/images/placeholder_1.jpg' %}" class="carousel_img">
+              <img src="{% static 'cc_app/images/placeholder_1.jpg' %}" class="landing-page-img">
             </div>
             <div class="carousel-item" data-bs-interval="4000">
-              <img src="{% static 'cc_app/images/placeholder_1.jpg' %}" class="carousel_img">
+              <img src="{% static 'cc_app/images/placeholder_1.jpg' %}" class="landing-page-img">
             </div>
             <div class="carousel-ite" data-bs-interval="4000">
-              <img src="{% static 'cc_app/images/500_error_img.jpg' %}" class="carousel_img">
+              <img src="{% static 'cc_app/images/500_error_img.jpg' %}" class="landing-page-img">
             </div>
 
           <!--
@@ -41,7 +41,7 @@
               <img class="d-block w-100 h-100">
             </div>
 
-          {% for image in carousel_img_objects %}
+          {% for image in landing-page-img_objects %}
             <div class="carousel-item" data-bs-interval="4000">
               <img src="{{image.landing_page_img.url}}" class="d-block w-100 h-100">
             </div>
