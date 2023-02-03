@@ -150,11 +150,16 @@ p {
 .rowwww{
 	flex-wrap: wrap;
 	display: flex;
-	padding-top: 70px;
+	padding-top: 45px;
 }
 
 .rowwww_2{
 	flex-wrap: wrap-reverse;
+	display: flex;
+}
+
+.rowwww_3{
+	flex-wrap: wrap;
 	display: flex;
 }
 
@@ -223,6 +228,7 @@ p {
 	margin-left: auto;
 	margin-right: auto;
 	text-align: left;
+	padding-top: 45px;
 }
 
 @media(min-width: 900px){
