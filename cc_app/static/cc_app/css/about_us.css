@@ -21,9 +21,7 @@
 /* media queries should be added for anything larger */
 
 .v_pl_img{
-	outline: solid;
-	outline-color: turquoise;
-	outline-width: 2px;
+
 	border-radius: 100px;
 	box-shadow: black 5px 5px 5px;
 
@@ -206,11 +204,11 @@
 		width: 70%;
 	}
 	.col_3{
-		width: 70%;
+		width: 40%;
 	}
 
 	.col_4{
-		width: 30%;
+		width: 60%;
 	}
 }
 
