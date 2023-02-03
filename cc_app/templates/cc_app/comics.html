@@ -13,14 +13,13 @@
 
       <style>
 
-      .cont_1{
-          background-image: url( "{% static 'cc_app/images/placeholders/comic_1.jpg' %}" );
-          background-position: center bottom;
-          background-size: 100%;
-      }
+        .cont_1{
+            background-image: url( "{% static 'cc_app/images/placeholders/comic_1.jpg' %}" );
+            background-position: center bottom;
+            background-size: 100%;
+        }
 
-    </style>
-
+      </style>
 
     {% endblock %}
     
@@ -55,10 +54,10 @@
       {% for comic in comics %}
     
           <div class="flex-column c1">
-            <div class="cont_1">
+            <div class="cont_1" data-tilt data-tilt-max="15">
               
               <a href="{% url 'comic-detail' comic_param=comic.slug %}">
-                <img src="{{comic.comic_img_376_by_376.url}}" class="c_pl_img">
+                <img src="{{comic.comic_img_376_by_376.url}}" class="c_pl_img" id="c_pl_img" data-tilt data-tilt-max="15">
               </a>
               <a href="{% url 'comic-detail' comic_param=comic.slug %}" class="com_name">
               {{comic.comic_name}}</a>
@@ -76,6 +75,7 @@
 
     </div>
 
+    <script type="text/javascript" src="{% static 'cc_app/javascript/vanilla-tilt/vanilla-tilt.js' %}"></script>
 
 
     {% endblock %}

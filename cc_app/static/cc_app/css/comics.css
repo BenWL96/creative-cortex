@@ -90,20 +90,22 @@
 	box-shadow: black 5px 5px 5px;
 	margin-left: 12.5px;
 
+	/* Related to tilt.js */
+	transform: translateZ(30px)
+	
+
 }
 
-.c_pl_img:hover {
-	box-shadow: black 0px 0px 0px;
-}
 
-.c_pl_img:hover{
-	opacity: 35%;
-}
 
 .cont_1{
 	margin-left: auto;
 	margin-right: auto;
 	padding-top: 25px;
+
+	/* Related to tilt.js */
+	transform-style: preserve-3d;
+	transform: perspective(1000px);
 }
 
 .p_text{
