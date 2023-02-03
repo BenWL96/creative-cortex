@@ -26,15 +26,18 @@
       <div id="carouselExampleFade" class="carousel carousel-fade" data-bs-ride="carousel">
         <div class="carousel-inner">
 
+          {% for image in carousel_img_objects %}
             <div class="carousel-item active" data-bs-interval="4000">
-              <img src="{% static 'cc_app/images/placeholder_1.jpg' %}" class="landing-page-img">
+              <img src="{{image.landing_page_img_n_by_n.url}}" class="landing-page-img">
             </div>
-            <div class="carousel-item" data-bs-interval="4000">
+          {% endfor %}
+
+            <!--<div class="carousel-item" data-bs-interval="4000">
               <img src="{% static 'cc_app/images/placeholder_1.jpg' %}" class="landing-page-img">
             </div>
             <div class="carousel-item" data-bs-interval="4000">
               <img src="{% static 'cc_app/images/500_error_img.jpg' %}" class="landing-page-img">
-            </div>
+            </div>-->
 
           <!--
             <div class="carousel-item active" data-bs-interval="10">
