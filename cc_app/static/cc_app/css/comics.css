@@ -12,7 +12,35 @@
 	width: 100%;
 }
 
-@media(min-width: 450px){
+.c1{
+	padding-top: 25px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@media(min-width: 500px){
+
+	.cr1{
+		width: 80%;
+	}
+
+}
+
+@media(max-width: 500px){
+
+	.cr1{
+		width: 100%;
+	}
+	
+}
+
+
+
+
+@media(min-width: 500px){
+
+
+
 	.c1{
 		width: 350px;
 	}
@@ -32,6 +60,8 @@
 
 
 @media(max-width: 450px){
+
+
 	.c1{
 		width: 100%;
 	}
