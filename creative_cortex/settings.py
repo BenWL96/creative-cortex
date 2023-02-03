@@ -11,7 +11,6 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['creative-cortex.herokuapp.com']
 
-
 INSTALLED_APPS = [
     'baton',
     'django.contrib.admin',
@@ -26,7 +25,8 @@ INSTALLED_APPS = [
     'storages',
     'baton.autodiscover',
 
-    "phonenumber_field"
+    'phonenumber_field',
+    'admin_reorder'
 
 
 ]
@@ -40,6 +40,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'admin_reorder.middleware.ModelAdminReorder'
 ]
 
 ROOT_URLCONF = 'creative_cortex.urls'
@@ -103,10 +104,6 @@ else:
     MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
-
-
-
-
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -140,3 +137,33 @@ STATIC_URL = 'static/'
 STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+
+ADMIN_REORDER = (
+    # Keep original label and models
+
+    # Rename app
+    #{'app': 'cc_app', 'label': 'creative-cortex-cms'},
+
+    # Reorder app models
+    {'app': 'cc_app', 'models': (
+        'cc_app.Comics',
+        'cc_app.Volumes',
+        'cc_app.Chapters',
+        'cc_app.Pages',
+        'cc_app.Personnel',
+        'cc_app.Comic_Personnel',
+        'cc_app.Landing_Page_Images',
+        'cc_app.Gallery_images',
+        'cc_app.Web_Pages',
+        'cc_app.Web_Page_Text_Content',
+        'cc_app.Featured_Youtube_videos'
+        'cc_app.Inquiries',
+
+
+    )},
+
+)
+
+
