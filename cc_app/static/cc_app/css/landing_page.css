@@ -36,7 +36,6 @@
 	z-index: 100;
   	position: fixed;
   	text-align: center;
-  	margin-top: 25vh;
   	width: 100vw;
 }
 
@@ -50,10 +49,23 @@
  
 }
 
-@media(min-width: 500px){
+@media(min-width: 800px){
+	.title-text{
+		font-size: 150px;
+		width: 700px;
+	}
+	.title-wrapper{
+		margin-top: 12vh;
+	}
+}
+
+@media(min-width: 500px) and (max-width: 800px){
 	.title-text{
 		font-size: 100px;
 		width: 400px;
+	}
+	.title-wrapper{
+		margin-top: 25vh;
 	}
 
 }
@@ -62,5 +74,8 @@
 	.title-text{
 		font-size: 20vw;
 		width: 100%;
+	}
+	.title-wrapper{
+		margin-top: 25vh;
 	}
 }
