@@ -139,10 +139,36 @@
 
 
 
+.wrap-subtitle{
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+    margin-top: 70px;
+}
+
+
+@media(min-width: 1000px){
+    .wrap-subtitle{
+        width: 640px;
+    }
+
+}
+
+@media(max-width: 1000px){
+    .wrap-subtitle{
+        width: 80%;
+    }
+
+}
+
 .sub-title{
     color: black;
     font-weight: 900;
     margin-left: 15px;
     font-family: 'Barlow', sans-serif;
     text-shadow: #fafafa 1px 1px 1px;
+}
+
+.vid-wrap-parent{
+    padding-top: 20px;
 }
