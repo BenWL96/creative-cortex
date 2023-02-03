@@ -19,8 +19,6 @@
 
 .hamburger:hover {
     opacity: 100%;
-    border-style: dashed;
-    border-color: black;
     background-color: #fafafa;
 }
 
