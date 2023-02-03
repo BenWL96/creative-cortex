@@ -19,10 +19,11 @@ p {
 	width: 80%;
 	margin-left: auto;
 	margin-right: auto;
+	padding-top: 15px;
 }
 
 .breadcrumb{
-	width: 200px;
+	width: 100%;
 }
 
 .breadcrumb-item{
@@ -45,6 +46,7 @@ p {
 }
 
 .volume_num{
+	padding-left: 25px;
 	font-size: 20px;
     font-weight: 300;
     color: black;
@@ -56,8 +58,9 @@ p {
 }
 
 .volume_num_head{
+
 	font-size: 25px;
-	text-align: left;
+	padding-left: 25px;
 	color: black;
     font-weight: 900;
     font-family: 'Barlow', sans-serif;
@@ -147,6 +150,7 @@ p {
 .rowwww{
 	flex-wrap: wrap;
 	display: flex;
+	padding-top: 70px;
 }
 
 .rowwww_2{
@@ -308,6 +312,7 @@ p {
 	}
 
 	.cont_volum_3{
+		padding-top: 45px;
 		width: 80%;
 		margin-left: auto;
 		margin-right: auto;
@@ -372,6 +377,7 @@ p {
 	}
 
 	.cont_volum_3{
+		padding-top: 45px;
 		width: 100%;
 	}
 
