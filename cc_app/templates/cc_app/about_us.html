@@ -81,7 +81,7 @@
                     <p class="col1-text">Name:</p>
                   </div>
                   <div class="text-container_col2">
-                    <p class="volume_num">{{person.full_name}}</p>
+                    <p class="col2-text">{{person.full_name}}</p>
                   </div>
                 </div>
                 
@@ -90,7 +90,7 @@
           </div>
         {% else %}
 
-          <div class="d-flex flex-row rowwww_2">
+          <div class="d-flex flex-row personnel_row2">
 
             
 
@@ -98,11 +98,11 @@
               <div class="container my-3 personnel_text-container">
               
                 <div class="d-flex flex-row text-container_row">
-                  <div class="col_3">
-                    <p class="volume_num_head_2">Name:</p>
+                  <div class="text-container_col3">
+                    <p class="col3-text">Name:</p>
                   </div>
-                  <div class="col_4">
-                    <p class="volume_num_2">{{person.full_name}}</p>
+                  <div class="text-container_col4">
+                    <p class="col4-text">{{person.full_name}}</p>
                   </div>
                 </div>
               
@@ -129,13 +129,13 @@
 
             <hr class="separator">
 
-      <div class="wrap-subtitle">
+      <div class="subtitle-wrapper">
           <h2 class="sub-title">
               Inquiries
           </h2>
         </div>
 
-      <div class="wrap-form">
+      <div class="form-wrapper">
 
         <form action="{% url 'about_us' %}" method="post" class="needs-validation" novalidate>
           {% csrf_token %}
