@@ -13,15 +13,6 @@
 }
 
 
-.l_email_text{
-
-    color: black;
-    padding-top: 25px;
-    font-weight: 900;
-    font-family: 'Barlow', sans-serif;
-    text-shadow: #fafafa 1px 1px 1px;
-}
-
 
 .wrap_g{
     width: 80%;
@@ -136,7 +127,6 @@
     outline-color: black;
     outline-width: 10px;
 }
-
 
 
 .wrap-subtitle{
