@@ -175,8 +175,8 @@
     background-color: #fafafa;
 }
 
-@media(max-width: 500px){
-    
+@media(min-width: 500px){
+
     .w{
         width: 80vw;
     }
