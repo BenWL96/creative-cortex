@@ -45,17 +45,17 @@
         
 
 
-        <div class="wrap_g">
+        <div class="text-wrapper">
 
           {% if page_text_content_1 %}
-          <p class="l_text">
+          <p class="links-text1">
             
                 {{page_text_content_1.text_content}}
 
           </p>
           {% else %}
 
-          <p class="l_text">
+          <p class="links-text1">
             
                 Please insert text content for web page.
 
@@ -65,41 +65,21 @@
 
 
 
-          <div class="d-flex flex-row parent_g_row">
+          <div class="d-flex flex-row icons-row-parent">
 
-            <div class="d-flex flex-row g_row">
+            <div class="d-flex flex-row icons-row-child">
 
-              <div class="img_cont">
+              <div class="icons-wrapper">
 
-                <img src="{% static 'cc_app/images/links/links.jpg' %}" class="gallery_img">
+                <img src="{% static 'cc_app/images/links/links.jpg' %}" class="icons">
               
                 <br><br>
 
               </div>
 
-              <div class="img_cont">
+              <div class="icons-wrapper">
 
-                <img src="{% static 'cc_app/images/links/reddit.jpg' %}" class="gallery_img">
-              
-                <br><br>
-
-              </div>
-
-            </div>
-
-            <div class="d-flex flex-row g_row">
-
-              <div class="img_cont">
-
-                <img src="{% static 'cc_app/images/links/instagram.jpg' %}" class="gallery_img">
-              
-                <br><br>
-
-              </div>
-
-              <div class="img_cont">
-
-                <img src="{% static 'cc_app/images/links/twitter.jpg' %}" class="gallery_img">
+                <img src="{% static 'cc_app/images/links/reddit.jpg' %}" class="icons">
               
                 <br><br>
 
@@ -107,19 +87,39 @@
 
             </div>
 
-            <div class="d-flex flex-row g_row">
+            <div class="d-flex flex-row icons-row-child">
 
-              <div class="img_cont">
+              <div class="icons-wrapper">
 
-                <img src="{% static 'cc_app/images/links/discord.jpg' %}" class="gallery_img">
+                <img src="{% static 'cc_app/images/links/instagram.jpg' %}" class="icons">
               
                 <br><br>
 
               </div>
 
-              <div class="img_cont">
+              <div class="icons-wrapper">
 
-                <img src="{% static 'cc_app/images/links/behance.jpg' %}" class="gallery_img">
+                <img src="{% static 'cc_app/images/links/twitter.jpg' %}" class="icons">
+              
+                <br><br>
+
+              </div>
+
+            </div>
+
+            <div class="d-flex flex-row icons-row-child">
+
+              <div class="icons-wrapper">
+
+                <img src="{% static 'cc_app/images/links/discord.jpg' %}" class="icons">
+              
+                <br><br>
+
+              </div>
+
+              <div class="icons-wrapper">
+
+                <img src="{% static 'cc_app/images/links/behance.jpg' %}" class="icons">
               
                 <br><br>
 
@@ -141,20 +141,20 @@
 
          
 
-           <div class="wrap-subtitle">
+           <div class="subtitle-wrapper">
               <h2 class="sub-title">
                   Videos
               </h2>
             </div>
 
 
-          <div class="wrap-ft-vids">
+          <div class="video-section">
 
 
             {% for feature in featured_videos %}
-            <div class="vid-wrap-parent">
-              <div class="vid-wrap">
-                <iframe src="{{feature.url}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen class="yt-vid"></iframe>
+            <div class="video-wrapper-parent">
+              <div class="video-wrapper-child">
+                <iframe src="{{feature.url}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen class="video"></iframe>
               </div>
             </div>
             {% endfor %}
