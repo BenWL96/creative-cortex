@@ -68,7 +68,7 @@
 
 }
 
-.volume_num_head{
+.col1-text{
 	font-size: 28px;
 	font-weight: 700;
 	text-align: left;
@@ -200,11 +200,11 @@
 
 
 @media(min-width: 900px){
-	.col_1{
+	.text-container_col1{
 		width: 30%;
 	}
 
-	.col_2{
+	.text-container_col2{
 		width: 70%;
 	}
 	.col_3{
@@ -217,11 +217,11 @@
 }
 
 @media(max-width: 900px) and (min-width: 700px){
-	.col_1{
+	.text-container_col1{
 		width: 50%;
 	}
 
-	.col_2{
+	.text-container_col2{
 		width: 50%;
 	}
 
@@ -235,11 +235,11 @@
 }
 
 @media(max-width: 700px){
-	.col_1{
+	.text-container_col1{
 		width: 100%;
 	}
 
-	.col_2{
+	.text-container_col2{
 		width: 100%;
 	}
 	.col_3{
