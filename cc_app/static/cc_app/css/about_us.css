@@ -23,19 +23,19 @@
 /* currently this represents phone screens */
 /* media queries should be added for anything larger */
 
-.v_pl_img{
+.personnel_img{
 
 	border-radius: 100px;
 	box-shadow: black 5px 5px 5px;
 
 }	
 
-.v_pl_img:hover{
+.personnel_img:hover{
 	box-shadow: black 0px 0px 0px;
 }	
 
 
-.rowwww{
+.personnel_row1{
 	flex-wrap: wrap;
 	display: flex;
 	padding-top: 70px;
@@ -51,7 +51,7 @@
 	
 }
 
-.cont_volum_2{
+.personnel_col1{
 	flex-grow: 0;
 }
 
@@ -118,7 +118,7 @@
 		padding-top: 25px;
 	}
 
-	.cont_volum_2{
+	.personnel_col1{
 		width: 35vw;
 	}
 
@@ -127,7 +127,7 @@
 	}
 
 	
-	.v_pl_img{
+	.personnel_img{
 		width: 200px;
 		height: 200px;
 	}
@@ -152,7 +152,7 @@
 
 
 
-	.cont_volum_2{
+	.personnel_col1{
 		width: 80%;
 		margin-left: auto;
 		margin-right: auto;
@@ -167,7 +167,7 @@
 
 
 
-	.v_pl_img{
+	.personnel_img{
 		width: 200px;
 		height: 200px;
 	}
@@ -184,7 +184,7 @@
 		padding-top: 0px;
 	}
 
-	.cont_volum_2{
+	.personnel_col1{
 		width: 100%;
 	}
 
@@ -192,7 +192,7 @@
 		width: 100%;
 	}
 	
-	.v_pl_img{
+	.personnel_img{
 	width: 100%;
 	}
 
