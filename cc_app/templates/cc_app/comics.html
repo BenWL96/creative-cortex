@@ -54,15 +54,20 @@
       {% for comic in comics %}
     
           <div class="flex-column c1">
-            <div class="cont_1" data-tilt data-tilt-max="15">
-              
-              <a href="{% url 'comic-detail' comic_param=comic.slug %}">
-                <img src="{{comic.comic_img_376_by_376.url}}" class="c_pl_img" id="c_pl_img" data-tilt data-tilt-max="15">
-              </a>
-              <a href="{% url 'comic-detail' comic_param=comic.slug %}" class="com_name">
-              {{comic.comic_name}}</a>
+
+            <div class="cont_1" data-tilt>
+              <div class="img_wrapper" data-tilt data-tilt-scale="0.8">
+                <img src="{{comic.comic_img_376_by_376.url}}" class="c_pl_img" id="c_pl_img" onclick="comicRedirect('{% url 'comic-detail' comic_param=comic.slug %}')">
+              </div>
+
+              <div class="container my-3">
+                
+                <a href="{% url 'comic-detail' comic_param=comic.slug %}" class="com_name">
+                {{comic.comic_name}}</a>
+              </div>
             </div>
-        
+           
+
           </div>   
 
       {% endfor %}
@@ -77,6 +82,13 @@
 
     <script type="text/javascript" src="{% static 'cc_app/javascript/vanilla-tilt/vanilla-tilt.js' %}"></script>
 
+    <script type="text/javascript">
+      function comicRedirect(url){
+        alert(url);
+        window
+      }
+
+    </script>
 
     {% endblock %}
 

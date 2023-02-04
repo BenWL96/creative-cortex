@@ -1,5 +1,4 @@
 
-
 .cr1 {
 	display: flex;
 	flex-wrap: wrap;
@@ -16,6 +15,10 @@
 	padding-top: 25px;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+.hyperlink_wrap{
+	padding-top: 80px;
 }
 
 @media(min-width: 500px){
@@ -39,14 +42,16 @@
 
 @media(min-width: 500px){
 
-
+	.img_wrapper{
+		margin-left: 37.5px;
+	}
 
 	.c1{
 		width: 350px;
 	}
 
 	.c_pl_img{
-		width: 300px;
+		width: 250px;
 	}
 
 	.cont_1{
@@ -87,12 +92,11 @@
 	border-color: turquoise;
 	border-width: 2px;
 	border-style: solid;
-	box-shadow: black 5px 5px 5px;
-	margin-left: 12.5px;
+	margin-left: auto;
+	margin-right: auto;
 
 	/* Related to tilt.js */
-	transform: translateZ(30px)
-	
+	transform: translateZ(100px);
 
 }
 
@@ -107,6 +111,9 @@
 	padding-top: 25px;
 
 	/* Related to tilt.js */
+}
+
+.img_wrapper{
 	transform-style: preserve-3d;
 	transform: perspective(1000px);
 }
@@ -123,6 +130,7 @@
 	color: black;
 	text-shadow: black 1px 1px 1px;
 	padding-left: 20px;
+
 }
 
 .com_name:hover{
