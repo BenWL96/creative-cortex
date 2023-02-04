@@ -403,7 +403,18 @@ p {
 	width: 100%;
 	}
 
+	@media(min-width: 400px){
+		.v_pl_img{
+			width: 100% !important;
+		}
+	}
+
 	
+	@media(max-width: 400px){
+		.v_pl_img{
+			width: 80% !important;
+		}
+	}
 	.cont_volum{
 		width: 80%;
 		margin-left: auto;
