@@ -218,7 +218,7 @@ p{
 
 
 .icons{
-    border-radius: 5px;
+    border-radius: 2px;
     border-color: turquoise;
     border-style: solid;
     border-width: 1px;
@@ -239,8 +239,6 @@ p{
 
 .powered-row-parent {
     margin-top: 10px;
-    width: 264px;
-    padding-left: 3px;
     color: #fafafa;
 
 }
@@ -253,10 +251,28 @@ p{
     .icons-row-parent{
         margin-left: 10%;
     }
+
+    .powered-row-parent {
+   
+        width: 264px;
+        padding-left: 3px;
+    }
+
+    .icons{
+        height: 35px;
+        width: 35px;
+        margin-left: 3px;
+        margin-right: 3px;
+    }
+
+    .icons-row-parent {
+        width: 264px;
+
+    }
 }
 
 /* Info icon + 10px padding either side */
-@media(max-width: 700px){
+@media(max-width: 700px) and (min-width: 400px){
     .powered-row-parent{
         margin-left: 70px;
     }
@@ -264,5 +280,53 @@ p{
     .icons-row-parent{
         margin-left: 70px;
     }
+
+    .powered-row-parent {
+   
+        width: 264px;
+        padding-left: 3px;
+    }
+
+    .icons{
+        height: 35px;
+        width: 35px;
+        margin-left: 3px;
+        margin-right: 3px;
+    }
+
+    .icons-row-parent {
+        width: 264px;
+
+    }
+
 }
+
+@media(max-width: 400px){
+    .powered-row-parent{
+        margin-left: 70px;
+    }
+
+    .icons-row-parent{
+        margin-left: 70px;
+    }
+
+    .powered-row-parent {
+   
+        width: 200px;
+        padding-left: 2px;
+    }
+
+    .icons{
+        height: 22px;
+        width: 22px;
+        margin-left: 2px;
+        margin-right: 2px;
+    }
+
+    .icons-row-parent {
+        width: 200px;
+
+    }
+}
+
 
