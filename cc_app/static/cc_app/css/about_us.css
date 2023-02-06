@@ -38,7 +38,6 @@
 /* media queries should be added for anything larger */
 
 .personnel_img{
-
 	border-radius: 100px;
 	box-shadow: black 5px 5px 5px;
 
@@ -121,6 +120,7 @@
 
 
 @media(max-width: 900px){
+
 	.personnel_row1{
 		padding-top: 35px;
 	}
@@ -131,6 +131,7 @@
 	.personnel_img{
 		width: 70%;
 	}
+
 }
 
 
@@ -175,12 +176,9 @@
 		text-align: left;
 	}
 
-
 	.personnel_text-container{
 		padding-top: 0px;
 	}
-
-
 
 	.personnel_col1{
 		width: 95%;
@@ -194,6 +192,9 @@
 		margin-right: auto;
 	}
 
+	.personnel_img{
+		width: 70%;
+	}
 
 
 }
@@ -203,25 +204,26 @@
 
 @media(max-width: 500px){
 
+
 	.personnel_text-container{
 		padding-top: 0px;
 	}
 
 	.personnel_col1{
-		width: 80%;
+		width: 90%;
 		margin-left: auto;
 		margin-right: auto;
 	}
 
 	.personnel_col2{
-		width: 80%;
+		width: 90%;
 		margin-left: auto;
 		margin-right: auto;
 	}
 	
 	.personnel_img{
-	width: 80%;
-	margin-left: auto;
+		width: 100%;
+		margin-left: auto;
 		margin-right: auto;
 	}
 
@@ -405,12 +407,12 @@ div.error{
   font-weight: bold;
   }
 
-div.flex-row{
+.form-row{
   flex-wrap: wrap;
   width: 100%;
 }
 
-div.flex-col{
+.form-col{
   flex-grow: 1;
 }
 
