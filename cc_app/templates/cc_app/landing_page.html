@@ -23,24 +23,31 @@
             <p class="title-text">Creative Cortex</p>
           </div>
       </div>
-        
       </div>
- 
+      
+      <div class="title-wrapper">
+            <p class="title-text">Creative Cortex</p>
+      </div>
 
+       <center>
+          <div id="carouselExampleFade" class="carousel carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-inner">
+
+              <div class="carousel-item active" data-bs-interval="200">
+                
+              </div>
+
+              {% for image in carousel_img_objects %}
+                <div class="carousel-item" data-bs-interval="5000">
+                  <img src="{{image.landing_page_img_n_by_n.url}}" class="landing-page-img">
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+          </center>
       
 
-      <center>
-      <div id="carouselExampleFade" class="carousel carousel-fade" data-bs-ride="carousel">
-        <div class="carousel-inner">
-
-          {% for image in carousel_img_objects %}
-            <div class="carousel-item active" data-bs-interval="4000">
-              <img src="{{image.landing_page_img_n_by_n.url}}" class="landing-page-img">
-            </div>
-          {% endfor %}
-        </div>
-      </div>
-      </center>
+      
 
       <img src="{% static 'cc_app/images/index/hamburger_icon.png' %}" class="hamburger" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
 
