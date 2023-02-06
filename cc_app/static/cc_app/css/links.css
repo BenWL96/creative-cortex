@@ -25,7 +25,6 @@
 }
 
 .video-section{
-    padding-bottom: 20px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -125,5 +124,5 @@
 }
 
 .video-wrapper-parent{
-    padding-top: 20px;
+    padding-top: 50px;
 }
