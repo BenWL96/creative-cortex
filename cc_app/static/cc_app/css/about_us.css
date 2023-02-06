@@ -1,12 +1,26 @@
 
 .text-wrapper{
-	width: 80%;
 	margin-left: auto;
 	margin-right: auto;
 	text-align: left;
 	padding-top: 70px;
 }
 
+
+
+@media(min-width: 500px){
+
+	.text-wrapper{
+    width: 80%;
+   }
+   
+}
+
+@media(min-width: 500px){
+	.text-wrapper{
+    width: 90%;
+
+}
 
 
 
@@ -150,7 +164,7 @@
 
 }
 
-@media(max-width: 900px) and (min-width: 400px){
+@media(max-width: 900px) and (min-width: 500px){
 	
 
 	.col4-text {
@@ -169,13 +183,13 @@
 
 
 	.personnel_col1{
-		width: 80%;
+		width: 95%;
 		margin-left: auto;
 		margin-right: auto;
 	}
 
 	.personnel_col2{
-		width: 80%;
+		width: 95%;
 		margin-left: auto;
 		margin-right: auto;
 	}
@@ -187,7 +201,7 @@
 
 
 
-@media(max-width: 400px){
+@media(max-width: 500px){
 
 	.personnel_text-container{
 		padding-top: 0px;
@@ -296,9 +310,16 @@
 
 }
 
-@media(max-width: 1000px){
+@media(max-width: 1000px) and (min-width: 500px){
 	.subtitle-wrapper{
 		width: 80%;
+	}
+
+}
+
+@media(min-width: 500px){
+	.subtitle-wrapper{
+		width: 95%;
 	}
 
 }
@@ -314,7 +335,6 @@
 
 
 .separator{
-    width: 80%;
     color: black;
     margin-left: auto;
     margin-right: auto;
@@ -322,6 +342,21 @@
     outline-color: black;
     outline-width: 10px;
 }
+
+@media(min-width: 500px){
+
+	.separator{
+    width: 80%;
+   }
+   
+}
+
+@media(min-width: 500px){
+	.separator{
+    width: 95%;
+
+}
+
 
 /* Form css */
 
@@ -338,12 +373,29 @@
 		width: 640px;
 	}
 
+	.separator{
+    width: 80%;
+   }
 }
 
-@media(max-width: 1000px){
+@media(max-width: 1000px) and (min-width: 500px){
 	.form-wrapper{
 		width: 80%;
 	}
+
+	.separator{
+    width: 80%;
+   }
+
+}
+
+@media(min-width: 500px){
+	.form-wrapper{
+		width: 95%;
+	}
+
+	.separator{
+    width: 95%;
 
 }
 

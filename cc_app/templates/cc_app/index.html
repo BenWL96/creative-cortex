@@ -33,28 +33,30 @@
     {% block body %}
     {% endblock %}
 
-    <div class="bottom-page-whitespace">
-      <div class="d-flex flex-row icons-row-parent">
+    <div class="footer">
 
-              <div class="flex-col">
+
+      <div class="icons-row-parent">
+
+              <div class="col">
 
                 <img src="{% static 'cc_app/images/links/links.jpg' %}" class="icons">
 
               </div>
 
-              <div class="flex-col">
+              <div class="col">
 
                 <img src="{% static 'cc_app/images/links/reddit.jpg' %}" class="icons">
 
               </div>
 
-              <div class="flex-col">
+              <div class="col">
 
                 <img src="{% static 'cc_app/images/links/instagram.jpg' %}" class="icons">
 
               </div>
 
-              <div class="flex-col">
+              <div class="col">
 
                 <img src="{% static 'cc_app/images/links/twitter.jpg' %}" class="icons">
 
@@ -62,25 +64,33 @@
 
        
 
-              <div class="flex-col">
+              <div class="col">
 
                 <img src="{% static 'cc_app/images/links/discord.jpg' %}" class="icons">
 
               </div>
 
-              <div class="flex-col">
+              <div class="col">
 
                 <img src="{% static 'cc_app/images/links/behance.jpg' %}" class="icons">
 
               </div>
 
         </div>
+
+      <div class="powered-row-parent">
+        <p class="powered-by">Powered By Django</p>
+      </div>
+
     </div>
+
+    
     
     <img src="{% static 'cc_app/images/index/hamburger_icon.png' %}" class="hamburger" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
 
       <div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
         <div class="offcanvas-header">
+
           <a href="{% url 'landing_page' %}">
             <img src="{% static 'cc_app/images/index/CC_logo.png' %}" class="offcanvas-logo" href="">
           </a>
