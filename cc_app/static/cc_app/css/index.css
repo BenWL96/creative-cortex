@@ -202,6 +202,34 @@ p{
     height: 100%;
 }
 
- 
+.bottom-page-whitespace{
+    height: 100px;
+}
 
+.icons-row-parent {
+    width: 70vw;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10px;
+
+}
+
+.icons{
+    border-color: turquoise;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: black 5px 5px 5px;
+    height: 30px;
+    width: 30px;
+}
+
+.icons:hover {
+    box-shadow: black 5px 5px 5px;
+    cursor: pointer;
+    opacity: 75%;
+}
+
+.icons-wrapper{
+    bottom: 10px;
+}
 

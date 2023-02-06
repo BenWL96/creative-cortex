@@ -12,9 +12,9 @@
 
 .about-us-text{
 	font-size: 25px;
-    font-weight: 300;
-    color: black;
-    font-family: 'Libre Franklin', sans-serif;
+  font-weight: 300;
+  color: black;
+  font-family: 'Libre Franklin', sans-serif;
 	text-align: left;
 	padding-top: 10px;
 }
@@ -41,9 +41,11 @@
 	padding-top: 70px;
 }
 
+
 .personnel_row2{
 	flex-wrap: wrap-reverse !important;
 	display: flex;
+	padding-top: 70px;
 }
 
 .cont_volum{
@@ -101,6 +103,20 @@
 	height: 100%;
 	width: 100%;
 
+}
+
+
+@media(max-width: 900px){
+	.personnel_row1{
+		padding-top: 35px;
+	}
+	.personnel_row2{
+		padding-top: 35px;
+	}
+
+	.personnel_img{
+		width: 70%;
+	}
 }
 
 
@@ -166,13 +182,6 @@
 
 
 
-
-	.personnel_img{
-		width: 200px;
-		height: 200px;
-	}
-
-
 }
 
 
@@ -185,15 +194,21 @@
 	}
 
 	.personnel_col1{
-		width: 100%;
+		width: 80%;
+		margin-left: auto;
+		margin-right: auto;
 	}
 
 	.personnel_col2{
-		width: 100%;
+		width: 80%;
+		margin-left: auto;
+		margin-right: auto;
 	}
 	
 	.personnel_img{
-	width: 100%;
+	width: 80%;
+	margin-left: auto;
+		margin-right: auto;
 	}
 
 }

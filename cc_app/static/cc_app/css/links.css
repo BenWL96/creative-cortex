@@ -12,17 +12,19 @@
     padding-top: 70px;
 }
 
+.flex-col{
+    margin-left: auto;
+    margin-right: auto;
+}
 
 
 .text-wrapper{
-    width: 80%;
     margin-left: auto;
     margin-right: auto;
     height: 100%;
 }
 
 .video-section{
-    width: 80%;
     padding-bottom: 20px;
     margin-left: auto;
     margin-right: auto;
@@ -45,30 +47,26 @@
 }
 
 
-.icons-row-child{
-    flex-wrap: wrap;
-    display: flex;
-    width: 150px;
-    margin-left: auto;
-    margin-right: auto;
-}
 
-.icons-row-parent {
+/* Social Icons */
+
+/*.icons-row-parent {
     flex-wrap: wrap;
     display: flex;
+    margin-top: 25px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 50px;
+
 }
 
 
 .icons{
-    width: 90%;
     border-radius: 15px;
     border-color: turquoise;
     border-style: solid;
     border-width: 1px;
     box-shadow: black 5px 5px 5px;
+    margin-top: 20px;
 }
 
 .icons:hover {
@@ -81,45 +79,81 @@
     margin-left: auto;
     margin-right: auto;
 }
+*/
 
-@media(min-width: 800px){
 
-    .icons-row-parent{
-        width: 300px;
+@media(min-width: 500px){
+
+    /*.icons-row-parent{
+        width: 80%;
+
     }
 
+    .icons{
+        width: 80%;
+    }
+    .flex-col{
+        width: 15%;
+    }*/
 
-    .icons-wrapper{
-        width: 70px;
-        height: 70px;
+    .separator{
+        width: 80%;
+    }
+
+    .subtitle-wrapper{
+        width: 80%;
+    }
+
+    .text-wrapper{
+        width: 80%;
+    }
+
+    .video-section{
+        width: 80%;
     }
 }
 
-@media(min-width: 400px) and (max-width: 800px){
 
-    .icons-row-parent{
-        width: 140px;
+@media(max-width: 500px){
+
+    /*.icons-row-parent{
+        width: 95%;
     }
 
-    .icons-wrapper{
-        width: 70px;
-        height: 70px;
+    .icons{
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .flex-col{
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }*/
+
+    .separator{
+        width: 95%;
     }
 
+    .subtitle-wrapper{
+        width: 95%;
+    }
+
+    .text-wrapper{
+        width: 95%;
+    }
+
+    .video-section{
+        width: 95%;
+    }
 }
 
-@media(max-width: 400px){
 
 
-    .icons-wrapper{
-        width: 200px;
-    }
 
-}
 
 
 .separator{
-    width: 80%;
     color: black;
     margin-left: auto;
     margin-right: auto;
@@ -135,7 +169,6 @@
     margin-right: auto;
     height: 100%;
     margin-top: 70px;
-    width: 80%;
 }
 
 
