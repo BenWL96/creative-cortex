@@ -44,7 +44,6 @@
     font-weight: 900;
     font-family: 'Barlow', sans-serif;
     text-shadow: white 2px 2px 2px;
-  	text-decoration: underline;
   	margin-left: auto;
   	margin-right: auto;
 
@@ -53,7 +52,7 @@
 
 @media(min-width: 800px){
 	.title-text{
-		font-size: 150px;
+		font-size: 175px;
 		width: 700px;
 	}
 	.title-wrapper{
