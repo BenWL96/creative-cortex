@@ -54,6 +54,7 @@
 	.title-text{
 		font-size: 175px;
 		width: 700px;
+        line-height: 175px;
 	}
 	.title-wrapper{
 		margin-top: 8vh;
@@ -64,6 +65,7 @@
 	.title-text{
 		font-size: 100px;
 		width: 400px;
+        line-height: 100px;
 	}
 	.title-wrapper{
 		margin-top: 20vh;
