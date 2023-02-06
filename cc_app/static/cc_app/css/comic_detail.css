@@ -5,21 +5,43 @@ p {
 /*Separator*/
 
 .separator{
-	width: 80%;
-	color: black;
-	margin-left: auto;
-	margin-right: auto;
-	outline: black;
-	outline-color: black;
-	outline-width: 10px;
+    color: black;
+    margin-left: auto;
+    margin-right: auto;
+    outline: black;
+    outline-color: black;
+    outline-width: 10px;
+    margin-top: 70px;
 }
-
 
 .cont_breadcrumb{
 	width: 80%;
 	margin-left: auto;
 	margin-right: auto;
 	padding-top: 15px;
+}
+
+@media(min-width: 500px){
+
+	.separator{
+		width: 80%;
+	}
+	.cont_breadcrumb{
+		width: 80%;
+	}
+
+}
+
+
+@media(max-width: 500px){
+
+	.separator{
+		width: 95%;
+	}
+	.cont_breadcrumb{
+		width: 95%;
+	}
+
 }
 
 .breadcrumb{
@@ -30,20 +52,6 @@ p {
 	background-color: turquoise;
 }
 
-.v_r{
-	flex-wrap: wrap;
-	display: flex;
-	width: 100%;
-}
-
-.v_c{
-	width: 40vw;
-}
-
-.v_r_2{
-	flex-wrap: wrap;
-	display: flex;
-}
 
 .volume_num{
 	padding-left: 25px;
@@ -218,17 +226,27 @@ p {
 }
 
 .cont_volum_5{
-	width: 80%;
 	margin-left: auto;
 	margin-right: auto;
 }
 
 .cont_comic_about{
-	width: 80%;
 	margin-left: auto;
 	margin-right: auto;
 	text-align: left;
 	padding-top: 45px;
+}
+
+@media(min-width: 500px){
+	.cont_comic_about{
+		width: 80%;
+	}
+}
+
+@media(max-width: 500px){
+	.cont_comic_about{
+		width: 90%;
+	}
 }
 
 @media(min-width: 900px){
@@ -296,7 +314,7 @@ p {
 	}
 }
 
-@media(max-width: 900px) and (min-width: 400px){
+@media(max-width: 900px) and (min-width: 500px){
 
 
 	.expand_info_btn{
@@ -312,14 +330,14 @@ p {
 	}
 
 	.cont_volum_2{
-		width: 80%;
+		width: 95%;
 		margin-left: auto;
 		margin-right: auto;
 	}
 
 	.cont_volum_3{
 		padding-top: 45px;
-		width: 80%;
+		width: 95%;
 		margin-left: auto;
 		margin-right: auto;
 	}
@@ -334,14 +352,6 @@ p {
 		height: 260px;
 	}
 
-	.v_c_1{
-		width: 80vw;
-	}
-
-
-	.v_c_2{
-		width: 450px;
-	}
 
 	.cont_1{
 		width: 400px;
@@ -349,18 +359,18 @@ p {
 
 	
 	.cont_volum{
-		width: 80%;
+		width: 90%;
 		margin-left: auto;
 		margin-right: auto;
 	}
 
 	.cont_volum_4{
-		width: 80%;
+		width: 90%;
 		margin-left: auto;
 		margin-right: auto;
 	}
 	.cont_volum_5{
-		width: 80%;
+		width: 90%;
 		margin-left: auto;
 		margin-right: auto;
 	}		
@@ -371,7 +381,7 @@ p {
 
 
 
-@media(max-width: 400px){
+@media(max-width: 500px){
 
 	.expand_info_btn{
 		margin-left: 0px !important;
@@ -394,41 +404,36 @@ p {
 	}
 
 
-	.cont_1{
-		width: 100%;
-
-	}
-
 	.v_pl_img{
 	width: 100%;
 	}
 
-	@media(min-width: 400px){
+	@media(min-width: 500px){
 		.v_pl_img{
 			width: 100% !important;
 		}
 	}
 
 	
-	@media(max-width: 400px){
+	@media(max-width: 500px){
 		.v_pl_img{
-			width: 80% !important;
+			width: 40% !important;
 		}
 	}
 	.cont_volum{
-		width: 80%;
+		width: 95%;
 		margin-left: auto;
 		margin-right: auto;
 	}	
 
 	.cont_volum_4{
-		width: 80%;
+		width: 95%;
 		margin-left: auto;
 		margin-right: auto;
 	}	
 
 	.cont_volum_5{
-		width: 80%;
+		width: 95%;
 		margin-left: auto;
 		margin-right: auto;
 	}	
@@ -467,7 +472,6 @@ p {
 
 
 .wrap-subtitle_parent{
-    width: 80%;
     margin-left: auto;
     margin-right: auto;
     height: 100%;
@@ -488,4 +492,29 @@ p {
 }
 
 
+
+@media(min-width: 500px){
+
+	.wrap-subtitle_parent{
+    	width: 80%;
+	}
+
+    .separator{
+        width: 80%;
+    }
+
+}
+
+
+@media(max-width: 500px){
+
+	.wrap-subtitle_parent{
+	    width: 90%;
+	}
+
+    .separator{
+        width: 95%;
+    }
+
+}
 
