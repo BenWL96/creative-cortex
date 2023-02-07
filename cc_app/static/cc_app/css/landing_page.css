@@ -10,6 +10,10 @@ body{
 	
 }
 
+.carousel-fade{
+    transition-duration: 8s;
+}
+
 .landing-page-img{
 	position: absolute;
  	right: 0;

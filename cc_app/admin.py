@@ -1,6 +1,5 @@
 from django.contrib import admin
 from . import models
-
 admin.site.register(models.Pages)
 admin.site.register(models.Personnel)
 admin.site.register(models.Comic_Personnel)
@@ -14,6 +13,13 @@ admin.site.register(models.Inquiries)
 
 class ComicsAdmin(admin.ModelAdmin):
 	exclude = ('slug',)
+
+	def changelist_view(self, request, extra_context=None):
+		extra_context = extra_context or {}
+		extra_context['rats'] = "rats"
+		return super(ComicsAdmin, self).changelist_view(
+			request, extra_context=extra_context,
+		)
 class VolumesAdmin(admin.ModelAdmin):
 	exclude = ('slug_volume_title',)
 class ChaptersAdmin(admin.ModelAdmin):
