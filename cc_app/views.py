@@ -21,7 +21,8 @@ def Comics(request):
 	else:
 		header_img_url = False
 
-	comics = models.Comics.objects.all()
+	comics = models.Comics.objects.filter(display_comic=True)
+
 	context = {
 		'comics': comics,
 		'header_img_url': header_img_url
@@ -31,7 +32,7 @@ def Comics(request):
 def Comic_Detail(request, comic_param):
 
 	try:
-		comic = models.Comics.objects.get(slug=comic_param)
+		comic = models.Comics.objects.get(slug=comic_param, display_comic=True)
 
 	except models.Comics.DoesNotExist:
 		print("comic with name '" + comic_param + "' was not found")
