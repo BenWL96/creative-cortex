@@ -83,7 +83,8 @@ class testViewsAndTemplates(TestCase):
 		comic_object = models.Comics.objects.create(
 			comic_name="comic_1",
 			ongoing=True,
-			next_release_date=datetime.date.today()
+			next_release_date=datetime.date.today(),
+			display_comic=True
 		)
 		kwargs = {"comic_param": comic_object.slug}
 
@@ -104,7 +105,8 @@ class testViewsAndTemplates(TestCase):
 			ongoing=True,
 			next_release_date=datetime.date.today(),
 			comic_img_376_by_376=self.a_simple_file,
-			comic_img_200_by_260=self.a_simple_file
+			comic_img_200_by_260=self.a_simple_file,
+			display_comic=True
 		)
 		volume_object = models.Volumes.objects.create(
 			comic_name=comic_object,
@@ -247,7 +249,8 @@ class testContext(unittest.TestCase):
 			ongoing=True,
 			next_release_date=datetime.date.today(),
 			comic_img_376_by_376=self.a_simple_file,
-			comic_img_200_by_260=self.a_simple_file
+			comic_img_200_by_260=self.a_simple_file,
+			display_comic=True
 		)
 
 		response = self.client.get(reverse('comics'))
@@ -343,7 +346,8 @@ class testModelFieldParameters(TestCase):
 			ongoing=True,
 			next_release_date=datetime.date.today(),
 			comic_img_376_by_376=a_simple_file,
-			comic_img_200_by_260=a_simple_file
+			comic_img_200_by_260=a_simple_file,
+			display_comic=True
 		)
 		volume_object = models.Volumes.objects.create(
 			comic_name=comic_object,
@@ -355,4 +359,5 @@ class testModelFieldParameters(TestCase):
 		"""Here we need to test the volume object does not exist"""
 		"""And instead that an error is raised"""
 
-
+if __name__ == "__main__":
+	unittest.main
