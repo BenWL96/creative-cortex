@@ -24,13 +24,20 @@
 {% endif %}
 
 {% block content %}<div id="content-main">
-    Column to show all images on the site. Column to show images not used. 
-    {% if images %} 
-        {% for image in images %}
-            <p>image goes here</p>
-        {% endfor %}
 
+    Column to show all images on the site. Column to show images not used. 
+
+    
+    {% if images_not_used_on_site %} 
+    <div class="row" style="height: 200px; width: 100%; overflow: scroll;">
+        {% for image in images_not_used_on_site %}
+        <div class="col">
+            <img src="{{image.img_url.url}}" style="height: 200px; width: 200px; ">
+        </div>
+        {% endfor %}
+    </div>
     {% endif %}
+    
 
 {% block object-tools %}
 {% if change and not is_popup %}

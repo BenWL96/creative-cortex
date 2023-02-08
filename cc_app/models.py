@@ -16,7 +16,7 @@ class Images(models.Model):
 	img_used_on_site = models.BooleanField(default=False)
 
 	def __str__(self):
-		return self.image_id + " | " + self.img_description + " | " + self.img_dimensions
+		return str(self.image_id) + " | " + self.img_description + " | " + self.img_dimensions
 
 	class Meta:
 		verbose_name = "Image"
