@@ -5,6 +5,24 @@ from creative_cortex.storage_backends import PrivateMediaStorage
 from phonenumber_field.modelfields import PhoneNumberField
 from django.core.validators import MinValueValidator
 
+
+class Images(models.Model):
+	#on images page we need to display all unused images and their IDS.
+	#Admin can note down the ID, then relate the model to that img.
+	image_id = models.AutoField(primary_key=True)
+	img_url = models.ImageField(storage=PrivateMediaStorage())
+	img_description = models.CharField(max_length=50)
+	img_dimensions = models.CharField(max_length=50)
+	img_used_on_site = models.BooleanField(default=False)
+
+	def __str__(self):
+		return self.image_id + " | " + self.img_description + " | " + self.img_dimensions
+
+	class Meta:
+		verbose_name = "Image"
+		verbose_name_plural = "Images"
+
+
 class Comics(models.Model):
 	comic_id = models.AutoField(primary_key=True)
 	comic_name = models.CharField(max_length=150)
@@ -25,7 +43,7 @@ class Comics(models.Model):
 		verbose_name = "Comic"
 		verbose_name_plural = "Comics"
 
-	def save(self, *args, **kwargs):  # new
+	def save(self, *args, **kwargs):
 		if not self.slug:
 			self.slug = slugify(self.comic_name)
 		return super().save(*args, **kwargs)
