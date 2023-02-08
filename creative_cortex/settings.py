@@ -7,10 +7,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = config("SECRET_KEY", default='')
 
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
-#'creative-cortex.herokuapp.com'
+ALLOWED_HOSTS = ['creative-cortex.herokuapp.com']
 
 INSTALLED_APPS = [
     'baton',
