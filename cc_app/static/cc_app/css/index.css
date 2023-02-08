@@ -77,7 +77,8 @@
 
 .offcanvas-title{
     font-size: 30px !important;
-    font-family: 'Barlow', sans-serif !important;
+    font-family: font-family: 'Lora', serif;
+    font-weight: 700 !important;
     text-decoration: none;
     color: turquoise !important;
 }
