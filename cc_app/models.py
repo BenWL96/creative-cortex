@@ -6,7 +6,7 @@ from phonenumber_field.modelfields import PhoneNumberField
 from django.core.validators import MinValueValidator
 
 
-class Images(models.Model):
+"""class Images(models.Model):
 	#on images page we need to display all unused images and their IDS.
 	#Admin can note down the ID, then relate the model to that img.
 	image_id = models.AutoField(primary_key=True)
@@ -21,7 +21,7 @@ class Images(models.Model):
 	class Meta:
 		verbose_name = "Image"
 		verbose_name_plural = "Images"
-
+"""
 
 class Comics(models.Model):
 	comic_id = models.AutoField(primary_key=True)
