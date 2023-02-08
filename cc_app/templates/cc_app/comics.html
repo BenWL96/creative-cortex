@@ -50,9 +50,9 @@
       {% endif %}
 
 
-        <div class="d-flex flex-row cr1" >
-      {% for comic in comics %}
-    
+      <div class="d-flex flex-row cr1" >
+        {% for comic in comics %}
+      
           <div class="flex-column c1">
 
             <div class="cont_1" data-tilt>
@@ -61,16 +61,16 @@
               </div>
 
               <div class="container my-3">
-                
+                  
                 <a href="{% url 'comic-detail' comic_param=comic.slug %}" class="com_name">
-                {{comic.comic_name}}</a>
+                  {{comic.comic_name}}</a>
               </div>
             </div>
-           
+             
 
           </div>   
 
-      {% endfor %}
+        {% endfor %}
 
 
       </div>
