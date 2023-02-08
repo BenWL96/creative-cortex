@@ -1,7 +1,10 @@
 body{
     background: rgb(136,120,195);
     background: linear-gradient(90deg, rgba(136,120,195,1) 3%, rgba(145,130,203,1) 66%, rgba(93,79,144,1) 100%);
+}
 
+.carousel{
+    z-index: 50;
 }
 
 .carousel-item{
@@ -15,7 +18,7 @@ body{
 }
 
 .landing-page-img{
-	position: absolute;
+	position: fixed;
  	right: 0;
   	left: 0;
   	top: 0;
@@ -44,10 +47,26 @@ body{
 }
 
 .scene{
-    z-index: 150;
+    height: 100vh;
+    width: 100vw;
+  font-weight: 900;
+    font-family: 'Barlow', sans-serif;
+    text-shadow: white 2px 2px 2px;
+  text-align: center;
+  display: flex;
+  position: fixed;
+  z-index: 150;
 }
 
 .title-wrapper{
+    margin: auto;
+}
+/*..scene{
+    z-index: 150;
+    height: 100vh;
+}
+
+title-wrapper{
 	z-index: 100;
   	position: fixed;
   	text-align: center;
@@ -62,41 +81,46 @@ body{
   	margin-right: auto;
     opacity: 100%;
 
- 
-}
+}*/
 
-@media(min-width: 800px){
-	.title-text{
+
+
+/*.title-wrapper{
+
+    height: 100%;
+    justify-content: center; 
+    align-items: center;
+    display: flex;
+    z-index: 100 !important;
+    font-weight: 900;
+    font-family: 'Barlow', sans-serif;
+    text-shadow: white 2px 2px 2px;
+    opacity: 100%;
+}*/
+
+
+@media(min-width: 900px){
+	.scene{
 		font-size: 200px;
-		width: 700px;
         line-height: 175px;
-	}
-	.title-wrapper{
-		margin-top: 8vh;
+        
 	}
 }
 
-@media(min-width: 500px) and (max-width: 800px){
-	.title-text{
+@media(max-width: 900px) and (min-width: 400px){
+	.scene{
 		font-size: 100px;
-		width: 400px;
-        line-height: 100px;
-	}
-	.title-wrapper{
-		margin-top: 20vh;
-	}
-
+        line-height: 90px;
+    }
 }
 
-@media(max-width: 500px){
-	.title-text{
-		font-size: 20vw;
-		width: 100%;
-	}
-	.title-wrapper{
-		margin-top: 20vh;
+@media(max-width: 400px){
+	.scene{
+		font-size: 60px;
+        line-height: 50px;
 	}
 }
+
 
 
 .index-body {
