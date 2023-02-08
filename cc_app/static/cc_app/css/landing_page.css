@@ -265,69 +265,12 @@ title-wrapper{
     box-shadow: black 0px 0px 0px;
 }
 
-
-/* css belonging To all pages */
-
-.w-title{
-    opacity: 1;
-    background-position: center bottom;
-    background-size: 100%;
-}
-
-.Title{
-    color: black;
-    font-weight: 900;
-    padding-top: 60px;
-    margin-left: 15px;
-    font-family: 'Barlow', sans-serif;
-    text-shadow: #fafafa 1px 1px 1px;
-}
-
-@media(min-width: 400px){
-    .Title{
-        font-size: 70px;
-    }
-}
-
-@media(max-width: 400px){
-    .Title{
-        font-size: 40px;
-    }
-}
-
-
-.w{
-    margin-left: auto;
-    margin-right: auto;
-    background-color: #fafafa;
-}
-
-@media(min-width: 500px){
-
-    .w{
-        width: 80vw;
-    }
-}
-
-@media(max-width: 500px){
-
-    .w{
-        width: 100vw;
-    }
-}
-
 p{
     padding: 0;
     margin: 0;
 }
 
 
-.wrap-subtitle{
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    height: 100%;
-}
 
 
 
