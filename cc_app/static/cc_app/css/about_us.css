@@ -16,10 +16,10 @@
    
 }
 
-@media(min-width: 500px){
+@media(max-width: 500px){
 	.text-wrapper{
     width: 90%;
-
+  }
 }
 
 
@@ -319,7 +319,7 @@
 
 }
 
-@media(min-width: 500px){
+@media(max-width: 500px){
 	.subtitle-wrapper{
 		width: 95%;
 	}
@@ -353,10 +353,10 @@
    
 }
 
-@media(min-width: 500px){
+@media(max-width: 500px){
 	.separator{
     width: 95%;
-
+  }
 }
 
 
@@ -371,6 +371,7 @@
 }
 
 @media(min-width: 1000px){
+
 	.form-wrapper{
 		width: 640px;
 	}
@@ -378,6 +379,7 @@
 	.separator{
     width: 80%;
    }
+
 }
 
 @media(max-width: 1000px) and (min-width: 500px){
@@ -391,13 +393,15 @@
 
 }
 
-@media(min-width: 500px){
+@media(max-width: 500px){
+
 	.form-wrapper{
 		width: 95%;
 	}
 
 	.separator{
     width: 95%;
+  }
 
 }
 
