@@ -159,10 +159,10 @@
 @media(max-width: 769px){
 
     .gallery_img-title{
-        color: white !important;
+        color: #fafafa !important;
     }
 
     .gallery_img-description{
-        color: white !important;
+        color: #fafafa !important;
     }
 }

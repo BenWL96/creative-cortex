@@ -51,7 +51,7 @@ body{
     width: 100vw;
   font-weight: 900;
     font-family: 'Barlow', sans-serif;
-    text-shadow: white 2px 2px 2px;
+    text-shadow: #fafafa 2px 2px 2px;
   text-align: center;
   display: flex;
   position: fixed;
@@ -76,7 +76,7 @@ title-wrapper{
 .title-text{
     font-weight: 900;
     font-family: 'Barlow', sans-serif;
-    text-shadow: white 2px 2px 2px;
+    text-shadow: #fafafa 2px 2px 2px;
   	margin-left: auto;
   	margin-right: auto;
     opacity: 100%;
@@ -94,7 +94,7 @@ title-wrapper{
     z-index: 100 !important;
     font-weight: 900;
     font-family: 'Barlow', sans-serif;
-    text-shadow: white 2px 2px 2px;
+    text-shadow: #fafafa 2px 2px 2px;
     opacity: 100%;
 }*/
 

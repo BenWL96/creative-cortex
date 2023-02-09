@@ -1,5 +1,5 @@
 p {
-	color: white;
+	color: #fafafa;
 }
 
 /*Separator*/
@@ -142,7 +142,7 @@ p {
 
 .chp_btn{
 	background-color: #282828 !important;
-	color: white !important;
+	color: #fafafa !important;
 	font-weight: 900;
 	margin-top: 10px;
 	font-family: 'Lora', serif !important;
@@ -213,7 +213,7 @@ p {
 .expand_info_btn{
 	background-color: #282828 !important;
 	width: 200px;
-	color: white !important;
+	color: #fafafa !important;
 	font-family: 'Lora', serif !important;
 	font-size: 15px;
 	box-shadow: #282828 2px 2px 2px;
