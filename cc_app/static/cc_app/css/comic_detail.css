@@ -172,6 +172,8 @@ p {
 .rowwww_2{
 	flex-wrap: wrap-reverse;
 	display: flex;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .rowwww_3{
@@ -245,8 +247,13 @@ p {
 	padding-top: 45px;
 }
 
+
 @media(min-width: 500px){
 	.cont_comic_about{
+		width: 80%;
+	}
+
+	.rowwww_2{
 		width: 80%;
 	}
 }
@@ -254,6 +261,10 @@ p {
 @media(max-width: 500px){
 	.cont_comic_about{
 		width: 90%;
+	}
+
+	.rowwww_2{
+		width: 100%;
 	}
 }
 
@@ -281,14 +292,14 @@ p {
 
 
 	.cont_volum_4{
-		width: 25vw;
+		width: 40%;
 		margin-left: auto;
 		margin-right: auto;
 
 	}
 
 	.cont_volum_5{
-		width: 35vw;
+		width: 60%;
 		margin-left: auto;
 		margin-right: auto;
 
@@ -373,14 +384,11 @@ p {
 	}
 
 	.cont_volum_4{
-		width: 90%;
-		margin-left: auto;
-		margin-right: auto;
+		padding-top: 50px;
+		width: 100%;
 	}
 	.cont_volum_5{
-		width: 90%;
-		margin-left: auto;
-		margin-right: auto;
+		width: 100%;
 	}		
 
 
@@ -435,13 +443,14 @@ p {
 	}	
 
 	.cont_volum_4{
-		width: 95%;
+		width: 90%;
+		padding-top: 50px;
 		margin-left: auto;
 		margin-right: auto;
 	}	
 
 	.cont_volum_5{
-		width: 95%;
+		width: 90%;
 		margin-left: auto;
 		margin-right: auto;
 	}	
@@ -479,50 +488,40 @@ p {
 }
 
 
-.wrap-subtitle_parent{
+.sub-title{
+
+    font-weight: 900;
+    font-family: 'Barlow', sans-serif;
+    text-shadow: #fafafa 1px 1px 1px;
+    background: rgb(64,224,208);
+		background: linear-gradient(90deg, rgba(64,224,208,1) 0%, rgba(71,200,187,1) 44%, rgba(115,214,204,1) 88%);
+    color: #282828;
+    width: 175px;
+    text-align: center;
+    font-size: 43px;
+}
+
+.subtitle-wrapper{
     margin-left: auto;
     margin-right: auto;
     height: 100%;
-}
-.wrap-sub_child{
-	background-color: turquoise;
-    width: 100px;
-    margin-left: 0;
-}
-
-.sub-title{
-    color: #282828;
-    font-weight: 900;
-    font-style: italic;
-    margin-left: 15px;
-    font-family: 'Barlow', sans-serif;
-    text-shadow: #fafafa 1px 1px 1px;
+    margin-top: 70px;
 }
 
 
 
 @media(min-width: 500px){
-
-	.wrap-subtitle_parent{
-    	width: 80%;
+	.subtitle-wrapper{
+		width: 80%;
 	}
 
-    .separator{
-        width: 80%;
-    }
-
 }
-
 
 @media(max-width: 500px){
-
-	.wrap-subtitle_parent{
-	    width: 95%;
+	.subtitle-wrapper{
+		width: 95%;
 	}
 
-    .separator{
-        width: 90%;
-    }
-
 }
+
 
