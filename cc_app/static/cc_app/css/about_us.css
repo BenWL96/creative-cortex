@@ -353,8 +353,9 @@
     background: rgb(64,224,208);
 		background: linear-gradient(90deg, rgba(64,224,208,1) 0%, rgba(71,200,187,1) 44%, rgba(115,214,204,1) 88%);
     color: #282828;
-    width: 135px;
+    width: 175px;
     text-align: center;
+    font-size: 43px;
 }
 
 
@@ -390,6 +391,7 @@
     outline: #282828;
     outline-color: #282828;
     outline-width: 10px;
+    margin-top: 70px;
 }
 
 @media(min-width: 500px){
