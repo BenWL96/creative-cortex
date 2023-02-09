@@ -53,6 +53,7 @@ p {
 }
 
 
+
 .volume_num{
 	padding-left: 25px;
 	font-size: 20px;
@@ -509,11 +510,11 @@ p {
 @media(max-width: 500px){
 
 	.wrap-subtitle_parent{
-	    width: 90%;
+	    width: 95%;
 	}
 
     .separator{
-        width: 95%;
+        width: 90%;
     }
 
 }

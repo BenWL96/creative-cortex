@@ -7,9 +7,9 @@
 .links-text1{
     font-size: 25px;
     font-weight: 300;
-    color: white;
+    color: #282828;
     font-family: 'Libre Franklin', sans-serif;
-    background-color: #282828;
+    padding-top: 70px;
 }
 
 
@@ -20,10 +20,10 @@
 
 
 .text-wrapper{
-    padding-top: 70px;
     margin-left: auto;
     margin-right: auto;
     height: 100%;
+    background-color: transparent;
     
 }
 
@@ -80,7 +80,7 @@
     }
 
     .text-wrapper{
-        width: 95%;
+        width: 90%;
     }
 
     .video-section{
