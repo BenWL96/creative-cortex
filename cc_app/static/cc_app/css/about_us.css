@@ -51,6 +51,8 @@
 	flex-wrap: wrap;
 	display: flex;
 	padding-top: 70px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 
@@ -58,6 +60,8 @@
 	flex-wrap: wrap-reverse !important;
 	display: flex;
 	padding-top: 70px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .cont_volum{
@@ -115,26 +119,63 @@
 	height: 100%;
 	width: 100%;
 
+
 }
 
-
-@media(max-width: 900px){
-
+@media(min-width: 1100px){
 	.personnel_row1{
-		padding-top: 35px;
-	}
-	.personnel_row2{
-		padding-top: 35px;
+		width: 890px;
 	}
 
-	.personnel_img{
-		width: 70%;
+	.personnel_row2{
+		width: 890px;
 	}
+}
+
+
+@media(max-width: 1100px){
+	.personnel_row1{
+		width: 100%;
+	}
+
+	.personnel_row2{
+		width: 100%;
+	}
+}
+
+
+@media(min-width: 1100px){
+	.personnel_col1{
+		width: 500px;
+	}
+
+	.personnel_col2{
+		width: 382px;
+	}
+
+	
+	.personnel_img{
+		width: 426px;
+		height: 284px;
+	}
+
+	.col4-text {
+		text-align: right;
+	}
+
+	.col3-text {
+		text-align: right;
+	}
+
+	.personnel_text-container{
+		padding-top: 25px;
+	}
+
 
 }
 
 
-@media(min-width: 900px){
+@media(min-width: 900px) and (max-width: 1100px){
 
 	.col4-text {
 		text-align: right;
