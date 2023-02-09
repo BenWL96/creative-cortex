@@ -118,7 +118,7 @@
 .volume_descr{
     font-size: 18px;
     font-weight: 500;
-    color: black;
+    color: #282828;
     font-family: 'Lora', serif;
 }
 
@@ -127,7 +127,7 @@
 .gallery_img-description{
     font-size: 20px;
     font-weight: 300;
-    color: black;
+    color: #282828;
     font-family: 'Libre Franklin', sans-serif;
     text-align: left !important;
     
@@ -148,11 +148,11 @@
     
 
     .gallery_img-title{
-        color: black;
+        color: #282828;
     }
 
     .gallery_img-description{
-        color: black;
+        color: #282828;
     }
 }
 

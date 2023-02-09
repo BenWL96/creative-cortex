@@ -12,7 +12,8 @@
     bottom: 20px;
     right: 20px; 
     z-index: 50;
-    background-color: turquoise;
+    background: rgb(64,224,208);
+background: linear-gradient(90deg, rgba(64,224,208,1) 0%, rgba(71,200,187,1) 44%, rgba(115,214,204,1) 88%);
     border-radius: 5px;
 
 }
@@ -26,11 +27,11 @@
 .offcanvas-logo{
     width: 60px;
     height: 40px;
-    border-color: black;
+    border-color: #282828;
     border-style: solid;
     border-width: 2px;
     box-shadow: turquoise 1px 1px 1px;
-    background-color: black;
+    background-color: #282828;
 }
 
 .offcanvas-logo:hover{
@@ -62,7 +63,7 @@
     border-style: solid;
     border-width: 2px;
     margin-top: 2vh;
-    box-shadow: black 5px 5px 5px;
+    box-shadow: #282828 5px 5px 5px;
 
 }
 
@@ -130,14 +131,14 @@
     bottom: 10px;
     left: 10px;
     z-index: 140;
-    box-shadow: black 1px 1px 1px;
+    box-shadow: #282828 1px 1px 1px;
     background-color: #8878c3;
     opacity: 75%;
 }
 
 .info-icon:hover{
     opacity: 100%;
-    box-shadow: black 0px 0px 0px;
+    box-shadow: #282828 0px 0px 0px;
 }
 
 
@@ -150,7 +151,7 @@
 }
 
 .Title{
-    color: black;
+    color: #282828;
     font-weight: 900;
     padding-top: 60px;
     margin-left: 15px;
@@ -224,7 +225,7 @@ p{
     border-color: turquoise;
     border-style: solid;
     border-width: 1px;
-    box-shadow: black 5px 5px 5px;
+    box-shadow: #282828 5px 5px 5px;
     margin-top: 15px;
     height: 35px;
     width: 35px;
@@ -234,7 +235,7 @@ p{
 }
 
 .icons:hover {
-    box-shadow: black 5px 5px 5px;
+    box-shadow: #282828 5px 5px 5px;
     cursor: pointer;
     opacity: 75%;
 }

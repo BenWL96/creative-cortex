@@ -18,7 +18,7 @@
 
 @media(max-width: 500px){
 	.text-wrapper{
-    width: 90%;
+    width: 95%;
   }
 }
 
@@ -27,10 +27,11 @@
 .about-us-text{
 	font-size: 25px;
   font-weight: 300;
-  color: black;
+  color: #fafafa;
   font-family: 'Libre Franklin', sans-serif;
 	text-align: left;
 	padding-top: 10px;
+	background-color: #282828;
 }
 
 
@@ -39,12 +40,12 @@
 
 .personnel_img{
 	border-radius: 100px;
-	box-shadow: black 5px 5px 5px;
+	box-shadow: #282828 5px 5px 5px;
 
 }	
 
 .personnel_img:hover{
-	box-shadow: black 0px 0px 0px;
+	box-shadow: #282828 0px 0px 0px;
 }	
 
 
@@ -78,7 +79,7 @@
 	font-size: 28px;
 	font-weight: 500;
 	text-align: left;
-	color: black;
+	color: #282828;
 	font-family: 'Libre Franklin', sans-serif;
 
 }
@@ -87,7 +88,7 @@
 	font-size: 28px;
 	font-weight: 700;
 	text-align: left;
-    color: black;
+    color: #282828;
     font-family: 'Libre Franklin', sans-serif;
 }
 
@@ -95,7 +96,7 @@
 .col4-text{
 	font-size: 28px;
 	font-weight: 500;
-	color: black;
+	color: #282828;
 	font-family: 'Libre Franklin', sans-serif;
 
 }
@@ -103,7 +104,7 @@
 .col3-text{
 	font-size: 28px;
 	font-weight: 700;
-	color: black;
+	color: #282828;
 	font-family: 'Libre Franklin', sans-serif;
 }
 
@@ -305,6 +306,20 @@
 }
 
 
+
+.sub-title{
+
+    font-weight: 900;
+    font-family: 'Barlow', sans-serif;
+    text-shadow: #fafafa 1px 1px 1px;
+    background: rgb(64,224,208);
+		background: linear-gradient(90deg, rgba(64,224,208,1) 0%, rgba(71,200,187,1) 44%, rgba(115,214,204,1) 88%);
+    color: #282828;
+    width: 135px;
+    text-align: center;
+}
+
+
 @media(min-width: 1000px){
 	.subtitle-wrapper{
 		width: 640px;
@@ -326,22 +341,16 @@
 
 }
 
-.sub-title{
-    color: black;
-    font-weight: 900;
-    margin-left: 15px;
-    font-family: 'Barlow', sans-serif;
-    text-shadow: #fafafa 1px 1px 1px;
-}
+
 
 
 
 .separator{
-    color: black;
+    color: #282828;
     margin-left: auto;
     margin-right: auto;
-    outline: black;
-    outline-color: black;
+    outline: #282828;
+    outline-color: #282828;
     outline-width: 10px;
 }
 
@@ -400,7 +409,7 @@
 	}
 
 	.separator{
-    width: 95%;
+    width: 90%;
   }
 
 }
@@ -424,7 +433,7 @@ div.error{
 .form-label{
 	font-size: 25px;
     font-weight: 300;
-    color: black;
+    color: #282828;
     font-family: 'Libre Franklin', sans-serif;
 }
 

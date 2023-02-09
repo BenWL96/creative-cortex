@@ -5,11 +5,11 @@ p {
 /*Separator*/
 
 .separator{
-    color: black;
+    color: #282828;
     margin-left: auto;
     margin-right: auto;
-    outline: black;
-    outline-color: black;
+    outline: #282828;
+    outline-color: #282828;
     outline-width: 10px;
     margin-top: 70px;
 }
@@ -57,7 +57,7 @@ p {
 	padding-left: 25px;
 	font-size: 20px;
     font-weight: 300;
-    color: black;
+    color: #282828;
     font-family: 'Libre Franklin', sans-serif;
 	text-align: left;
 	
@@ -69,7 +69,7 @@ p {
 
 	font-size: 25px;
 	padding-left: 25px;
-	color: black;
+	color: #282828;
     font-weight: 900;
     font-family: 'Barlow', sans-serif;
     text-shadow: #fafafa 1px 1px 1px;
@@ -78,39 +78,39 @@ p {
 .volume_name{
 	font-size: 45px;
 	font-weight: 900;
-	color: black;
+	color: #282828;
 	font-family: 'Barlow', sans-serif;
-	text-shadow: black 1px 1px 1px;
+	text-shadow: #282828 1px 1px 1px;
 }
 
 .volume_number{
 	font-size: 18px;
-	color: black;
+	color: #282828;
 	font-family: 'Barlow', sans-serif;
-	text-shadow: black 1px 1px 1px;
+	text-shadow: #282828 1px 1px 1px;
 	padding: 0;
 }
 
 .volume_descr{
 	font-size: 22px;
     font-weight: 300;
-    color: black;
+    color: #282828;
     font-family: 'Libre Franklin', sans-serif;
 }
 
 .comic_about_name{
 	font-size: 45px;
 	font-weight: 900;
-	color: black;
+	color: #282828;
 	font-family: 'Barlow', sans-serif;
-	text-shadow: black 1px 1px 1px;
+	text-shadow: #282828 1px 1px 1px;
 	text-align: left;
 }
 
 .comic_about_descr{
 	font-size: 25px;
     font-weight: 300;
-    color: black;
+    color: #282828;
     font-family: 'Libre Franklin', sans-serif;
 	text-align: left;
 }
@@ -118,7 +118,7 @@ p {
 .t{
 	margin-left: 15px;
 	font-size: 25px;
-	color: black;
+	color: #282828;
 }
 
 
@@ -128,25 +128,25 @@ p {
 	outline-color: turquoise;
 	outline-width: 2px;
 	border-radius: 15px;
-	box-shadow: black 5px 5px 5px;
+	box-shadow: #282828 5px 5px 5px;
 	margin-top: 10px;
 }	
 
 .v_pl_img:hover{
-	box-shadow: black 0px 0px 0px;
+	box-shadow: #282828 0px 0px 0px;
 }	
 
 
 
 
 .chp_btn{
-	background-color: black !important;
+	background-color: #282828 !important;
 	color: white !important;
 	font-weight: 900;
 	margin-top: 10px;
 	font-family: 'Lora', serif !important;
 	font-size: 15px;
-	box-shadow: black 2px 2px 2px;
+	box-shadow: #282828 2px 2px 2px;
 	border-color: turquoise !important;
 	border-width: 2px !important;
 }
@@ -187,7 +187,7 @@ p {
 
 .see_more_text{
 	text-decoration: none;
-	color: black;
+	color: #282828;
 	font-size: 18px;
 	font-weight: 500;
 	text-align: center;
@@ -210,19 +210,19 @@ p {
 
 
 .expand_info_btn{
-	background-color: black !important;
+	background-color: #282828 !important;
 	width: 200px;
 	color: white !important;
 	font-family: 'Lora', serif !important;
 	font-size: 15px;
-	box-shadow: black 2px 2px 2px;
+	box-shadow: #282828 2px 2px 2px;
 	border-color: turquoise !important;
 	border-width: 2px !important;
 }
 
 .expand_info_btn:hover{
 	background-color: turquoise !important;
-	box-shadow: black 0px 0px 0px;
+	box-shadow: #282828 0px 0px 0px;
 }
 
 .cont_volum_5{
@@ -483,7 +483,7 @@ p {
 }
 
 .sub-title{
-    color: black;
+    color: #282828;
     font-weight: 900;
     font-style: italic;
     margin-left: 15px;
