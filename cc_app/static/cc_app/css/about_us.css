@@ -38,7 +38,6 @@
 /* media queries should be added for anything larger */
 
 .personnel_img{
-	border-radius: 100px;
 	box-shadow: #282828 5px 5px 5px;
 
 }	
@@ -159,8 +158,8 @@
 
 	
 	.personnel_img{
-		width: 200px;
-		height: 200px;
+		width: 220px;
+		height: 140px;
 	}
 
 }
@@ -189,7 +188,6 @@
 	.personnel_col2{
 		width: 95%;
 		margin-left: auto;
-		margin-right: auto;
 	}
 
 	.personnel_img{
@@ -249,19 +247,19 @@
 
 @media(max-width: 900px) and (min-width: 700px){
 	.text-container_col1{
-		width: 50%;
+		width: 30%;
 	}
 
 	.text-container_col2{
-		width: 50%;
+		width: 70%;
 	}
 
 	.text-container_col3{
-		width: 50%;
+		width: 30%;
 	}
 
 	.text-container_col4{
-		width: 50%;
+		width: 70%;
 	}
 }
 
@@ -442,5 +440,13 @@ div.error{
     color: #fafafa;
     font-family: 'Libre Franklin', sans-serif;
     margin-top: 10px;
+}
+
+.form-button{
+	background-color: rgba(93,79,144,1) !important;
+}
+
+.form-button:hover{
+	background-color: rgba(136,120,195,1)!important;
 }
 

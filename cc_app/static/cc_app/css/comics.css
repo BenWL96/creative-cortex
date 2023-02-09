@@ -93,12 +93,15 @@
 	padding-top: 25px;
 
 	/* Related to tilt.js */
+	background: rgb(232,84,47);
+	background: linear-gradient(90deg, rgba(232,84,47,1) 0%, rgba(245,159,44,1) 74%, rgba(245,182,44,1) 88%);
+
 }
 
 .img_wrapper{
 	transform-style: preserve-3d;
 	transform: perspective(1000px);
-}
+	}
 
 .p_text{
 	margin-left: 15px;
