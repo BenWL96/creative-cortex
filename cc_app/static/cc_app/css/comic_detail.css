@@ -228,11 +228,11 @@ p {
 	box-shadow: #282828 2px 2px 2px;
 	border-color: turquoise !important;
 	border-width: 2px !important;
+	padding-top: 50px;
 }
 
 .expand_info_btn:hover{
 	background-color: turquoise !important;
-	box-shadow: #282828 0px 0px 0px;
 }
 
 .cont_volum_5{
