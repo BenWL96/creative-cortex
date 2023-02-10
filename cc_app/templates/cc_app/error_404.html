@@ -1,30 +1,20 @@
 <!doctype html>
 <html lang="en">
 
-  {% extends 'cc_app/index.html' %}
   {% load static %}
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    {% block style %}
       <link href="{% static 'cc_app/css/404.css' %}" rel="stylesheet" type="text/css">
-    {% endblock %}
-
-    
+  
   </head>
-  <body>
+  <body class="error-wrapper">
     
-    {% block body %}
+      <a href="{% url 'landing_page' %}">
+          <img src="{% static 'cc_app/images/error/404_error_img.jpg' %}" class="error-img">
+      </a>
 
-      <div class="error-wrapper">
-        <center>
-          <a href="{% url 'landing_page' %}">
-            <img src="{% static 'cc_app/images/error/404_error_img.jpg' %}" class="error-img">
-          </a>
-        </center>
-      </div>
-    {% endblock %}
-   
-  </body>
+  
+  </body> 
 </html>
