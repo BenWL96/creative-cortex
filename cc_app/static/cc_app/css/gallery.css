@@ -3,6 +3,8 @@
 .gallery-wrapper{
     margin-left: auto;
     margin-right: auto;
+    margin-top: 70px;
+
 }
 
 @media(min-width: 1261px){
@@ -53,7 +55,12 @@
 }
 
 .gallery{
-    padding-top: 70px;
+    background-color: #282828;
+    border-radius: 5px;
+    border-color: turquoise;
+    border-width: 1px;
+    border-style: solid;
+    box-shadow: #282828 5px 5px 5px;
 }
 
 
