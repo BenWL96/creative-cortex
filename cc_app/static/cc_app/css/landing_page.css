@@ -107,7 +107,14 @@ title-wrapper{
 	}
 }
 
-@media(max-width: 900px) and (min-width: 400px){
+@media(min-width: 720px) and (max-width: 900px){
+    .scene{
+        font-size: 140px;
+        line-height: 130px;
+    }
+}
+
+@media(max-width:720px) and (min-width: 400px){
 	.scene{
 		font-size: 100px;
         line-height: 90px;
