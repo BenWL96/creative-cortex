@@ -9,7 +9,7 @@ SECRET_KEY = config("SECRET_KEY", default='')
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['creative-cortex.herokuapp.com']
+ALLOWED_HOSTS = ['https://creative-cortex.herokuapp.com']
 
 INSTALLED_APPS = [
     'baton',
