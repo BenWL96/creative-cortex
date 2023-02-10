@@ -146,8 +146,19 @@
 
 .w-title{
     opacity: 1;
-    background-position: center bottom;
-    background-size: 100%;
+    background-position: left;
+}
+
+@media(min-width: 2000px){
+    .w-title{
+        background-size: 2000px 144px;
+    }
+}
+
+@media(max-width: 2000px){
+    .w-title{
+        background-size: 2000px 144px;
+    }
 }
 
 .Title{
