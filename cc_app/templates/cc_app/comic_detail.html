@@ -5,11 +5,11 @@
 {% load static %}
 
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     {% block style %}
-      <link href="{% static 'cc_app/css/comic_detail.css' %}" rel="stylesheet" type="text/css">
+      <link href="{% static 'cc_app/css/comic_detail.css' %}" rel="stylesheet" type="text/css" />
 
       <style type="text/css">
       .cont_volume_2_cont{
@@ -46,31 +46,23 @@
 
       {% endif %}
 
+      <div class="cont_breadcrumb">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'comics' %}" class="breadcrumb-hyperlink">comics</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{comic.comic_name}}</li>
+          </ol>
+        </nav>
 
-
-
-    <div class="cont_breadcrumb">
-      <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="{% url 'comics' %}" class="breadcrumb-hyperlink">comics</a></li>
-          <li class="breadcrumb-item active" aria-current="page">{{comic.comic_name}}</li>
-        </ol>
-      </nav>
-
-    </div>
-
-
-
+      </div>
 
       <div class="d-flex flex-row rowwww">
 
         <div class="cont_volum_2">
           <div class="cont_volume_2_cont">
             <center>
-              <img src="{% static 'cc_app/images/volumes_page_placeholder_img.jpg' %}" class="v_pl_img">
+              <img src="{% static 'cc_app/images/volumes_page_placeholder_img.jpg' %}" class="v_pl_img" alt="Comic backdrop" />
             </center>
-
-      
           </div>     
         </div>
 
@@ -106,8 +98,7 @@
         </div>
       </div>
 
-      <br>
-
+      <br/>
 
       <div class="d-flex flex-row rowwww_3">
 
@@ -115,13 +106,11 @@
           <div>
             <center>
               <p>
-              <a class="btn expand_info_btn" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-                See More Info
-              </a>
-              
-            </p>
+                <a class="btn expand_info_btn" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                  See More Info
+                </a>
+              </p>
             </center>
-
       
           </div>     
         </div>
@@ -131,88 +120,74 @@
           
             <div class="collapse" id="collapseExample">
             
-            <div class="d-flex flex-row v_row">
-              <div class="col_1">
-                <p class="volume_num_head">Author(s):</p>
-              </div>
-              <div class="col_2">
+              <div class="d-flex flex-row v_row">
+                <div class="col_1">
+                  <p class="volume_num_head">Author(s):</p>
+                </div>
+                <div class="col_2">
 
-                <!-- for comic_personnel in comic_personnel_related -->
-                  <!-- if comic_personnel.role == 'Author' -->
-                    <p class="volume_num">Placeholder 1 Placeholder</p>
-                    
-                  <!-- endif -->
-                <!-- endfor -->
+                  <!-- for comic_personnel in comic_personnel_related -->
+                    <!-- if comic_personnel.role == 'Author' -->
+                      <p class="volume_num">Placeholder 1 Placeholder</p>
+                      
+                    <!-- endif -->
+                  <!-- endfor -->
+                </div>
               </div>
-            </div>
-            <div class="d-flex flex-row v_row">
-              <div class="col_1">
-                <p class="volume_num_head">Artist(s):</p>
+              <div class="d-flex flex-row v_row">
+                <div class="col_1">
+                  <p class="volume_num_head">Artist(s):</p>
+                </div>
+                <div class="col_2">
+                  <!-- for comic_personnel in comic_personnel_related -->
+                    <!-- if comic_personnel.role == 'Artist' -->
+                      <p class="volume_num">Placeholder 1 Placeholder</p>
+                    <!-- endif -->
+                  <!-- endfor -->
+                </div>
               </div>
-              <div class="col_2">
-                <!-- for comic_personnel in comic_personnel_related -->
-                  <!-- if comic_personnel.role == 'Artist' -->
-                    <p class="volume_num">Placeholder 1 Placeholder</p>
-                  <!-- endif -->
-                <!-- endfor -->
-              </div>
-            </div>
 
+              <div class="d-flex flex-row v_row">
+                <div class="col_1">
+                  <p class="volume_num_head">Released:</p>
+                </div>
+                <div class="col_2">
+                  <p class="volume_num">Placeholder 1 Placeholder</p>
+              
+                </div>
+              </div>
+              <div class="d-flex flex-row v_row">
+                <div class="col_1">
+                  <p class="volume_num_head">Next Release:</p>
+                </div>
+                <div class="col_2">
+                  <p class="volume_num">Volume 1</p>
+                </div>
+              </div>
             
-            <div class="d-flex flex-row v_row">
-              <div class="col_1">
-                <p class="volume_num_head">Released:</p>
-              </div>
-              <div class="col_2">
-                <p class="volume_num">Placeholder 1 Placeholder</p>
-            
-              </div>
             </div>
-            <div class="d-flex flex-row v_row">
-              <div class="col_1">
-                <p class="volume_num_head">Next Release:</p>
-              </div>
-              <div class="col_2">
-                <p class="volume_num">Volume 1</p>
-              </div>
-            </div>
-            
-
-            </div>
-
-
             
           </div>    
         </div>
       </div>
 
+      <div class="cont_comic_about">
 
+        <p class="comic_about_name">About Comic</p>
+        <p class="comic_about_descr">
 
+          <!-- {{comic.comic_description}} -->
 
-        <div class="cont_comic_about">
-          <div class="">
-          <p class="comic_about_name">About Comic</p>
-          <p class="comic_about_descr">
+          Abstract: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 
-            <!-- {{comic.comic_description}} -->
+        </p>
+          
+      </div>
 
-            Abstract: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-
-          </p>
-
-
-      
-          </div>     
-        </div>
-
-
-        <hr class="separator">
-
-
+      <hr class="separator" />
 
       {% if volumes %}
       <!-- check if volumes, if not display an error -->
-
 
         {% for volume in volumes %}
 
@@ -221,8 +196,6 @@
                   vol: {{volume.vol_number}}
               </h2>
           </div>
-
-
 
           <div class="d-flex flex-row rowwww_2">
 
@@ -235,26 +208,20 @@
                 
                   {% endif %}
                 {% endfor %}
-               
-         
+                
             </div>
-
 
             <div class="cont_volum_5">
              
-              
-              <p class="volume_name">
-              
-                
+              <p class="volume_name"> 
                {{volume.volume_title}}
               </p>
               <p class="volume_descr">
                 <!-- volume.volume description DOESN't YET EXIST -->
-                Abstract: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."</p>
+                Abstract: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
+              </p>
           
-            
             </div>
-
             
           </div>
         {% endfor %}
