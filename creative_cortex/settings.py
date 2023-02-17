@@ -1,16 +1,17 @@
-from pathlib import Path
 import os
+from pathlib import Path
+
 from decouple import config
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 SECRET_KEY = config("SECRET_KEY", default='')
 
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['creative-cortex.herokuapp.com']
+ALLOWED_HOSTS = []
 
+# 'creative-cortex.herokuapp.com'
 INSTALLED_APPS = [
     'baton',
     'django.contrib.admin',
@@ -27,8 +28,6 @@ INSTALLED_APPS = [
 
     'phonenumber_field',
     'admin_reorder'
-
-
 ]
 
 MIDDLEWARE = [
@@ -75,13 +74,13 @@ DATABASES = {
         'OPTIONS': {'sql_mode': 'traditional'}}
 }
 
-#S3 Config
+# S3 Config
 
 USE_S3 = config("USES3", default='False') == 'TRUE'
 AWS_S3_ADDRESSING_STYLE = "virtual"
 
-if USE_S3 == True:
-    # aws settings
+if USE_S3 is True:
+
     AWS_ACCESS_KEY_ID = config("AWS_ACCESS_KEY_ID", default='')
     AWS_SECRET_ACCESS_KEY = config("AWS_SECRET_ACCESS_KEY", default='')
     AWS_STORAGE_BUCKET_NAME = config("AWS_STORAGE_BUCKET_NAME", default='')
@@ -92,12 +91,9 @@ if USE_S3 == True:
     AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
     AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
 
-    #PUBLIC_MEDIA_LOCATION = 'media'
-    #MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{PUBLIC_MEDIA_LOCATION}/'
-    #DEFAULT_FILE_STORAGE = 'creative_cortex.storage_backends.PublicMediaStorage'
-
     PRIVATE_MEDIA_LOCATION = 'private'
-    PRIVATE_FILE_STORAGE = 'creative_cortex.storage_backends.PrivateMediaStorage'
+    PRIVATE_FILE_STORAGE = \
+        'creative_cortex.storage_backends.PrivateMediaStorage'
 
 else:
     MEDIA_URL = '/media/'
@@ -119,7 +115,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
@@ -139,15 +134,10 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-
 ADMIN_REORDER = (
-    # Keep original label and models
-
-    # Rename app
-    #{'app': 'cc_app', 'label': 'creative-cortex-cms'},
-
     # Reorder app models
-    {'app': 'cc_app', 'models': (
+    {'app': 'cc_app', 'models':
+    (
         'cc_app.Comics',
         'cc_app.Volumes',
         'cc_app.Chapters',
@@ -160,10 +150,6 @@ ADMIN_REORDER = (
         'cc_app.Web_Page_Text_Content',
         'cc_app.Featured_Youtube_videos'
         'cc_app.Inquiries',
-
-
-    )},
-
+    )
+    },
 )
-
-

@@ -1,7 +1,7 @@
-from django.shortcuts import render
-from . import models, utils
-from django.shortcuts import redirect
 from django.http import HttpResponseRedirect
+from django.shortcuts import redirect, render
+
+from . import models, utils
 
 
 def Landing_Page(request):

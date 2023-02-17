@@ -1,4 +1,5 @@
 from django.urls import path
+
 from . import views
 
 # path('404error/', views.Error_404, name="error_404"),

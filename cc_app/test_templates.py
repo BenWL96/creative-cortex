@@ -1,12 +1,11 @@
 import datetime
 import tempfile
-from django.test import (
-	Client,
-	TestCase,
-)
+
+from django.test import Client, TestCase
 from django.urls import reverse
-from . import models
 from phonenumber_field.phonenumber import PhoneNumber
+
+from . import models
 
 
 class testViewsAndTemplates(TestCase):

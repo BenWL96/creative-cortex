@@ -1,10 +1,10 @@
 import datetime
 import tempfile
-from django.test import (
-	TestCase,
-)
-from . import models
+
+from django.test import TestCase
 from phonenumber_field.phonenumber import PhoneNumber
+
+from . import models
 
 
 class testModelFieldParameters(TestCase):
