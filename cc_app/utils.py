@@ -173,29 +173,29 @@ def take_volumes_with_chap_return_list_volumes_that_have_chapters_and_pages(
 
 	for volume_with_chapter in list_volumes_with_chapters:
 
-			chapters_of_volumes_with_chapters = list(
+		chapters_of_volumes_with_chapters = list(
 				models.Chapters.objects.select_related(
 					'volume').filter(volume=volume_with_chapter)
 			)
 
-			print(chapters_of_volumes_with_chapters)
-			print(len(chapters_of_volumes_with_chapters))
+		print(chapters_of_volumes_with_chapters)
+		print(len(chapters_of_volumes_with_chapters))
 
-			if len(chapters_of_volumes_with_chapters) > 0:
-				# for every chapter in every volume
-				# find pages of the chapters which belong to
-				# the variable volume_with_chapter
+		if len(chapters_of_volumes_with_chapters) > 0:
+			# for every chapter in every volume
+			# find pages of the chapters which belong to
+			# the variable volume_with_chapter
 
-				for chapter_of_volumes_with_chapters in chapters_of_volumes_with_chapters:
-					pages_of_chapters_of_volumes_with_chapters_with_pages = list(
-						models.Pages.objects.select_related(
-							'chapter').filter(chapter=chapter_of_volumes_with_chapters)
+			for chapter_of_volumes_with_chapters in chapters_of_volumes_with_chapters:
+				pages_of_chapters_of_volumes_with_chapters_with_pages = list(
+					models.Pages.objects.select_related(
+						'chapter').filter(chapter=chapter_of_volumes_with_chapters)
 					)
 
-					if len(pages_of_chapters_of_volumes_with_chapters_with_pages) > 0:
+				if len(pages_of_chapters_of_volumes_with_chapters_with_pages) > 0:
 
-						if volume_with_chapter not in volumes_with_chapters_and_pages:
-							volumes_with_chapters_and_pages.append(volume_with_chapter)
+					if volume_with_chapter not in volumes_with_chapters_and_pages:
+						volumes_with_chapters_and_pages.append(volume_with_chapter)
 
 	return volumes_with_chapters_and_pages
 
@@ -221,10 +221,10 @@ def assign_personnel_objects_even_boolean_return_list():
 
 
 def Pass_About_Us_Text_Return_Context(
-		form,
-		list_personnel,
-		page_text_content,
-		header_img_url
+	form,
+	list_personnel,
+	page_text_content,
+	header_img_url
 ):
 
 	if page_text_content.count() == 1:
@@ -285,9 +285,9 @@ def Pass_About_Us_Text_Return_Context(
 
 
 def Pass_Links_Text_Return_Context(
-		featured_videos,
-		page_text_content,
-		header_img_url
+	featured_videos,
+	page_text_content,
+	header_img_url
 ):
 
 	if page_text_content.count() == 1:

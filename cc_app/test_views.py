@@ -1,13 +1,7 @@
-import unittest, datetime, tempfile
-from django.test import (
-	Client,
-	TestCase,
-	SimpleTestCase
-)
+import unittest
 from django.urls import reverse, resolve
-from . import views, models, utils, forms
-from django.http import HttpResponseRedirect
-from phonenumber_field.phonenumber import PhoneNumber
+from . import views
+
 
 class testPatternNameResolveToView(unittest.TestCase):
 
@@ -20,7 +14,7 @@ class testPatternNameResolveToView(unittest.TestCase):
 		self.assertEqual(resolve(url).func, views.Comics)
 
 	def test_Volumes_View_No_Comics(self):
-		#If no comics exists go to landin pages
+		# If no comics exists go to landin pages
 		kwargs = {"comic_param": "random-comic"}
 		url = reverse('comic-detail', kwargs=kwargs)
 		print(resolve(url).func)
@@ -43,18 +37,15 @@ class testPatternNameResolveToView(unittest.TestCase):
 		self.assertEqual(resolve(url).func, views.Gallery)
 
 	"""Debug should be set to False before testing these
-	
 	def test_404_View(self):
 		url = reverse('error_404')
 		self.assertEqual(resolve(url).func, views.Error_404)
-
 	def test_500_View(self):
 		url = reverse('error_500')
 		self.assertEqual(resolve(url).func, views.Error_500)
-	
 	"""
-
 
 
 if __name__ == "__main__":
 	unittest.main()
+	pass
