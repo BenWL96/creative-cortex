@@ -4,13 +4,11 @@
   {% extends 'cc_app/index.html' %}
   {% load static %}
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     {% block style %}
-      <link href="{% static 'cc_app/css/about_us.css' %}" rel="stylesheet" type="text/css">
-
-
+      <link href="{% static 'cc_app/css/about_us.css' %}" rel="stylesheet" type="text/css" />
     {% endblock %}
 
     
@@ -24,7 +22,7 @@
 
         {% if header_img_url %}
 
-          <div class="w-title" style="background-image: url( '{{header_img_url.url}}' )">
+          <div class="w-title" style="background-image: url( '{{header_img_url.url}}' )" />
             <h1 class="Title">
                 About Us
             </h1>
@@ -39,7 +37,6 @@
           </div>
 
         {% endif %}
-
 
         {% if page_text_content_1 %}
 
@@ -63,7 +60,7 @@
             <div class="personnel_col1">
               <div class="container my-2">
                 <center>
-                  <img src="{{person.person_img_200_by_260.url}}" class="personnel_img">
+                  <img src="{{person.person_img_200_by_260.url}}" class="personnel_img" />
                 </center>
 
           
@@ -89,8 +86,6 @@
 
           <div class="d-flex flex-row personnel_row2">
 
-            
-
             <div class="personnel_col2">
               <div class="container my-3 personnel_text-container">
               
@@ -109,22 +104,18 @@
             <div class="personnel_col1">
               <div class="container my-3">
                 <center>
-                  <img src="{{person.person_img_200_by_260.url}}" class="personnel_img">
+                  <img src="{{person.person_img_200_by_260.url}}" class="personnel_img" />
                 </center>
 
-          
               </div>     
             </div>
           </div>
           
         {% endif %}
 
-      
-
       {% endfor %}
 
-
-      <hr class="separator">
+      <hr class="separator" />
 
       <div class="subtitle-wrapper">
           <h2 class="sub-title">
@@ -143,14 +134,14 @@
             <div class="container">
               
               <label for="your_name" class="form-label">Your Name: </label>
-              <input id="your_name" class="form-control" type="text" name="your_name" maxlength="25" required>
+              <input id="your_name" class="form-control" type="text" name="your_name" maxlength="25" required />
               <div class="error">
                 {{ form.your_name.errors }}
               </div>
 
             </div>
 
-            <br>
+            <br />
 
           </div>
           <div class="flex-col form-col">
@@ -158,7 +149,7 @@
             <div class="container">
 
               <label for="email_address" class="form-label">Email: </label>
-              <input id="email_address" class="form-control" type="text" name="email_address" maxlength="50" required>
+              <input id="email_address" class="form-control" type="text" name="email_address" maxlength="50" required />
               <div class="error">
                 {{ form.email_address.errors }}
               </div>
@@ -168,7 +159,7 @@
           </div>
         </div>
 
-        <br>
+        <br />
 
         <div class="d-flex flex-row form-row">
             <div class="flex-col form-col">
@@ -187,7 +178,7 @@
         </div>
     
 
-        <br>
+        <br />
 
         <div class="d-flex flex-row form-row">
           <div class="container">
@@ -196,7 +187,7 @@
           </div>
         </div>
 
-        <br>
+        <br />
 
         <div class="d-flex flex-row">
           <div class="flex-col">
@@ -208,7 +199,7 @@
           </div>
         </div>
 
-          <br>
+          <br />
 
        
 
