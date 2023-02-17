@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from . import models, utils, forms
-from django.shortcuts import get_object_or_404, redirect
+from . import models, utils
+from django.shortcuts import redirect
 from django.http import HttpResponseRedirect
 
 
@@ -10,6 +10,7 @@ def Landing_Page(request):
 	)
 	context = {'carousel_img_objects': carousel_img_objects}
 	return render(request, 'cc_app/landing_page.html', context)
+
 
 def Comics(request):
 
@@ -29,6 +30,7 @@ def Comics(request):
 	}
 	return render(request, 'cc_app/comics.html', context)
 
+
 def Comic_Detail(request, comic_param):
 
 	try:
@@ -45,12 +47,12 @@ def Comic_Detail(request, comic_param):
 	volumes_related_to_comic_param = models.Volumes.objects.select_related(
 		'comic_name').filter(comic_name=comic)
 
-	list_volumes_with_chapters = utils.take_volumes_of_comic_return_list_volumes_with_chapters(volumes_related_to_comic_param)
+	list_volumes_with_chapters =\
+		utils.take_volumes_of_comic_return_list_volumes_with_chapters(volumes_related_to_comic_param)
 	volumes_with_chapters_and_pages = utils.take_volumes_with_chap_return_list_volumes_that_have_chapters_and_pages(list_volumes_with_chapters)
 
-	#HEADER IMG
+	# HEADER IMG
 	header_img_url = utils.fetch_comic_detail_page_return_img_url()
-
 
 	volumes_related_count = len(volumes_with_chapters_and_pages)
 
@@ -63,8 +65,8 @@ def Comic_Detail(request, comic_param):
 			volumes_related_to_comic_param
 		)
 
-		# Find pages related to chapters. if no pages in chapter, then don't append chapter
-		# To the list of chapter objects.
+		# Find pages related to chapters. if no pages in chapter,
+		# then don't append chapter to the list of chapter objects.
 
 		chapters = utils.return_list_chapters_with_pages(chapters_related)
 
@@ -88,17 +90,16 @@ def Comic_Detail(request, comic_param):
 
 	return render(request, "cc_app/comic_detail.html", context)
 
-#List view won't work because this is a detail view !!
 
 def Pages(request, comic_param, volume_param, chapter_param, page_param):
 
-
-	chapter_volume_comic_objects = utils.find_chapter_with_all_pages_from_params_or_redirect(
-		comic_param,
-		volume_param,
-		chapter_param,
-		page_param
-	)
+	chapter_volume_comic_objects =\
+		utils.find_chapter_with_all_pages_from_params_or_redirect(
+			comic_param,
+			volume_param,
+			chapter_param,
+			page_param
+		)
 
 	if type(chapter_volume_comic_objects) != HttpResponseRedirect:
 		chapter = chapter_volume_comic_objects[0]
@@ -109,11 +110,10 @@ def Pages(request, comic_param, volume_param, chapter_param, page_param):
 		redirect = chapter_volume_comic_objects
 		return redirect
 
-	#Only gets this far if all of the pages are found.
-	#This can only be set by the admin user.
+	# Only gets this far if all of the pages are found.
 
-	#This page_related_count logic is used to determine
-	#The final page count, which then allows for page navigation
+	# This page_related_count logic is used to determine
+	# The final page count, which then allows for page navigation
 
 	pages_related = models.Pages.objects.select_related(
 		'chapter').filter(chapter=chapter)
@@ -124,7 +124,7 @@ def Pages(request, comic_param, volume_param, chapter_param, page_param):
 	param_equal_to_one_boolean = page_param == 1
 	param_equals_final_page_id_boolean = page_param == last_page_number
 
-	if param_equal_to_one_boolean == True:
+	if param_equal_to_one_boolean is True:
 		next_page = page_param + 1
 
 		context = {
@@ -137,7 +137,7 @@ def Pages(request, comic_param, volume_param, chapter_param, page_param):
 			'previous_page_exists': False,
 			'current_page_number': page_param
 		}
-	elif param_equals_final_page_id_boolean == True:
+	elif param_equals_final_page_id_boolean is True:
 		previous_page = page_param - 1
 
 		context = {
@@ -168,14 +168,16 @@ def Pages(request, comic_param, volume_param, chapter_param, page_param):
 			'current_page_number': page_param
 		}
 
-
 	return render(request, 'cc_app/pages.html', context)
+
 
 def Links(request):
 
-	featured_videos = models.Featured_Youtube_videos.objects.all().order_by("video_ordering")
+	featured_videos =\
+		models.Featured_Youtube_videos.objects.all().order_by("video_ordering")
 
-	page_text_content, header_img_url = utils.fetch_links_page_return_content_and_img_url()
+	page_text_content, header_img_url =\
+		utils.fetch_links_page_return_content_and_img_url()
 
 	context = utils.Pass_Links_Text_Return_Context(
 		featured_videos,
@@ -186,16 +188,18 @@ def Links(request):
 
 	return render(request, 'cc_app/links.html', context)
 
+
 def About_Us(request):
 
 	form = utils.form_logic_about_us(request)
-	#This needs to be named something else to make it more clear...
+	# This needs to be named something else to make it more clear...
 	if type(form) == bool:
 		return HttpResponseRedirect('/about-us/')
 
 	list_personnel = utils.assign_personnel_objects_even_boolean_return_list()
 
-	page_text_content, header_img_url = utils.fetch_about_us_page_return_content_and_img_url()
+	page_text_content, header_img_url =\
+		utils.fetch_about_us_page_return_content_and_img_url()
 
 	context = utils.Pass_About_Us_Text_Return_Context(
 		form, list_personnel, page_text_content, header_img_url
@@ -218,15 +222,6 @@ def Gallery(request):
 
 	return render(request, 'cc_app/gallery.html', context)
 
-
-"""def Error_404(request):
-	context = {}
-	return render(request, 'cc_app/error_404.html', context)
-
-
-def Error_500(request):
-	context = {}
-	return render(request, 'cc_app/error_500.html', context)"""
 
 def error404(request, exception):
 	return render(request, 'cc_app/error_404.html', status=404)

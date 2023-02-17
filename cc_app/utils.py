@@ -4,6 +4,7 @@ import re
 
 SLUG_REGEX = re.compile('^[-\w]+$')
 
+
 def check_type_param_comic_slug_boolean(comic_param):
 
 	try:
@@ -20,11 +21,13 @@ def check_type_volume_param_boolean(volume_param):
 		return True
 	return False
 
+
 def check_type_chapter_param_boolean(chapter_param):
 
 	if type(chapter_param) == int:
 		return True
 	return False
+
 
 def check_type_page_param_boolean(page_param):
 
@@ -34,10 +37,10 @@ def check_type_page_param_boolean(page_param):
 
 
 def find_chapter_with_all_pages_from_params_or_redirect(
-		comic_param,
-		volume_param,
-		chapter_param,
-		page_param
+	comic_param,
+	volume_param,
+	chapter_param,
+	page_param
 ):
 
 	# We can try to condense this down into a single database query.
@@ -56,15 +59,15 @@ def find_chapter_with_all_pages_from_params_or_redirect(
 	)
 
 	if (
-			type_check_comic_slug_passed == False and
-			type_check_volume_param_passed == False and
-			type_check_chapter_param_passed == False and
-			type_check_page_param_passed == False):
+			type_check_comic_slug_passed is False and
+			type_check_volume_param_passed is False and
+			type_check_chapter_param_passed is False and
+			type_check_page_param_passed is False):
 
 		return redirect('landing_page')
 
-	#the redirects here won't work becuase we are assuming these redirects are
-	#legitimate
+	# the redirects here won't work becuase we are assuming these redirects are
+	# legitimate
 
 	try:
 
@@ -84,7 +87,7 @@ def find_chapter_with_all_pages_from_params_or_redirect(
 			vol_number=volume_param, comic_name=comic)
 		print("volume successfully found")
 
-	except:
+	except models.Volumes.DoesNotExist:
 		print("volume " + str(volume_param) + " doesn't exist to comic " + comic_param + ".")
 		return redirect('comics')
 
@@ -97,7 +100,7 @@ def find_chapter_with_all_pages_from_params_or_redirect(
 		)
 		print("chapter successfully found that has all its pages")
 
-	except:
+	except models.Chapters.DoesNotExist:
 
 		print("Chapter " + str(chapter_param) + " doesn't exist to volume " + str(volume_param) + " of " + comic_param + ".")
 		print("Or doesn't have all its pages.")
@@ -109,14 +112,13 @@ def find_chapter_with_all_pages_from_params_or_redirect(
 			chapter=chapter,
 			page_number=page_param,
 		)
-		print("chapter successfully found that has all its pages")
+		print("Pages related to chapter found")
 
-	except:
+	except models.Pages.DoesNotExist:
 
 		print("Page " + str(page_param) + " doesn't exist to chapter " + chapter_param)
 		print("of volume" + str(volume_param) + " of " + comic_param + ".")
 		return redirect('comics')
-
 
 	print("how did we get this far")
 	return [chapter, volume, comic, page]
@@ -146,7 +148,10 @@ def return_list_chapters_with_pages(chapters_related):
 
 	return chapters
 
-def take_volumes_of_comic_return_list_volumes_with_chapters(volumes_related_to_comic_param):
+
+def take_volumes_of_comic_return_list_volumes_with_chapters(
+	volumes_related_to_comic_param
+):
 
 	volumes_with_chapters = list()
 
@@ -162,10 +167,9 @@ def take_volumes_of_comic_return_list_volumes_with_chapters(volumes_related_to_c
 
 
 def take_volumes_with_chap_return_list_volumes_that_have_chapters_and_pages(
-		list_volumes_with_chapters
+	list_volumes_with_chapters
 ):
 	volumes_with_chapters_and_pages = list()
-
 
 	for volume_with_chapter in list_volumes_with_chapters:
 
@@ -177,10 +181,10 @@ def take_volumes_with_chap_return_list_volumes_that_have_chapters_and_pages(
 			print(chapters_of_volumes_with_chapters)
 			print(len(chapters_of_volumes_with_chapters))
 
-
 			if len(chapters_of_volumes_with_chapters) > 0:
-				#for every chapter in every volume
-				#We are investigating the pages of the chapters which belong to volume_with_chapter
+				# for every chapter in every volume
+				# find pages of the chapters which belong to
+				# the variable volume_with_chapter
 
 				for chapter_of_volumes_with_chapters in chapters_of_volumes_with_chapters:
 					pages_of_chapters_of_volumes_with_chapters_with_pages = list(
@@ -193,9 +197,7 @@ def take_volumes_with_chap_return_list_volumes_that_have_chapters_and_pages(
 						if volume_with_chapter not in volumes_with_chapters_and_pages:
 							volumes_with_chapters_and_pages.append(volume_with_chapter)
 
-
 	return volumes_with_chapters_and_pages
-
 
 
 def assign_personnel_objects_even_boolean_return_list():
@@ -218,7 +220,12 @@ def assign_personnel_objects_even_boolean_return_list():
 	return list_personnel
 
 
-def Pass_About_Us_Text_Return_Context(form, list_personnel, page_text_content, header_img_url):
+def Pass_About_Us_Text_Return_Context(
+		form,
+		list_personnel,
+		page_text_content,
+		header_img_url
+):
 
 	if page_text_content.count() == 1:
 		context = {
@@ -277,8 +284,11 @@ def Pass_About_Us_Text_Return_Context(form, list_personnel, page_text_content, h
 	return context
 
 
-
-def Pass_Links_Text_Return_Context(featured_videos, page_text_content, header_img_url):
+def Pass_Links_Text_Return_Context(
+		featured_videos,
+		page_text_content,
+		header_img_url
+):
 
 	if page_text_content.count() == 1:
 		context = {
@@ -330,7 +340,9 @@ def Pass_Links_Text_Return_Context(featured_videos, page_text_content, header_im
 
 	return context
 
+
 def fetch_about_us_page_return_content_and_img_url():
+
 	about_page_obj = models.Web_Pages.objects.filter(page_name="About Us")
 
 	if len(about_page_obj) > 0:
@@ -362,6 +374,7 @@ def fetch_gallery_page_return_img_url():
 
 	return header_img_url
 
+
 def fetch_comic_detail_page_return_img_url():
 
 	comic_detail_page_obj = models.Web_Pages.objects.filter(
@@ -376,11 +389,9 @@ def fetch_comic_detail_page_return_img_url():
 	return header_img_url
 
 
-
 def fetch_links_page_return_content_and_img_url():
 
 	links_page_obj = models.Web_Pages.objects.filter(page_name="Links")
-	# page_text_content = models.Web_Page_Text_Content.objects.select_related('page_name')
 
 	if len(links_page_obj) > 0:
 		page_text_content = links_page_obj[
@@ -392,7 +403,6 @@ def fetch_links_page_return_content_and_img_url():
 		header_img_url = False
 
 	return page_text_content, header_img_url
-
 
 
 def form_logic_about_us(request):
@@ -420,7 +430,6 @@ def form_logic_about_us(request):
 			)
 
 			print("inquiry has been added to the database")
-
 
 			return True
 
