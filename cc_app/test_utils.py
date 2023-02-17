@@ -4,6 +4,7 @@ from phonenumber_field.phonenumber import PhoneNumber
 import datetime, tempfile
 from django.http import HttpResponseRedirect
 
+
 class testUtils(TestCase):
 
 	def setUp(self):
@@ -47,18 +48,24 @@ class testUtils(TestCase):
 		volumes_related = models.Volumes.objects.select_related(
 			'comic_name').filter(comic_name=comic_object)
 
-		chapters_related = utils.return_chapters_related_to_volumes_queryset(volumes_related)
+		chapters_related = utils.return_chapters_related_to_volumes_queryset(
+			volumes_related
+		)
 		chapters_related_count = len(chapters_related)
 		self.assertEqual(chapters_related_count, 2)
 
 	def test_type_param_comic_slug_boolean_false(self):
 		comic_param = 1512
-		type_check_passed = utils.check_type_param_comic_slug_boolean(comic_param)
+		type_check_passed = utils.check_type_param_comic_slug_boolean(
+			comic_param
+		)
 		self.assertEqual(type_check_passed, False)
 
 	def test_type_param_comic_slug_boolean_true(self):
 		comic_param = 'comic-123'
-		type_check_passed = utils.check_type_param_comic_slug_boolean(comic_param)
+		type_check_passed = utils.check_type_param_comic_slug_boolean(
+			comic_param
+		)
 		self.assertEqual(type_check_passed, True)
 
 	def test_check_type_volume_param_boolean_false(self):
@@ -73,12 +80,16 @@ class testUtils(TestCase):
 
 	def test_check_type_chapter_param_boolean_false(self):
 		chapter_param = "abc"
-		type_check_passed = utils.check_type_chapter_param_boolean(chapter_param)
+		type_check_passed = utils.check_type_chapter_param_boolean(
+			chapter_param
+		)
 		self.assertEqual(type_check_passed, False)
 
 	def test_check_type_chapter_param_boolean_true(self):
 		chapter_param = 1512
-		type_check_passed = utils.check_type_chapter_param_boolean(chapter_param)
+		type_check_passed = utils.check_type_chapter_param_boolean(
+			chapter_param
+		)
 		self.assertEqual(type_check_passed, True)
 
 	def test_check_type_page_param_boolean_false(self):
@@ -92,7 +103,12 @@ class testUtils(TestCase):
 		self.assertEqual(type_check_passed, True)
 
 	def test_find_chapter_from_params_or_redirect_NO_OBJECTS(self):
-		comic_param, volume_param, chapter_param, page_param = "comic_1", 1, 1, 1
+
+		comic_param = "comic_1"
+		volume_param = 1
+		chapter_param = 1
+		page_param = 1
+
 		response = utils.find_chapter_with_all_pages_from_params_or_redirect(
 			comic_param,
 			volume_param,
@@ -285,7 +301,8 @@ class testUtils(TestCase):
 			person_img_200_by_260=self.a_simple_file
 		)
 
-		personnel_list = utils.assign_personnel_objects_even_boolean_return_list()
+		personnel_list =\
+			utils.assign_personnel_objects_even_boolean_return_list()
 		self.assertEqual(len(personnel_list), 2)
 
 	def test_check_even_values_from_assign_personnel_objects_even_boolean_return(self):
@@ -313,7 +330,8 @@ class testUtils(TestCase):
 			person_img_200_by_260=self.a_simple_file
 		)
 
-		personnel_list = utils.assign_personnel_objects_even_boolean_return_list()
+		personnel_list =\
+			utils.assign_personnel_objects_even_boolean_return_list()
 
 		first_person = personnel_list[0]
 		second_person = personnel_list[1]
@@ -347,7 +365,8 @@ class testUtils(TestCase):
 			text_content="ipsum"
 		)
 
-		page_text_content, header_img_url = utils.fetch_links_page_return_content_and_img_url()
+		page_text_content, header_img_url =\
+			utils.fetch_links_page_return_content_and_img_url()
 
 		context = utils.Pass_Links_Text_Return_Context(
 			featured_video,
@@ -395,21 +414,22 @@ class testUtils(TestCase):
 			text_content="ipsum"
 		)
 
-		page_text_content, header_img_url = utils.fetch_about_us_page_return_content_and_img_url()
+		page_text_content, header_img_url =\
+			utils.fetch_about_us_page_return_content_and_img_url()
 		personnel = models.Personnel.objects.all()
 		form = forms.Name_Form
-		context = utils.Pass_About_Us_Text_Return_Context(form, personnel, page_text_content, header_img_url)
-
-		#'form': form,
-		#'personnel': list_personnel,
-		#'header_img_url': header_img_url,
-		#'page_text_content_1': page_text_content[0],
-		#'page_text_content_2': page_text_content[1]
+		context = utils.Pass_About_Us_Text_Return_Context(
+			form,
+			personnel,
+			page_text_content,
+			header_img_url
+		)
 
 		self.assertEqual(len(context), 5)
 
 	def test_about_us_page_return_content_and_img_url_no_obj(self):
-		page_text_content, header_img_url = utils.fetch_about_us_page_return_content_and_img_url()
+		page_text_content, header_img_url =\
+			utils.fetch_about_us_page_return_content_and_img_url()
 		self.assertEqual(header_img_url, False)
 		self.assertEqual(page_text_content, "No text")
 
@@ -418,7 +438,8 @@ class testUtils(TestCase):
 		self.assertEqual(img_url, False)
 
 	def test_fetch_links_page_return_content_and_img_url_no_obj(self):
-		page_text_content, header_img_url = utils.fetch_links_page_return_content_and_img_url()
+		page_text_content, header_img_url =\
+			utils.fetch_links_page_return_content_and_img_url()
 		self.assertEqual(header_img_url, False)
 		self.assertEqual(page_text_content, "No text")
 
@@ -436,7 +457,8 @@ class testUtils(TestCase):
 			text_content_ordering=1,
 			text_content="ipsum"
 		)
-		page_text_content, header_img_url = utils.fetch_about_us_page_return_content_and_img_url()
+		page_text_content, header_img_url =\
+			utils.fetch_about_us_page_return_content_and_img_url()
 		self.assertNotEqual(header_img_url, False)
 		self.assertNotEqual(page_text_content, "No text")
 
@@ -456,7 +478,8 @@ class testUtils(TestCase):
 			text_content_ordering=1,
 			text_content="ipsum"
 		)
-		page_text_content, header_img_url = utils.fetch_links_page_return_content_and_img_url()
+		page_text_content, header_img_url =\
+			utils.fetch_links_page_return_content_and_img_url()
 		self.assertNotEqual(header_img_url, False)
 		self.assertNotEqual(page_text_content, "No text")
 

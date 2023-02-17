@@ -59,10 +59,10 @@ def find_chapter_with_all_pages_from_params_or_redirect(
 	)
 
 	if (
-			type_check_comic_slug_passed is False and
-			type_check_volume_param_passed is False and
-			type_check_chapter_param_passed is False and
-			type_check_page_param_passed is False):
+		type_check_comic_slug_passed is False and
+		type_check_volume_param_passed is False and
+		type_check_chapter_param_passed is False and
+		type_check_page_param_passed is False):
 
 		return redirect('landing_page')
 
@@ -174,9 +174,9 @@ def take_volumes_with_chap_return_list_volumes_that_have_chapters_and_pages(
 	for volume_with_chapter in list_volumes_with_chapters:
 
 		chapters_of_volumes_with_chapters = list(
-				models.Chapters.objects.select_related(
-					'volume').filter(volume=volume_with_chapter)
-			)
+			models.Chapters.objects.select_related(
+				'volume').filter(volume=volume_with_chapter)
+		)
 
 		print(chapters_of_volumes_with_chapters)
 		print(len(chapters_of_volumes_with_chapters))

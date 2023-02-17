@@ -1,12 +1,13 @@
-import datetime, tempfile
+import datetime
+import tempfile
 from django.test import (
 	Client,
 	TestCase,
 )
-from django.urls import reverse, resolve
-from . import views, models, utils, forms
-from django.http import HttpResponseRedirect
+from django.urls import reverse
+from . import models
 from phonenumber_field.phonenumber import PhoneNumber
+
 
 class testViewsAndTemplates(TestCase):
 

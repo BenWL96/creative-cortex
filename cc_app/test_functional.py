@@ -1,5 +1,5 @@
+from django.test import SimpleTestCase
 from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.wait import WebDriverWait
 import time
 from selenium.webdriver.common.by import By
@@ -8,8 +8,8 @@ from selenium.webdriver.common.action_chains import ActionChains
 
 class WebNavigationTest(SimpleTestCase):
 
-	#These test will not work because the class names
-	#have changed since writing these tests !
+	# These test will not work because the class names
+	# have changed since writing these tests !
 
 	def setUp(self):
 		self.driver = webdriver.Safari()
@@ -18,7 +18,6 @@ class WebNavigationTest(SimpleTestCase):
 
 	def tearDown(self):
 		self.driver.close()
-
 
 	def testNavigationToHomepage(self):
 
@@ -84,9 +83,7 @@ class WebNavigationTest(SimpleTestCase):
 			lambda d: d.find_element(By.CLASS_NAME, "Title"))
 		self.assertInHTML("Gallery", title.text)
 
-
 	def testNavigationToLinks(self):
-
 
 		link = WebDriverWait(self.driver, timeout=5).until(
 			lambda d: d.find_element(By.CLASS_NAME, "hamburger"))
@@ -119,7 +116,6 @@ class WebNavigationTest(SimpleTestCase):
 		title = WebDriverWait(self.driver, timeout=5).until(
 			lambda d: d.find_element(By.CLASS_NAME, "Title"))
 		self.assertInHTML("Links", title.text)
-
 
 	def testNavigationToAboutUs(self):
 		link = WebDriverWait(self.driver, timeout=5).until(
@@ -214,3 +210,4 @@ class WebNavigationTest(SimpleTestCase):
 
 if __name__ == "__main__":
 	unittest.main()
+	
