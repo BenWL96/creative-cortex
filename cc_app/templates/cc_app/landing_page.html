@@ -4,13 +4,13 @@
 {% load static %}
 
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
 
-      <link href="{% static 'cc_app/css/landing_page.css' %}" rel="stylesheet" type="text/css">
+      <link href="{% static 'cc_app/css/landing_page.css' %}" rel="stylesheet" type="text/css" />
 
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
 
       <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
     
@@ -20,21 +20,10 @@
       <div data-relative-input="true" id="scene" class="scene">
         <span data-depth="0.2" class="title-wrapper">
      
-     
               Creative Cortex
      
-       
-        </div>
+        </span>
       </div>
-      <!--<div class="container title-wrapper">
-        <center>
-          Creative Cortex
-        </center>
-      </div>-->
-
-    
-
-      
 
        <center>
           <div id="carouselExampleFade" class="carousel carousel-fade" data-bs-ride="carousel">
@@ -46,22 +35,19 @@
 
               {% for image in carousel_img_objects %}
                 <div class="carousel-item" data-bs-interval="5000">
-                  <img src="{{image.landing_page_img_n_by_n.url}}" class="landing-page-img">
+                  <img src="{{image.landing_page_img_n_by_n.url}}" class="landing-page-img" alt="{{image.landing_page_img_description}}" />
                 </div>
               {% endfor %}
             </div>
           </div>
           </center>
       
-
-      
-
-      <img src="{% static 'cc_app/images/index/hamburger_icon.png' %}" class="hamburger" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
+      <img src="{% static 'cc_app/images/index/hamburger_icon.png' %}" class="hamburger" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling" alt="Hamburger icon" />
 
       <div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
         <div class="offcanvas-header">
           <a href="{% url 'landing_page' %}">
-            <img src="{% static 'cc_app/images/index/CC_logo.png' %}" class="offcanvas-logo" href="">
+            <img src="{% static 'cc_app/images/index/CC_logo.png' %}" class="offcanvas-logo" href="" alt="Creative Cortex logo" />
           </a>
 
           <a class="offcanvas-title" id="offcanvasScrollingLabel" href="{% url 'landing_page' %}">Creative Cortex</a>
@@ -74,44 +60,42 @@
           <col class="offcanvas-body_col">
             <row>
               <a href="{% url 'landing_page' %}">
-                <img src="{% static 'cc_app/images/index/pop-homepage.jpg' %}" class="offcanvas-page-img" alt="...">
+                <img src="{% static 'cc_app/images/index/pop-homepage.jpg' %}" class="offcanvas-page-img" alt="Landing page button image" />
               </a>
             </row>
 
             <row>
               <a href="{% url 'comics' %}">
-                <img src="{% static 'cc_app/images/index/pop-comics.jpg' %}" class="offcanvas-page-img" alt="...">
+                <img src="{% static 'cc_app/images/index/pop-comics.jpg' %}" class="offcanvas-page-img" alt="Comics page button image" />
               </a>
             </row>
 
             <row>
               <a href="{% url 'gallery' %}">
-                <img src="{% static 'cc_app/images/index/pop-gallery.jpg' %}" class="offcanvas-page-img" alt="...">
+                <img src="{% static 'cc_app/images/index/pop-gallery.jpg' %}" class="offcanvas-page-img" alt="Gallery page button image" />
               </a>
             </row>
 
             <row>
               <a href="{% url 'links' %}">
-                <img src="{% static 'cc_app/images/index/pop-links.jpg' %}" class="offcanvas-page-img" alt="...">
+                <img src="{% static 'cc_app/images/index/pop-links.jpg' %}" class="offcanvas-page-img" alt="Links page button image" />
               </a>
             </row>
 
             <row>
               <a href="{% url 'about_us' %}">
-                <img src="{% static 'cc_app/images/index/pop-about.jpg' %}" class="offcanvas-page-img" alt="...">
+                <img src="{% static 'cc_app/images/index/pop-about.jpg' %}" class="offcanvas-page-img" alt="About Us page button image" />
               </a>
             </row>
-
 
           </col>
           
         </div>
 
-
     </div>
 
     <a href="{% url 'about_us' %}">
-        <img src="{% static 'cc_app/images/index/info.png' %}" class="info-icon" alt="...">
+        <img src="{% static 'cc_app/images/index/info.png' %}" class="info-icon" alt="Info icon" />
     </a>
 
     <script>
