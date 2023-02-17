@@ -3,18 +3,18 @@
 
   {% load static %}
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <link href="{% static 'cc_app/css/404.css' %}" rel="stylesheet" type="text/css">
-  
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+      <link href="{% static 'cc_app/css/404.css' %}" rel="stylesheet" type="text/css" />
+      
   </head>
   <body class="error-wrapper">
     
       <a href="{% url 'landing_page' %}">
-          <img src="{% static 'cc_app/images/error/404_error_img.jpg' %}" class="error-img">
+          <img src="{% static 'cc_app/images/error/404_error_img.jpg' %}" class="error-img" alt="404 error image" />
       </a>
 
-  
   </body> 
 </html>
