@@ -5,15 +5,14 @@
 {% load static %}
 
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     {% block style %}
-      <link href="{% static 'cc_app/css/comics.css' %}" rel="stylesheet" type="text/css">
+      <link href="{% static 'cc_app/css/comics.css' %}" rel="stylesheet" type="text/css" />
 
       <style>
 
-        /* background-image: url( "{% static 'cc_app/images/placeholders/comic_1.jpg' %}" ); */
         .cont_1{
             background: rgb(245,182,44);
             background: radial-gradient(circle, rgba(245,182,44,1) 11%, rgba(245,167,44,1) 36%, rgba(245,159,44,1) 51%, rgba(232,84,47,1) 100%, rgba(232,84,47,1) 100%);
@@ -30,9 +29,6 @@
   <body>
     
     {% block body %}
-
-
-
 
         {% if header_img_url %}
 
@@ -52,33 +48,27 @@
 
       {% endif %}
 
-
       <div class="d-flex flex-row cr1" >
+
         {% for comic in comics %}
       
           <div class="flex-column c1">
 
             <div class="cont_1" data-tilt>
               <div class="img_wrapper" data-tilt data-tilt-scale="0.8">
-                <img src="{{comic.comic_img_376_by_376.url}}" class="c_pl_img" id="c_pl_img" onclick="comicRedirect('{% url 'comic-detail' comic_param=comic.slug %}')">
+                <img src="{{comic.comic_img_376_by_376.url}}" class="c_pl_img" id="c_pl_img" onclick="comicRedirect('{% url 'comic-detail' comic_param=comic.slug %}')" alt="The cover art for {{comic_name}}"/>
               </div>
-
-              <div class="container my-3">
-                  
+              <div class="container my-3"> 
                 <a href="{% url 'comic-detail' comic_param=comic.slug %}" class="com_name">
                   {{comic.comic_name}}</a>
               </div>
             </div>
-             
 
           </div>   
 
         {% endfor %}
 
-
       </div>
-
-
 
     <script type="text/javascript" src="{% static 'cc_app/javascript/vanilla-tilt/vanilla-tilt.js' %}"></script>
 
