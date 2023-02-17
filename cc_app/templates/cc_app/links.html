@@ -4,16 +4,14 @@
   {% extends 'cc_app/index.html' %}
   {% load static %}
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     {% block style %}
-      <link href="{% static 'cc_app/css/links.css' %}" rel="stylesheet" type="text/css">
-    
-    
+      <link href="{% static 'cc_app/css/links.css' %}" rel="stylesheet" type="text/css" />
     {% endblock %}
 
-    
   </head>
   <body>
     
@@ -37,58 +35,53 @@
 
         {% endif %}
 
-
-        
-        
-
-
         <div class="text-wrapper">
 
           {% if page_text_content_1 %}
-          <p class="links-text1">
-            
-                {{page_text_content_1.text_content}}
 
-          </p>
+            <p class="links-text1">
+              
+              {{page_text_content_1.text_content}}
+
+            </p>
+
           {% else %}
 
-          <p class="links-text1">
-            
-                Please insert text content for web page.
+            <p class="links-text1">
+              
+              Please insert text content for web page.
 
-          </p>
+            </p>
 
           {% endif %}
-        </div>
 
+        </div>
 
           {% if featured_videos %}
 
-      
-            <hr class="separator">
+          <hr class="separator" />
         
-
            <div class="subtitle-wrapper">
               <h2 class="sub-title">
                   Videos
               </h2>
             </div>
 
-
           <div class="video-section">
 
-
             {% for feature in featured_videos %}
-            <div class="video-wrapper-parent">
 
-              <div class="video-wrapper-child">
-                <iframe src="{{feature.url}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen class="video"></iframe>
+              <div class="video-wrapper-parent">
+
+                <div class="video-wrapper-child">
+                  <iframe src="{{feature.url}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen class="video"></iframe>
+                </div>
               </div>
-            </div>
+
             {% endfor %}
+
           </div> 
-
-
+          
           {% endif %}
 
     {% endblock %}
