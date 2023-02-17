@@ -4,9 +4,10 @@ from django.test import (
 	Client,
 	TestCase
 )
-from django.urls import reverse, resolve
-from . import views, models, utils, forms
+from django.urls import reverse
+from . import models
 from phonenumber_field.phonenumber import PhoneNumber
+
 
 class testContext(TestCase):
 
@@ -87,10 +88,7 @@ class testContext(TestCase):
 		self.assertIsNotNone(context_object_text)
 		self.assertIsNotNone(context_object_text_2)
 
-
-
-
-	"""def test_about_page_context(self):
+	def test_about_page_context(self):
 
 		raw_phone = "+447713835911"
 		phone_num = PhoneNumber.from_string(phone_number=raw_phone).as_e164
@@ -119,8 +117,7 @@ class testContext(TestCase):
 		context_objects = response.context['personnel']
 		self.assertEqual(len(context_objects), 1)
 		context_objects = response.context['page_text_content_1']
-		self.assertEqual(len(context_objects), 1)"""
-
+		self.assertEqual(len(context_objects), 1)
 
 
 if __name__ == "__main__":
