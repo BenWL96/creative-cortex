@@ -4,11 +4,11 @@
   {% extends 'cc_app/index.html' %}
   {% load static %}
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     {% block style %}
-      <link href="{% static 'cc_app/css/gallery.css' %}" rel="stylesheet" type="text/css">
+      <link href="{% static 'cc_app/css/gallery.css' %}" rel="stylesheet" type="text/css" />
 
       <!-- LIGHT BOX -->
 
@@ -26,14 +26,12 @@
       
 
     {% endblock %}
-
     
   </head>
+  
   <body>
     
     {% block body %}
-
-      
 
         {% if header_img_url %}
 
@@ -53,62 +51,25 @@
 
       {% endif %}
 
-        
         <div class="gallery-wrapper">
 
-          <!--<p class="gal_title">
-            Gallery Name
-          </p>-->
-
-
           <div class="gallery" id ="gallery">
-            <!-- do not use banner in Masonry layout -->
 
-            <!-- for every img passed -->
             {% for image in gallery_images %}
 
               <div class="gallery_item">
 
-                <!-- pass in the object properties such as title and description and possibly date-->
-
                 <img src="{{image.gallery_img_url.url}}" class="gallery_img" onclick="ShowLightBox('{{image.gallery_img_id}}', '{{image.gallery_img_description}}',
                   '{{image.gallery_img_url.url}}'
-                  )" id="gallery_img">
+                  )" id="gallery_img" alt="{{image.gallery_img_description}}" />
               
               </div>
 
             {% endfor %}
-
-            <!-- all the extra html for display purposes only -->
-
-            <!--<div class="grid-item">
-                <img src="{% static 'cc_app/images/placeholder_2.png' %}" class="gallery_img" onclick="ShowLightBox(1)" id="gallery_img">
-            </div>
-            <div class="grid-item">
-                <img src="{% static 'cc_app/images/popover_placeholder.jpg' %}" class="gallery_img" onclick="ShowLightBox(1)" id="gallery_img">
-            </div>
-            <div class="grid-item">
-                <img src="{% static 'cc_app/images/placeholder_2.png' %}" class="gallery_img" onclick="ShowLightBox(1)" id="gallery_img">
-            </div>
-            <div class="grid-item">
-                <img src="{% static 'cc_app/images/placeholder_2.png' %}" class="gallery_img" onclick="ShowLightBox(1)" id="gallery_img">
-            </div>
-            <div class="grid-item">
-                <img src="{% static 'cc_app/images/popover_placeholder.jpg' %}" class="gallery_img" onclick="ShowLightBox(1)" id="gallery_img">
-            </div>
-            <div class="grid-item">
-              <img src="{% static 'cc_app/images/placeholder_1.jpg' %}" class="gallery_img" onclick="ShowLightBox(1)" id="gallery_img">
-            
-            </div>
-            <div class="grid-item">
-              <img src="{% static 'cc_app/images/placeholder_1.jpg' %}" class="gallery_img" onclick="ShowLightBox(1)" id="gallery_img">
-            
-            </div>-->
             
           </div>
 
       </div>
-
 
       <script type="text/javascript">
 
@@ -155,8 +116,6 @@
 
           //We need to pass in info separately as the object isn't able to be identified.
 
-         
-
           const src = img_url;
           const title = `<p class="gallery_img-title">${image_id}</p>`;
           const description = `<p class="gallery_img-description">${image_description}</p>`;
@@ -178,11 +137,7 @@
         
       };
 
-
       </script>
-
-      
-       
    
     {% endblock %}
    
