@@ -152,6 +152,56 @@
         <img src="{{current_page_obj.page_img.url}}" class="t_p" alt="image for {{comic.comic_name}} vol: {{volume.vol_number}} chapter: {{chapter.chapter_number}} page: {{current_page_number}}" />
       </center>
 
+      <script>
+        // Define variables to keep track of touch position
+        let xDown = null;
+        let yDown = null;
+
+        // Add touch event listeners to the document
+        document.addEventListener('touchstart', handleTouchStart, false);
+        document.addEventListener('touchmove', handleTouchMove, false);
+
+        // Touch start event handler
+        function handleTouchStart(evt) {
+            xDown = evt.touches[0].clientX;
+            yDown = evt.touches[0].clientY;
+        }
+
+        // Touch move event handler
+        function handleTouchMove(evt) {
+            if (!xDown || !yDown) {
+                return;
+            }
+
+            // Calculate touch distance traveled
+            let xDiff = xDown - evt.touches[0].clientX;
+            let yDiff = yDown - evt.touches[0].clientY;
+
+            // Determine swipe direction
+            if (Math.abs(xDiff) > Math.abs(yDiff)) {
+                if (xDiff > 0) {
+                    alert('left so redirect to next page');
+                } else {
+                    alert('right so redirect to previous page');
+                }
+            }
+
+            // Reset touch position variables
+            xDown = null;
+            yDown = null;
+        }
+        </script>
+
+        <script>
+          document.addEventListener("keydown", function(event) {
+            if (event.key === "ArrowLeft") {
+              alert("previous");
+            } else if (event.key === "ArrowRight") {
+              alert("next");
+            }
+          });
+        </script>
+
     {% endblock %}
    
   </body>
