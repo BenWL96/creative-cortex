@@ -16,7 +16,7 @@ class Comics(models.Model):
     ongoing = models.BooleanField()
     next_release_date = models.DateField()
     # initial_release_date = models.DateField()
-    comic_img_376_by_376 = models.ImageField(storage=PrivateMediaStorage())
+    comic_img_300_by_300 = models.ImageField(storage=PrivateMediaStorage())
     comic_img_200_by_260 = models.ImageField(storage=PrivateMediaStorage())
     display_comic = models.BooleanField(default=False)
 
