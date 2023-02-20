@@ -113,7 +113,7 @@ class Personnel(models.Model):
     phone_number = PhoneNumberField(blank=True, unique=True)
     email_address = models.EmailField()
     role_at_creative_cortex = models.CharField(max_length=20)
-    person_img_200_by_260 = models.ImageField(storage=PrivateMediaStorage())
+    person_img_426_by_284 = models.ImageField(storage=PrivateMediaStorage())
 
     def __str__(self):
         return self.full_name
@@ -135,7 +135,6 @@ class Comic_Personnel(models.Model):
     personnel_id = models.ForeignKey(Personnel, on_delete=models.CASCADE)
     comic_id = models.ForeignKey(Comics, on_delete=models.CASCADE)
     role = models.CharField(choices=CHOICES, max_length=40)
-    # photograph = models.FileField()
 
     def __str__(self):
         return self.personnel_id.full_name
