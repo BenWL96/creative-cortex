@@ -176,17 +176,17 @@
         <p class="comic_about_name">About Comic</p>
         <p class="comic_about_descr">
 
-          <!-- {{comic.comic_description}} -->
-
-          Abstract: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+          {{comic.comic_description}}
 
         </p>
           
       </div>
+      
+
+      {% if volumes %}
 
       <hr class="separator" />
 
-      {% if volumes %}
       <!-- check if volumes, if not display an error -->
 
         {% for volume in volumes %}
@@ -217,28 +217,14 @@
                {{volume.volume_title}}
               </p>
               <p class="volume_descr">
-                <!-- volume.volume description DOESN't YET EXIST -->
-                Abstract: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
+                {{volume.volume_description}}
               </p>
           
             </div>
             
           </div>
         {% endfor %}
-      {% else %}
-        <div class="d-flex flex-row rowwww_2">
-
-          <div class="cont_volum">
-            <div class="container">
-            
-            <p class="volume_name"> 
-              If no volume found then display this, in the else statement.
-              Perhaps have an illustration or 3d model here
-            </p>
-        
-            </div>     
-          </div>
-        </div>
+    
       {% endif %}
 
     {% endblock %}

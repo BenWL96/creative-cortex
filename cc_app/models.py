@@ -38,7 +38,7 @@ class Volumes(models.Model):
     volume_id = models.AutoField(primary_key=True)
     comic_name = models.ForeignKey(Comics, on_delete=models.CASCADE)
     volume_title = models.CharField(max_length=150)
-    # volume_description = models.CharField(max_length=500)
+    volume_description = models.CharField(max_length=500, default="insert volume description")
     slug_volume_title = models.SlugField(max_length=170)
     vol_number = models.IntegerField(validators=[
         MinValueValidator(1, message="value has to be above 0"),
