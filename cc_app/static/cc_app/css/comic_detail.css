@@ -153,10 +153,11 @@ p {
 	font-weight: 900;
 	margin-top: 10px;
 	font-family: 'Lora', serif !important;
-	font-size: 15px;
+	font-size: 25px !important;
 	box-shadow: #282828 2px 2px 2px;
 	border-color: turquoise !important;
 	border-width: 2px !important;
+	height: 50px !important;
 }
 
 .chp_btn:hover{
@@ -224,11 +225,12 @@ p {
 	width: 200px;
 	color: #fafafa !important;
 	font-family: 'Lora', serif !important;
-	font-size: 15px;
+	font-size: 25px !important;
 	box-shadow: #282828 2px 2px 2px;
 	border-color: turquoise !important;
 	border-width: 2px !important;
 	padding-top: 50px;
+	height: 50px !important;
 }
 
 .expand_info_btn:hover{
