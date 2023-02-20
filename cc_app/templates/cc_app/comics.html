@@ -58,10 +58,11 @@
               <div class="img_wrapper" data-tilt data-tilt-scale="0.8">
                 <img src="{{comic.comic_img_376_by_376.url}}" class="c_pl_img" id="c_pl_img" onclick="comicRedirect('{% url 'comic-detail' comic_param=comic.slug %}')" alt="The cover art for {{comic_name}}"/>
               </div>
-              <div class="container my-3"> 
+              
+            </div>
+            <div class="comic-name_wrapper"> 
                 <a href="{% url 'comic-detail' comic_param=comic.slug %}" class="com_name">
                   {{comic.comic_name}}</a>
-              </div>
             </div>
 
           </div>   
