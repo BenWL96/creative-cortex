@@ -2,6 +2,11 @@ p {
 	color: #fafafa;
 }
 
+.index-body{
+	background: rgb(73,73,73) !important;
+    background: radial-gradient(circle, rgba(73,73,73,1) 0%, rgba(22,22,22,1) 95%, rgba(22,22,22,1) 95%) !important;
+}
+
 
 .pages_title {
 	position: fixed;
@@ -19,10 +24,11 @@ p {
 	margin-top: 10px;
 	width: 40px;
 	height: 40px;
-	box-shadow: turquoise 2px 2px 2px !important;
-	border-color: lightgray !important;
+	box-shadow: #282828 3px 3px 3px !important;
+	border-color: turquoise !important;
 	border-style: solid !important;
 	border-width: 1px !important;
+	background-color: #282828 !important;
 }
 
 .btn-pages:hover{
@@ -35,7 +41,7 @@ p {
 	margin-top: 10px;
 	width: 40px;
 	height: 40px;
-	border-color: lightgray !important;
+	border-color: darkgray !important;
 	border-style: solid !important;
 	border-width: 1px !important;
 }
@@ -72,19 +78,20 @@ p {
 	text-align: center;
 	color: #fafafa;
 	font-family: 'Barlow', sans-serif;
-	text-shadow: purple 2px 2px 2px;
+	text-shadow: #282828 2px 2px 2px;
 	
 }
 
 
 
 .back_btn{
+	background-color: #282828 !important;
 	height: 54px !important;
-	border-color: #fafafa !important;
+	border-color: turquoise !important;
 	border-style: solid !important;
 	border-width: 1px !important;
 	margin-left: 10px;
-	box-shadow: turquoise 2px 2px 2px !important;
+	box-shadow: #282828 3px 3px 3px !important;
 
 }
 
@@ -192,13 +199,18 @@ p {
     font-size: 12px;
     font-weight: 700;
     color: #fafafa;
+    text-shadow: #282828 2px 2px 2px;
 }
 
 .stack_wrapper{
-	background-color: #282828;
+	background: rgb(136,120,195);
+    background: linear-gradient(90deg, rgba(136,120,195,1) 3%, rgba(145,130,203,1) 66%, rgba(93,79,144,1) 100%);
+
 }
 .hstack{
-	background-color: #282828;
+	background: rgb(136,120,195);
+    background: linear-gradient(90deg, rgba(136,120,195,1) 3%, rgba(145,130,203,1) 66%, rgba(93,79,144,1) 100%);
+
 }
 
 .w-end{
