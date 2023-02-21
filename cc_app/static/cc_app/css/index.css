@@ -4,16 +4,18 @@
 
 }
 
+
+
+/* popover css */
+
+}
+
 .offcanvas-header{
     height: 20vh !important;
 }
 
 .offcanvas-body{
     height: 80vh !important;
-}
-
-.offcanvas-body_row{
-    width: 100%;
 }
 
 .offcanvas-img_wrapper{
@@ -38,8 +40,10 @@
 }
 
 .offcanvas-text{
+    font-weight: 700;
     text-align: center;
     text-shadow: #282828 5px 5px 5px;
+    font-family: 'Libre Franklin', sans-serif;
 }
 
 .hamburger{
@@ -77,10 +81,6 @@
     cursor: pointer;
 }
 
-
-/* popover css */
-
-}
 
 .offcanvas-page-img{
     border-color: #8878c3;

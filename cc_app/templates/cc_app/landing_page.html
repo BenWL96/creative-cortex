@@ -44,51 +44,74 @@
       
       <img src="{% static 'cc_app/images/index/hamburger_icon.png' %}" class="hamburger" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling" alt="Hamburger icon" />
 
-      <div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+      <div class="offcanvas" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+     
         <div class="offcanvas-header">
+
           <a href="{% url 'landing_page' %}">
-            <img src="{% static 'cc_app/images/index/CC_logo.png' %}" class="offcanvas-logo" href="" alt="Creative Cortex logo" />
+            <img src="{% static 'cc_app/images/index/CC_logo.png' %}" class="offcanvas-logo" alt="Creative Cortex logo" />
           </a>
 
-          <a class="offcanvas-title" id="offcanvasScrollingLabel" href="{% url 'landing_page' %}">Creative Cortex</a>
+          <a class="offcanvas-title" id="offcanvasScrollingLabel" href="{% url 'landing_page' %}">
+            Creative Cortex
+          </a>
+
           <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+
         </div>
         <div class="offcanvas-body">
 
-          <!-- page height 100 % -->
-          <!-- make each of these links an image of height 10-15% -->
-          <col class="offcanvas-body_col">
-            <row>
-              <a href="{% url 'landing_page' %}">
-                <img src="{% static 'cc_app/images/index/pop-homepage.jpg' %}" class="offcanvas-page-img" alt="Landing page button image" />
+          <div class="offcanvas-body_row">
+            <div class="offcanvas-img_wrapper">
+              <p class="offcanvas-text">
+              <a href="{% url 'landing_page' %}" class="offcanvas-link">
+                Home
               </a>
-            </row>
+              </p>
+            </div>
+          </div>
 
-            <row>
-              <a href="{% url 'comics' %}">
-                <img src="{% static 'cc_app/images/index/pop-comics.jpg' %}" class="offcanvas-page-img" alt="Comics page button image" />
+          <div class="offcanvas-body_row">
+            <div class="offcanvas-img_wrapper">
+              <p class="offcanvas-text">
+                <a href="{% url 'comics' %}" class="offcanvas-link">
+                  Comics
+                </a>
+              </p>
+            </div>
+          </div>
+
+          <div class="offcanvas-body_row">
+            <div class="offcanvas-img_wrapper">
+              <p class="offcanvas-text">
+              <a href="{% url 'gallery' %}" class="offcanvas-link">
+                Gallery
               </a>
-            </row>
+            </p>
+            </div>
+        
+          </div>
 
-            <row>
-              <a href="{% url 'gallery' %}">
-                <img src="{% static 'cc_app/images/index/pop-gallery.jpg' %}" class="offcanvas-page-img" alt="Gallery page button image" />
-              </a>
-            </row>
+          <div class="offcanvas-body_row">
+            <div class="offcanvas-img_wrapper">
+              <p class="offcanvas-text">
+                <a href="{% url 'links' %}" class="offcanvas-link">
+                  Links
+                </a>
+              </p>
+            </div>
+          </div>
 
-            <row>
-              <a href="{% url 'links' %}">
-                <img src="{% static 'cc_app/images/index/pop-links.jpg' %}" class="offcanvas-page-img" alt="Links page button image" />
-              </a>
-            </row>
+          <div class="offcanvas-body_row">
+            <div class="offcanvas-img_wrapper">
+              <p class="offcanvas-text">
+                <a href="{% url 'about_us' %}" class="offcanvas-link">
+                  About Us
+                </a>
+              </p>
+            </div>
+          </div>
 
-            <row>
-              <a href="{% url 'about_us' %}">
-                <img src="{% static 'cc_app/images/index/pop-about.jpg' %}" class="offcanvas-page-img" alt="About Us page button image" />
-              </a>
-            </row>
-
-          </col>
           
         </div>
 
