@@ -127,6 +127,8 @@ def Pages(request, comic_param, volume_param, chapter_param, page_param):
 	if param_equal_to_one_boolean is True:
 		next_page = page_param + 1
 
+		pagination_status = "only_next_page_exists"
+
 		context = {
 			'comic': comic,
 			'volume': volume,
@@ -135,10 +137,13 @@ def Pages(request, comic_param, volume_param, chapter_param, page_param):
 			'next_page_number': next_page,
 			'next_page_exists': True,
 			'previous_page_exists': False,
-			'current_page_number': page_param
+			'current_page_number': page_param,
+			'pagination_status': pagination_status
 		}
 	elif param_equals_final_page_id_boolean is True:
 		previous_page = page_param - 1
+
+		pagination_status = "only_previous_page_exist"
 
 		context = {
 			'comic': comic,
@@ -148,13 +153,15 @@ def Pages(request, comic_param, volume_param, chapter_param, page_param):
 			'previous_page_number': previous_page,
 			'next_page_exists': False,
 			'previous_page_exists': True,
-			'current_page_number': page_param
+			'current_page_number': page_param,
+			'pagination_status': pagination_status
 		}
 
 	else:
 
 		next_page = page_param + 1
 		previous_page = page_param - 1
+		pagination_status = "both_pages_exists"
 
 		context = {
 			'comic': comic,
@@ -165,7 +172,8 @@ def Pages(request, comic_param, volume_param, chapter_param, page_param):
 			'previous_page_number': previous_page,
 			'next_page_exists': True,
 			'previous_page_exists': True,
-			'current_page_number': page_param
+			'current_page_number': page_param,
+			'pagination_status': pagination_status
 		}
 
 	return render(request, 'cc_app/pages.html', context)

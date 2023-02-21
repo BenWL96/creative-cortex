@@ -76,7 +76,7 @@
 
               <div class="p_row d-flex flex-row">
                 <div class="p_col">
-                  <a type="button" class="btn btn-disabled" disabled>
+                  <a type="button" class="btn btn-disabled" disabled id="previous-button">
                   
                   </a>
                 </div>
@@ -86,7 +86,7 @@
                   </p>
                 </div>
                 <div class="p_col">
-                  <a type="button" class="btn btn-pages" href="{% url 'pages' comic_param=comic.slug volume_param=volume.vol_number chapter_param=chapter.chapter_number page_param=next_page_number %}">
+                  <a type="button" class="btn btn-pages" href="{% url 'pages' comic_param=comic.slug volume_param=volume.vol_number chapter_param=chapter.chapter_number page_param=next_page_number %}" id="next-button">
                     <p class="s_e_t">
                       {{next_page_number}}
                     </p>
@@ -94,11 +94,13 @@
                 </div>
               </div>
 
+              {{ pagination_status |json_script:"pagination_status" }}
+
             {% elif previous_page_exists == True and next_page_exists == False %}
 
               <div class="p_row d-flex flex-row">
                 <div class="p_col">
-                  <a type="button" class="btn btn-pages" href="{% url 'pages' comic_param=comic.slug volume_param=volume.vol_number chapter_param=chapter.chapter_number page_param=previous_page_number %}">
+                  <a type="button" class="btn btn-pages" href="{% url 'pages' comic_param=comic.slug volume_param=volume.vol_number chapter_param=chapter.chapter_number page_param=previous_page_number %}" id="previous-button">
                     <p class="s_e_t">
                       {{previous_page_number}}
                     </p>
@@ -110,17 +112,19 @@
                     </p>
                 </div>
                 <div class="p_col">
-                  <a type="button" class="btn btn-disabled" disabled>
+                  <a type="button" class="btn btn-disabled" disabled id="next-button">
                    
                   </a>
                 </div>
               </div>
 
+              {{ pagination_status |json_script:"pagination_status" }}
+
             {% else %}
 
                 <div class="p_row d-flex flex-row">
                   <div class="p_col">
-                    <a type="button" class="btn btn-pages" href="{% url 'pages' comic_param=comic.slug volume_param=volume.vol_number chapter_param=chapter.chapter_number page_param=previous_page_number %}">
+                    <a type="button" class="btn btn-pages" href="{% url 'pages' comic_param=comic.slug volume_param=volume.vol_number chapter_param=chapter.chapter_number page_param=previous_page_number %}" id="previous-button">
                       <p class="s_e_t">
                       {{previous_page_number}}
                       </p>
@@ -133,7 +137,7 @@
                     </p>
                   </div>
                   <div class="p_col">
-                    <a type="button" class="btn btn-pages" href="{% url 'pages' comic_param=comic.slug volume_param=volume.vol_number chapter_param=chapter.chapter_number page_param=next_page_number %}">
+                    <a type="button" class="btn btn-pages" href="{% url 'pages' comic_param=comic.slug volume_param=volume.vol_number chapter_param=chapter.chapter_number page_param=next_page_number %}" id="next-button">
                       <p class="s_e_t">
                       {{next_page_number}}
                       </p>
@@ -141,6 +145,8 @@
                     
                   </div>
                 </div>
+
+                {{ pagination_status |json_script:"pagination_status" }}
 
               {% endif %}
 
@@ -152,7 +158,15 @@
         <img src="{{current_page_obj.page_img.url}}" class="t_p" alt="image for {{comic.comic_name}} vol: {{volume.vol_number}} chapter: {{chapter.chapter_number}} page: {{current_page_number}}" />
       </center>
 
+      {{current_page_number |json_script:"current_page_number"}}
+
+
       <script>
+
+        const paginationStatus = JSON.parse(document.getElementById('pagination_status').textContent);
+
+  
+
         // Define variables to keep track of touch position
         let xDown = null;
         let yDown = null;
@@ -160,6 +174,29 @@
         // Add touch event listeners to the document
         document.addEventListener('touchstart', handleTouchStart, false);
         document.addEventListener('touchmove', handleTouchMove, false);
+
+        const nextButton = document.getElementById('next-button');
+        const previousButton = document.getElementById('previous-button');
+
+        function clickNextButton(){
+
+          if (paginationStatus == 'only_next_page_exists'){
+            nextButton.click();
+          } else if (paginationStatus == 'both_pages_exists'){
+            nextButton.click();
+          }
+
+        }
+
+        function clickPreviousButton(){
+
+          if (paginationStatus == 'only_next_page_exists'){
+            nextButton.click();
+          } else if (paginationStatus == 'both_pages_exists'){
+            nextButton.click();
+          }
+
+        }
 
         // Touch start event handler
         function handleTouchStart(evt) {
@@ -180,9 +217,13 @@
             // Determine swipe direction
             if (Math.abs(xDiff) > Math.abs(yDiff)) {
                 if (xDiff > 0) {
-                    alert('left so redirect to next page');
+
+                  clickNextButton();
+
                 } else {
-                    alert('right so redirect to previous page');
+                    
+                  clickPreviousButton();
+
                 }
             }
 
@@ -193,11 +234,19 @@
         </script>
 
         <script>
+
+          //key navigation for desktop users
+          
           document.addEventListener("keydown", function(event) {
             if (event.key === "ArrowLeft") {
-              alert("previous");
+              
+              clickPreviousButton();
+
+
             } else if (event.key === "ArrowRight") {
-              alert("next");
+              
+              clickNextButton();
+              
             }
           });
         </script>
