@@ -190,7 +190,7 @@
 
         function clickPreviousButton(){
 
-          if (paginationStatus == 'only_next_page_exists'){
+          if (paginationStatus == 'only_previous_page_exists'){
             nextButton.click();
           } else if (paginationStatus == 'both_pages_exists'){
             nextButton.click();
@@ -236,7 +236,7 @@
         <script>
 
           //key navigation for desktop users
-          
+
           document.addEventListener("keydown", function(event) {
             if (event.key === "ArrowLeft") {
               
