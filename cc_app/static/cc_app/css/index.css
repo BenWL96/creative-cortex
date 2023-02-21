@@ -4,6 +4,15 @@
 
 }
 
+.offcanvas-body_row{
+    width: 100%;
+}
+
+.offcanvas-img_wrapper{
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .hamburger{
     height: 50px;
     width: 50px;
@@ -45,8 +54,8 @@
 @media(min-width: 400px){
     .offcanvas-page-img{
 
-        width: 100%;
-        height: 100px;
+        width: 400px;
+        height: 80px;
     }
 }
 
@@ -74,10 +83,12 @@
 
 .offcanvas{
     background-color: transparent !important;
+    width: 100vw !important;
+    height: 100vh !important;
 }
 
 .offcanvas-title{
-    font-size: 30px !important;
+    font-size: 50px !important;
     font-family: font-family: 'Lora', serif;
     font-weight: 700 !important;
     text-decoration: none;
@@ -100,6 +111,19 @@
     border-width: 1px;
     border-radius: 15px;
 
+}
+
+@media(min-width: 400px){
+    .offcanvas-img_wrapper{
+        width: 400px !important;
+    }
+}
+
+
+@media(max-width: 400px){
+    .offcanvas-img_wrapper{
+        width: 100% !important;
+    }
 }
 
 .offcanvas-header{
