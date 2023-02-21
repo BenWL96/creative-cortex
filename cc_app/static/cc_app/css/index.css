@@ -102,8 +102,8 @@
     position: fixed;
     z-index: 100;
     
-background: rgb(73,73,73);
-background: radial-gradient(circle, rgba(73,73,73,1) 0%, rgba(22,22,22,1) 95%, rgba(22,22,22,1) 95%);
+    background: rgb(73,73,73);
+    background: radial-gradient(circle, rgba(73,73,73,1) 0%, rgba(22,22,22,1) 95%, rgba(22,22,22,1) 95%);
 }
 
 .offcanvas-title{
