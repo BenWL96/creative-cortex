@@ -260,9 +260,7 @@
     margin-left: auto;
     margin-right: auto;
     
-    background: rgb(251,251,251);
-    background: radial-gradient(circle, rgba(251,251,251,1) 0%, rgba(239,239,239,1) 95%);
-}
+    background-color: #f3f3f3;}
 
 @media(min-width: 500px){
 
