@@ -27,6 +27,19 @@ p {
 	color: #282828;
 }
 
+
+@media(min-width: 900px){
+	.cont_volume_2_cont{
+		background-size: 85%;
+	}
+}
+
+@media(max-width: 900px){
+	.cont_volume_2_cont{
+		background-size: 100%;
+	}
+}
+
 @media(min-width: 500px){
 
 	.separator{

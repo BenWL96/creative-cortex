@@ -1,6 +1,8 @@
 import re
 
 from django.shortcuts import redirect
+from django.core.mail import send_mail, send_mass_mail
+from django.conf import settings
 
 from . import forms, models
 
@@ -407,6 +409,20 @@ def fetch_links_page_return_content_and_img_url():
     return page_text_content, header_img_url
 
 
+if settings.EMAIL_HOST_USER:
+    from_email = settings.EMAIL_HOST_USER
+
+if settings.ADMIN_EMAIL_1:
+    admin_email_1 = settings.ADMIN_EMAIL_1
+
+if settings.ADMIN_EMAIL_2:
+    admin_email_2 = settings.ADMIN_EMAIL_2
+
+if settings.ADMIN_EMAIL_3:
+    admin_email_3 = settings.ADMIN_EMAIL_3
+
+
+
 def form_logic_about_us(request):
 
     if request.method == 'POST':
@@ -432,6 +448,19 @@ def form_logic_about_us(request):
             )
 
             print("inquiry has been added to the database")
+
+            # creative cortex business email sends
+            # email to users in email.
+
+            send_mail(
+                "inquiry from {}".format(your_email),
+                your_subject,
+                from_email,
+                [admin_email_1, admin_email_2, admin_email_3],
+                fail_silently=False
+            )
+
+            print("email has successfully been sent")
 
             return True
 
