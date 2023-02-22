@@ -18,6 +18,12 @@
           background-size: 100%;
       }
 
+      .subtitle-wrapper{
+          background-image: url( "{% static 'cc_app/images/placeholders/comic_2.jpg' %}" );
+          background-position: center bottom;
+          background-size: 100%;
+      }
+
       </style>
     {% endblock %}
 
@@ -116,7 +122,7 @@
         </div>
 
         <div class="cont_volum_3">
-          <div>
+    
           
             <div class="collapse" id="collapseExample">
             
@@ -168,18 +174,21 @@
             </div>
             
           </div>    
-        </div>
       </div>
 
-      <div class="cont_comic_about">
+      <div class="collapse" id="collapseExample">
 
-        <p class="comic_about_name">About Comic</p>
-        <p class="comic_about_descr">
+        <div class="cont_comic_about">
 
-          {{comic.comic_description}}
+          <p class="comic_about_name">About Comic</p>
+          <p class="comic_about_descr">
 
-        </p>
-          
+            {{comic.comic_description}}
+
+          </p>
+            
+        </div>
+
       </div>
       
 
