@@ -25,10 +25,10 @@ class Name_Form(forms.Form):
 
 	def clean_subject(self):
 		data = self.cleaned_data['subject']
-		lengthError = "Sorry but you must keep your message between 15 and 150 characters..."
+		lengthError = "Sorry but you must keep your message between 15 and 500 characters..."
 		js_error = "An error has occurred"
 
-		if 15 <= len(str(data)) <= 150:
+		if 15 <= len(str(data)) <= 500:
 			return data
 		elif '<script>' in str(data) or '</script>' in str(data):
 			raise ValidationError(js_error)

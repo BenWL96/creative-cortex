@@ -467,6 +467,7 @@ def form_logic_about_us(request):
         else:
             # form is not valid and so we must render error messages
             form = forms.Name_Form(request.POST)
+            print("ERROR")
     else:
 
         form = forms.Name_Form()

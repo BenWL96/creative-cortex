@@ -236,7 +236,7 @@ class Featured_Youtube_videos(models.Model):
 class Inquiries(models.Model):
 
     inquiry_id = models.AutoField(primary_key=True)
-    inquiry = models.CharField(max_length=150)
+    inquiry = models.CharField(max_length=500)
     name = models.CharField(max_length=50, default="")
     email = models.EmailField()
     checked = models.BooleanField(default=False)
