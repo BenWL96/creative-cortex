@@ -52,6 +52,16 @@
         </div>
         {% endif %}
 
+
+      {% if personnel %}
+
+      <hr class="separator" />
+
+      <div class="subtitle-wrapper-1">
+          <h2 class="sub-title-1">
+              Meet The Team
+          </h2>
+      </div>
       {% for person in personnel %}
 
         {% if person.even == 'false' %}
@@ -78,6 +88,14 @@
                     <p class="col2-text">{{person.full_name}}</p>
                   </div>
                 </div>
+                <div class="d-flex flex-row text-container_row">
+                  <div class="text-container_col1">
+                    <p class="col1-text">&nbsp;Mob:</p>
+                  </div>
+                  <div class="text-container_col2">
+                    <p class="col2-text">{{person.phone_number}}</p>
+                  </div>
+                </div>
                 
               </div>    
             </div>
@@ -97,6 +115,14 @@
                     <p class="col4-text">{{person.full_name}}</p>
                   </div>
                 </div>
+                <div class="d-flex flex-row text-container_row">
+                  <div class="text-container_col3">
+                    <p class="col3-text">&nbsp;Mob:</p>
+                  </div>
+                  <div class="text-container_col4">
+                    <p class="col4-text">{{person.phone_number}}</p>
+                  </div>
+                </div>
               
               </div>    
             </div>
@@ -114,6 +140,7 @@
         {% endif %}
 
       {% endfor %}
+      {% endif %}
 
       <hr class="separator" />
 

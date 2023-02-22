@@ -7,7 +7,6 @@
 }
 
 
-
 @media(min-width: 500px){
 
 	.text-wrapper{
@@ -50,7 +49,7 @@
 .personnel_row1{
 	flex-wrap: wrap;
 	display: flex;
-	padding-top: 70px;
+	padding-top: 50px;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -59,7 +58,7 @@
 .personnel_row2{
 	flex-wrap: wrap-reverse !important;
 	display: flex;
-	padding-top: 20px;
+	padding-top: 50px;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -83,8 +82,6 @@
 	text-align: left;
 	color: #282828;
 	font-family: 'Libre Franklin', sans-serif;
-	background-color: #282828;
-	color: #fafafa
 	
 }
 
@@ -94,7 +91,6 @@
 	text-align: left;
   color: #282828;
   font-family: 'Libre Franklin', sans-serif;
-  background-color:;
   }
 
 
@@ -102,8 +98,7 @@
 	font-size: 28px;
 	font-weight: 500;
 	font-family: 'Libre Franklin', sans-serif;
-	background-color: #282828;
-	color: #fafafa
+	color: #282828;
 
 }
 
@@ -357,9 +352,9 @@
     background: rgb(64,224,208);
 		background: linear-gradient(90deg, rgba(64,224,208,1) 0%, rgba(71,200,187,1) 44%, rgba(115,214,204,1) 88%);
     color: #282828;
-    width: 175px;
+    width: 200px;
     text-align: center;
-    font-size: 43px;
+    font-size: 50px;
 }
 
 
@@ -379,6 +374,45 @@
 
 @media(max-width: 500px){
 	.subtitle-wrapper{
+		width: 95%;
+	}
+
+}
+
+
+.subtitle-wrapper-1{
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+    margin-top: 50px;
+}
+
+
+
+.sub-title-1{
+
+    font-weight: 900;
+    font-family: 'Barlow', sans-serif;
+    text-shadow: #fafafa 1px 1px 1px;
+    background: rgb(64,224,208);
+		background: linear-gradient(90deg, rgba(64,224,208,1) 0%, rgba(71,200,187,1) 44%, rgba(115,214,204,1) 88%);
+    color: #282828;
+    width: 350px;
+    text-align: center;
+    font-size: 50px;
+}
+
+
+
+@media(min-width: 500px){
+	.subtitle-wrapper-1{
+		width: 80%;
+	}
+
+}
+
+@media(max-width: 500px){
+	.subtitle-wrapper-1{
 		width: 95%;
 	}
 
@@ -475,10 +509,10 @@ div.error{
 
 
 .form-label{
-	font-size: 25px;
-    font-weight: 300;
-    color: #282828;
-    font-family: 'Libre Franklin', sans-serif;
+	font-size: 28px;
+	font-weight: 700;
+	color: #282828;
+	font-family: 'Libre Franklin', sans-serif;
 }
 
 

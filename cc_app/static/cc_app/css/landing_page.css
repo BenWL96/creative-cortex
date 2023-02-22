@@ -190,7 +190,9 @@ title-wrapper{
     margin-left: auto !important;
     margin-right: auto !important;
     background-color: transparent;
-    background-color: #fafafa;
+    background: rgb(251,251,251) !important;
+    background: radial-gradient(circle, rgba(251,251,251,1) 0%, rgba(239,239,239,1) 95%) !important;
+
 }
 
 .offcanvas-link{
