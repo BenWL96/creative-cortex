@@ -11,6 +11,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['creative-cortex.herokuapp.com']
 
+
 INSTALLED_APPS = [
     'baton',
     'django.contrib.admin',
@@ -152,3 +153,14 @@ ADMIN_REORDER = (
     )
     },
 )
+
+
+EMAIL_BACKEND = config("EMAIL_BACKEND", default='')
+EMAIL_USE_TLS = config("EMAIL_USE_TLS", default=False)
+EMAIL_HOST = config("EMAIL_HOST", default=False)
+EMAIL_HOST_USER = config("EMAIL_HOST_USER", default=False)
+EMAIL_HOST_PASSWORD = config("EMAIL_HOST_PASSWORD", default=False)
+EMAIL_PORT = config("EMAIL_PORT", default=False)
+ADMIN_EMAIL_1 = config("ADMIN_EMAIL_1", default=False)
+ADMIN_EMAIL_2 = config("ADMIN_EMAIL_2", default=False)
+ADMIN_EMAIL_3 = config("ADMIN_EMAIL_3", default=False)
