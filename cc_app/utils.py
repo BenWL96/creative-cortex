@@ -229,7 +229,6 @@ def Pass_About_Us_Text_Return_Context(
     list_personnel,
     page_text_content,
     header_img_url,
-    captcha_sitekey
 ):
 
     if page_text_content.count() == 1:
@@ -237,7 +236,6 @@ def Pass_About_Us_Text_Return_Context(
             'form': form,
             'personnel': list_personnel,
             'header_img_url': header_img_url,
-            'captcha_sitekey': captcha_sitekey,
             'page_text_content_1': page_text_content[0]
         }
 
@@ -246,7 +244,7 @@ def Pass_About_Us_Text_Return_Context(
             'form': form,
             'personnel': list_personnel,
             'header_img_url': header_img_url,
-            'captcha_sitekey': captcha_sitekey,
+
             'page_text_content_1': page_text_content[0],
             'page_text_content_2': page_text_content[1]
         }
@@ -255,7 +253,6 @@ def Pass_About_Us_Text_Return_Context(
             'form': form,
             'personnel': list_personnel,
             'header_img_url': header_img_url,
-            'captcha_sitekey': captcha_sitekey,
             'page_text_content_1': page_text_content[0],
             'page_text_content_2': page_text_content[1],
             'page_text_content_3': page_text_content[2]
@@ -265,7 +262,6 @@ def Pass_About_Us_Text_Return_Context(
             'form': form,
             'personnel': list_personnel,
             'header_img_url': header_img_url,
-            'captcha_sitekey': captcha_sitekey,
             'page_text_content_1': page_text_content[0],
             'page_text_content_2': page_text_content[1],
             'page_text_content_3': page_text_content[2],
@@ -276,7 +272,6 @@ def Pass_About_Us_Text_Return_Context(
             'form': form,
             'personnel': list_personnel,
             'header_img_url': header_img_url,
-            'captcha_sitekey': captcha_sitekey,
             'page_text_content_1': page_text_content[0],
             'page_text_content_2': page_text_content[1],
             'page_text_content_3': page_text_content[2],
@@ -289,7 +284,6 @@ def Pass_About_Us_Text_Return_Context(
             'form': form,
             'personnel': list_personnel,
             'header_img_url': header_img_url,
-            'captcha_sitekey': captcha_sitekey,
         }
 
     return context
