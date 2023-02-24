@@ -27,7 +27,7 @@ INSTALLED_APPS = [
     'baton.autodiscover',
 
     'phonenumber_field',
-    'admin_reorder'
+    'admin_reorder',
 ]
 
 MIDDLEWARE = [
@@ -164,3 +164,4 @@ EMAIL_PORT = config("EMAIL_PORT", default=False)
 ADMIN_EMAIL_1 = config("ADMIN_EMAIL_1", default=False)
 ADMIN_EMAIL_2 = config("ADMIN_EMAIL_2", default=False)
 ADMIN_EMAIL_3 = config("ADMIN_EMAIL_3", default=False)
+

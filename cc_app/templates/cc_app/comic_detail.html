@@ -39,7 +39,7 @@
           
           <div class="w-title" style="background-image: url( '{{header_img_url.url}}' )">
             <h1 class="Title">
-                {{comic.comic_name|truncatechars:20}}
+                {{comic.comic_name|truncatechars:10}}
             </h1>
           </div>
 
@@ -47,7 +47,7 @@
 
           <div class="w-title" style="background-color: black;">
             <h1 class="Title">
-                {{comic.comic_name|truncatechars:20}}
+                {{comic.comic_name|truncatechars:10}}
             </h1>
           </div>
 
@@ -177,8 +177,11 @@
           </div>    
       </div>
 
+
       <div class="collapse" id="collapseExample">
 
+        <hr class="separator" />
+        
         <div class="cont_comic_about">
 
           <p class="comic_about_name">About Comic</p>

@@ -1,6 +1,6 @@
 import re
 
-from django.shortcuts import redirect
+from django.shortcuts import redirect, render
 from django.core.mail import send_mail, send_mass_mail
 from django.conf import settings
 
@@ -228,7 +228,8 @@ def Pass_About_Us_Text_Return_Context(
     form,
     list_personnel,
     page_text_content,
-    header_img_url
+    header_img_url,
+    captcha_sitekey
 ):
 
     if page_text_content.count() == 1:
@@ -236,6 +237,7 @@ def Pass_About_Us_Text_Return_Context(
             'form': form,
             'personnel': list_personnel,
             'header_img_url': header_img_url,
+            'captcha_sitekey': captcha_sitekey,
             'page_text_content_1': page_text_content[0]
         }
 
@@ -244,6 +246,7 @@ def Pass_About_Us_Text_Return_Context(
             'form': form,
             'personnel': list_personnel,
             'header_img_url': header_img_url,
+            'captcha_sitekey': captcha_sitekey,
             'page_text_content_1': page_text_content[0],
             'page_text_content_2': page_text_content[1]
         }
@@ -252,6 +255,7 @@ def Pass_About_Us_Text_Return_Context(
             'form': form,
             'personnel': list_personnel,
             'header_img_url': header_img_url,
+            'captcha_sitekey': captcha_sitekey,
             'page_text_content_1': page_text_content[0],
             'page_text_content_2': page_text_content[1],
             'page_text_content_3': page_text_content[2]
@@ -261,6 +265,7 @@ def Pass_About_Us_Text_Return_Context(
             'form': form,
             'personnel': list_personnel,
             'header_img_url': header_img_url,
+            'captcha_sitekey': captcha_sitekey,
             'page_text_content_1': page_text_content[0],
             'page_text_content_2': page_text_content[1],
             'page_text_content_3': page_text_content[2],
@@ -271,6 +276,7 @@ def Pass_About_Us_Text_Return_Context(
             'form': form,
             'personnel': list_personnel,
             'header_img_url': header_img_url,
+            'captcha_sitekey': captcha_sitekey,
             'page_text_content_1': page_text_content[0],
             'page_text_content_2': page_text_content[1],
             'page_text_content_3': page_text_content[2],
@@ -283,6 +289,7 @@ def Pass_About_Us_Text_Return_Context(
             'form': form,
             'personnel': list_personnel,
             'header_img_url': header_img_url,
+            'captcha_sitekey': captcha_sitekey,
         }
 
     return context
@@ -433,13 +440,10 @@ def form_logic_about_us(request):
 
             clean_form = form.cleaned_data
 
-            # This finally takes the information from that dictionary and then
-            # accesses the data within the fields.
-
-            # This also completes all the custom validation.
             your_name = clean_form['your_name']
             your_email = clean_form['email_address']
             your_subject = clean_form['subject']
+
 
             models.Inquiries.objects.create(
                 name=your_name,
@@ -463,6 +467,7 @@ def form_logic_about_us(request):
             print("email has successfully been sent")
 
             return True
+
 
         else:
             # form is not valid and so we must render error messages

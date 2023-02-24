@@ -197,6 +197,7 @@ def Links(request):
 	return render(request, 'cc_app/links.html', context)
 
 
+
 def About_Us(request):
 
 	form = utils.form_logic_about_us(request)
@@ -210,7 +211,10 @@ def About_Us(request):
 		utils.fetch_about_us_page_return_content_and_img_url()
 
 	context = utils.Pass_About_Us_Text_Return_Context(
-		form, list_personnel, page_text_content, header_img_url
+		form,
+		list_personnel,
+		page_text_content,
+		header_img_url,
 	)
 
 	return render(request, 'cc_app/about_us.html', context)

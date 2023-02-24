@@ -188,6 +188,7 @@ p {
 	display: flex;
 	margin-left: auto;
 	margin-right: auto;
+	padding-top: 30px;
 }
 
 .rowwww_3{
@@ -259,7 +260,7 @@ p {
 	margin-left: auto;
 	margin-right: auto;
 	text-align: left;
-	padding-top: 45px;
+	padding-top: 20px;
 }
 
 
