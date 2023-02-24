@@ -11,6 +11,13 @@
 
     {% block style %}
       <link href="{% static 'cc_app/css/pages.css' %}" rel="stylesheet" type="text/css" />
+
+      <meta name="description" content="Explore page {{current_page_number}} chapter {{chapter.chapter_number}} volume {{volume.vol_number}} of {{comic.comic_name}}, the exciting comic from Creative Cortex. Our modern and easy-to-use website makes it simple to navigate and enjoy {{comic.comic_name}} one page at a time.">
+
+      <meta name="keywords" content="Creative Cortex, {{comic.comic_name}}, comic, page {{current_page_number}}, chapter {{chapter.chapter_number}}, volume {{volume.vol_number}}, modern website, easy navigation">
+
+
+
     {% endblock %}
     
   </head>
