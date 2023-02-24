@@ -163,8 +163,20 @@ class Landing_Page_Images(models.Model):
         validators=[MinValueValidator(1, message="value has to be above 0"),]
     )
     landing_page_img_description = models.CharField(max_length=50)
-    landing_page_img_2000_by_2000 = models.ImageField(storage=PrivateMediaStorage())
-    landing_page_img_position = models.CharField(choices=IMG_POSITIONS, max_length=15, default="center center")
+    landing_page_img_2000_by_2000 = models.ImageField(
+        storage=PrivateMediaStorage()
+    )
+    landing_page_img_position_phone = models.CharField(
+        choices=IMG_POSITIONS,
+        max_length=15,
+        default="center center"
+    )
+    landing_page_img_position_desktop = models.CharField(
+        choices=IMG_POSITIONS,
+        max_length=15,
+        default="center center"
+    )
+
     def __str__(self):
         return "img: " + \
             str(self.landing_page_img_carousel_placement_number) + \

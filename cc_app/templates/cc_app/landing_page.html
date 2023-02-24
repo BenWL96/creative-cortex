@@ -13,7 +13,38 @@
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
 
       <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
-    
+      
+      <style type="text/css">
+        
+        /* Doesn't work because media image isn't an object here */
+
+        @media(min-width: 700px){
+
+
+            .carousel-item{
+                background-size: 100%;
+                opacity: 35% !important;
+                background-position: center;
+            }
+
+        }
+
+        @media(max-width: 700px){
+
+
+          .carousel-item{
+            background-position: center;
+            opacity: 35% !important;
+            background-size: 700px 700px !important;
+          }
+
+
+
+        }
+
+
+
+      </style>
 
   </head>
   <body>
@@ -35,9 +66,10 @@
               </div>
 
               {% for image in carousel_img_objects %}
-                <div class="carousel-item" data-bs-interval="5000" style="background-image: url( '{{image.landing_page_img_2000_by_2000.url}}'); background-position: '{{image.landing_page_img_position}}';">
-                  <!--<img src="{{image.landing_page_img_n_by_n.url}}" class="landing-page-img" alt="{{image.landing_page_img_description}}" />-->
+                <div class="carousel-item" data-bs-interval="5000" style="background-image: url( '{{image.landing_page_img_2000_by_2000.url}}'); background-position: 'center'!important;">
+          
                 </div>
+               
               {% endfor %}
             </div>
           </div>

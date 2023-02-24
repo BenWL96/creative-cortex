@@ -7,54 +7,44 @@ body{
     z-index: 50;
 }
 
+
 .carousel-item{
 	width: 100vw;
 	height: 100vh;
 	
 }
 
-@media(min-width: 1000px){
+@media(min-width: 700px){
+
+
     .carousel-item{
-        background-size: 100%;
-    }
+            background-size: 100%;
+            opacity: 35% !important;
+            background-position: center;
+        }
+
 }
 
 
-@media(max-width: 1000px){
+@media(max-width: 700px){
+
+
     .carousel-item{
-        background-size: 1000px 1000px;
+        background-position: center;
+        opacity: 35% !important;
+        background-size: 700px 700px !important;
     }
+
+
+
 }
+
+
 
 .carousel-fade{
     transition-duration: 8s;
 }
 
-.landing-page-img{
-	position: fixed;
- 	right: 0;
-  	left: 0;
-  	top: 0;
-  	margin: auto;
-  	opacity: 20%;	
-}
-
-@media(min-width: 700px){
-	.landing-page-img{
-		width: 100vw;
-		
-	}
-}
-
-
-
-@media(max-width: 700px){
-	.landing-page-img{
-		width: 700px;
-		height: 100vh;
-		
-	};
-}
 
 .scene{
     height: 100vh;
