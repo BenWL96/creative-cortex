@@ -14,6 +14,7 @@
 
       <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
     
+
   </head>
   <body>
       
@@ -34,8 +35,8 @@
               </div>
 
               {% for image in carousel_img_objects %}
-                <div class="carousel-item" data-bs-interval="5000">
-                  <img src="{{image.landing_page_img_n_by_n.url}}" class="landing-page-img" alt="{{image.landing_page_img_description}}" />
+                <div class="carousel-item" data-bs-interval="5000" style="background-image: url( '{{image.landing_page_img_n_by_n.url}}'); background-position: '{{image.landing_page_img_position}}';">
+                  <!--<img src="{{image.landing_page_img_n_by_n.url}}" class="landing-page-img" alt="{{image.landing_page_img_description}}" />-->
                 </div>
               {% endfor %}
             </div>
@@ -131,6 +132,7 @@
 
       });
     </script>
+      
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
    
   </body>

@@ -144,6 +144,18 @@ class Comic_Personnel(models.Model):
         verbose_name_plural = "Comic Personnel"
 
 
+IMG_POSITIONS = (
+    ('left top', "left top"),
+    ("left center", "left center"),
+    ("left bottom", "left bottom"),
+    ('right top', "right top"),
+    ("right center", "right center"),
+    ("right bottom", "right bottom"),
+    ('center top', "center top"),
+    ("center center", "center center"),
+    ("center bottom", "center bottom"),
+)
+
 class Landing_Page_Images(models.Model):
 
     landing_page_img_id = models.AutoField(primary_key=True)
@@ -151,8 +163,8 @@ class Landing_Page_Images(models.Model):
         validators=[MinValueValidator(1, message="value has to be above 0"),]
     )
     landing_page_img_description = models.CharField(max_length=50)
-    landing_page_img_n_by_n = models.ImageField(storage=PrivateMediaStorage())
-
+    landing_page_img_2000_by_2000 = models.ImageField(storage=PrivateMediaStorage())
+    landing_page_img_position = models.CharField(choices=IMG_POSITIONS, max_length=15, default="center center")
     def __str__(self):
         return "img: " + \
             str(self.landing_page_img_carousel_placement_number) + \

@@ -13,6 +13,19 @@ body{
 	
 }
 
+@media(min-width: 1000px){
+    .carousel-item{
+        background-size: 100%;
+    }
+}
+
+
+@media(max-width: 1000px){
+    .carousel-item{
+        background-size: 1000px 1000px;
+    }
+}
+
 .carousel-fade{
     transition-duration: 8s;
 }
@@ -22,11 +35,8 @@ body{
  	right: 0;
   	left: 0;
   	top: 0;
-  	bottom: 0;
   	margin: auto;
-  	opacity: 20%;
-  	
-	
+  	opacity: 20%;	
 }
 
 @media(min-width: 700px){
@@ -61,42 +71,8 @@ body{
 .title-wrapper{
     margin: auto;
 }
-/*..scene{
-    z-index: 150;
-    height: 100vh;
-}
-
-title-wrapper{
-	z-index: 100;
-  	position: fixed;
-  	text-align: center;
-  	width: 100vw;
-}
-
-.title-text{
-    font-weight: 900;
-    font-family: 'Barlow', sans-serif;
-    text-shadow: #fafafa 2px 2px 2px;
-  	margin-left: auto;
-  	margin-right: auto;
-    opacity: 100%;
-
-}*/
 
 
-
-/*.title-wrapper{
-
-    height: 100%;
-    justify-content: center; 
-    align-items: center;
-    display: flex;
-    z-index: 100 !important;
-    font-weight: 900;
-    font-family: 'Barlow', sans-serif;
-    text-shadow: #fafafa 2px 2px 2px;
-    opacity: 100%;
-}*/
 
 
 @media(min-width: 900px){
