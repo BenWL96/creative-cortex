@@ -1,9 +1,22 @@
+@media(min-width: 500px){
+	.text-wrapper{
+		padding-top: 70px;
+	}
+}	
+
+@media(max-width: 500px){
+	.text-wrapper{
+		padding-top: 30px;
+	}
+}	
+
+
+
 
 .text-wrapper{
 	margin-left: auto;
 	margin-right: auto;
 	text-align: left;
-	padding-top: 70px;
 }
 
 
@@ -29,7 +42,6 @@
   color: #282828;
   font-family: 'Libre Franklin', sans-serif;
 	text-align: left;
-	padding-top: 10px;
 }
 
 

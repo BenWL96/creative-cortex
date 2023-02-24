@@ -1,4 +1,19 @@
 
+@media(min-width: 500px){
+    .links-text1{
+        padding-top: 70px;
+    }
+}   
+
+@media(max-width: 500px){
+    .links-text1{
+        padding-top: 30px;
+    }
+}   
+
+
+
+
 
 .Title{
     text-align: center;
@@ -9,7 +24,6 @@
     font-weight: 300;
     color: #282828;
     font-family: 'Libre Franklin', sans-serif;
-    padding-top: 70px;
 }
 
 
